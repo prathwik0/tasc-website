@@ -11,7 +11,7 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<section class="flex items-center justify-between border-zinc-300 bg-primary-light px-10 py-4 shadow-slate-100 dark:border-zinc-800 dark:bg-primary-dark dark:shadow-white">
+<section class="flex content-center items-center justify-between border-zinc-300 bg-primary-light px-10 py-4 shadow-slate-100 dark:border-zinc-800 dark:bg-primary-dark dark:shadow-white">
 	<a href="/"><img src="/TASCLogo.png" alt="" class="h-7 w-20 duration-200 hover:scale-110" /></a>
 	<ul class="hidden space-x-10 md:flex">
 		{#each NAVITEM as item}
