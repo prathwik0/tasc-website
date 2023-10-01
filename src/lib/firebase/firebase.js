@@ -26,7 +26,72 @@ if(!getApps().length){
 
 export const db = getFirestore(app);
 
+// let Data = [
+//     //Enter json data here
+// ]
+//
+// /**
+//  * @type {string}
+//  */
+//
+// let filename;
+// async function add() {
+//     const storage = getStorage();
+//
+//
+//     for (const data of Data) {
+//For Members
+//         if (data.name === 'Nihal Gatty' || data.name === 'Mohammed Zihab') {
+//             filename = data.name.split(' ')[1];
+//         } else {
+//             filename = data.name.split(' ')[0];
+//         }
 
+//For Faculty
+//     switch(data.name){
+//         case 'Dr. Sharada U Shenoy':
+//             filename = 'Sharada';
+//             break;
+//         case 'Mr. Sudesh Rao':
+//             filename = 'Sudesh';
+//             break;
+//         case 'Ms. Disha D N':
+//             filename = 'Disha';
+//             break;
+//         case 'Mr. Mahesh B L':
+//             filename = 'Mahesh';
+//             break;
+//         case 'Ms. Swathi Pai M':
+//             filename = 'Swathi';
+//             break;
+//         case 'Ms. Sneha Shetty R':
+//             filename = 'Sneha';
+//             break;
+//         case 'Ms. Smitha':
+//             filename = 'Smitha';
+//             break;
+//         case 'Ms. Rakshitha':
+//             filename = 'Rakshitha';
+//             break;
+//         case 'Mr. Anirudhan A C':
+//             filename = 'Anirudhan';
+//             break;
+//         default:
+//             filename = data.name.split(' ')[0];
+//     }
+//         //Change team to Faculty for Faculty
+//         const ImageRef = ref(storage, 'Images/Faculty/' + filename + '.jpg');
+//         data.image = await getDownloadURL(ImageRef);
+//     }
+//
+//     Data.map(async (data) => {
+//         await setDoc(doc(db, "Faculty",`${data.id}`), data);
+//     })
+//
+//     console.log('Done');
+// }
+//
+// await add();
 
 
 
