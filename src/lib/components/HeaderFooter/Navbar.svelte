@@ -38,6 +38,6 @@
 
 
     <div class={`md:hidden ${menuToggle? '' : 'hidden'} fixed z-50 top-0 right-0`} transition:fade={{ delay: 250, duration: 300 }}>
-        <NavbarMenu {$menuToggle}/>
+        <NavbarMenu />
     </div>
 </section>
