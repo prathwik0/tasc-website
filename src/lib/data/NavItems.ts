@@ -13,7 +13,7 @@ export const NAVITEM = [
     },
     {
         title: 'Events',
-        href: '/events'
+        href: '/events/upcoming'
     },
     {
         title: 'Handbook',
