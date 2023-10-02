@@ -11,8 +11,8 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<section class="flex content-center items-center justify-between border-zinc-300 bg-primary-light px-10 py-4 shadow-slate-100 dark:border-zinc-800 dark:bg-primary-dark dark:shadow-white">
-	<a href="/"><img src="/TASCLogo.png" alt="" class="h-7 w-20 duration-200 hover:scale-110" /></a>
+<section class="flex content-center items-center justify-between border-zinc-300 bg-primary-light px-10 py-4  shadow-slate-100 dark:border-zinc-800 dark:bg-primary-dark dark:shadow-white">
+	<a href="/"><img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/TASCLogo.png?alt=media&token=885899c8-a49c-46d7-9d22-ebc5507964db&_gl=1*ozy9q7*_ga*MTE2MzE3ODExMC4xNjk1Mzg4Nzkx*_ga_CW55HF8NVT*MTY5NjIxODM2NC4xOS4xLjE2OTYyMTg0MzEuNTcuMC4w" alt="" class="h-7 w-20 duration-200 hover:scale-110" /></a>
 	<ul class="hidden space-x-10 md:flex">
 		{#each NAVITEM as item}
 			<a href={`${item.href}`}>
@@ -22,11 +22,11 @@
 			</a>
 		{/each}
 	</ul>
-	<div class="flex items-center space-x-5">
+	<div class="flex items-center space-x-5" >
 		<!-- <button class="hidden rounded-xl bg-brand px-4 py-2 text-white duration-200 hover:scale-110 md:block">Login</button> -->
-		<div><ThemeToggle /></div>
-		<button class="md:hidden" on:click={toggleMenu}>
-			<iconify-icon icon="ion:menu" height="2.5rem"></iconify-icon>
+		<div class="flex-1"><ThemeToggle /></div>
+		<button class="md:hidden flex" on:click={toggleMenu} >
+			<iconify-icon icon="eva:menu-outline" height="2rem" width="2rem"></iconify-icon>
 		</button>
 	</div>
 

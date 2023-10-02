@@ -15,7 +15,7 @@
             <p class={'lg:text-xl text-md max-w-4xl pb-6'}>We believe in the potential of AI to improve our world, and we strive to use it responsibly and ethically.</p>
         </div>
         <div>
-            <img src="/AboutBanner.jpeg" alt="AboutBanner" class={'rounded-xl'}/>
+            <img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/AboutBanner.jpeg?alt=media&token=a258cf9b-be51-4160-a773-7917daa50cbc&_gl=1*1h5cmm8*_ga*MTE2MzE3ODExMC4xNjk1Mzg4Nzkx*_ga_CW55HF8NVT*MTY5NjIxODM2NC4xOS4xLjE2OTYyMTg1NTYuNjAuMC4w" alt="AboutBanner" class={'rounded-xl'}/>
         </div>
     </div>
 </div>
