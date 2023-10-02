@@ -8,7 +8,7 @@
 
 <div class={`absolute right-0 top-0 h-[100vh] rounded-l-xl bg-primary-dark dark:bg-primary-light ${$menuToggle ? '' : 'hidden'} px-10`}>
 	<button on:click={toggleMenu} class="right-0 top-0 flex w-full justify-end py-5">
-		<iconify-icon icon="ph:x-bold" height="2.5rem" class="text-white dark:text-black"></iconify-icon>
+		<iconify-icon icon="ep:close" height="2rem" width="2rem" class="text-white dark:text-black" />
 	</button>
 	<ul class="space-y-16 pt-32">
 		{#each NAVITEM as item}

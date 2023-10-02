@@ -15,7 +15,7 @@
 
 	<a href="/#about">
 		<div class={'flex animate-bounce justify-center pb-16'}>
-			<iconify-icon icon="mingcute:arrow-up-fill" rotate="180deg" height="4rem"></iconify-icon>
+			<iconify-icon icon="solar:arrow-down-linear" height="4rem"></iconify-icon>
 		</div>
 	</a>
 
