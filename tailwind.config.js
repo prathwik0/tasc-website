@@ -22,6 +22,7 @@ const config = {
 				'muted-dark': '#121928',
 				'muted-light': '#F3E7FB',
 
+				navbar: 'hsla(var(--navbar))',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
