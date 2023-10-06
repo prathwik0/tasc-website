@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type FacultyCardType from '../types/FacultyCardType';
-	export let data: FacultyCardType;
+	import type FacultyData from '../types/FacultyData';
+	export let faculties: FacultyData[];
 </script>
 
 <div class="grid-container gap-10 space-y-10 px-6 py-16 md:space-y-0 md:px-12 lg:px-16">
-	{#each data.Data as faculty}
+	{#each faculties as faculty}
 		<div class={'dark:custom-shadow-black min-w-full rounded-xl bg-muted-light px-6 py-8 shadow-xl  dark:bg-muted-dark dark:drop-shadow-md'}>
 			<div class={'flex justify-center'}>
 				<img src={faculty.image} alt={faculty.name} class={'h-36 w-36 rounded-full border border-[#e5c6fc] object-cover   dark:border-[#121928] lg:h-44 lg:w-44'} />

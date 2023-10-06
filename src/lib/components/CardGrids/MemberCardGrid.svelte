@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type MemberCardType from '$lib/components/types/MemberCardType';
-	export let data: MemberCardType;
+	import type MemberData from '$lib/components/types/MemberData';
+	export let members: MemberData[];
 </script>
 
 <div class="grid-container gap-10 space-y-10 px-6 pb-28 md:space-y-0 md:px-12 lg:px-16">
-	{#each data.Data as member}
+	{#each members as member}
 		<div class={'dark:custom-shadow-black min-w-full rounded-xl bg-muted-light px-5 py-8 shadow-xl duration-200 hover:scale-110 dark:bg-muted-dark dark:drop-shadow-md'}>
 			<div class={'flex justify-center'}>
 				<img src={member.image} alt={member.name} width={800} height={800} class={'h-36 w-36 rounded-full border border-[#e5c6fc] object-cover dark:border-[#121928] lg:h-44 lg:w-44'} />

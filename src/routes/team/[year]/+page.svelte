@@ -18,5 +18,5 @@
 			<button class={`text-xl md:text-2xl ${year === '2023' ? 'underline underline-offset-4' : 'no-underline'}`} on:click={() => (year = '2023')}> 2023-24 </button>
 		</a>
 	</div>
-	<MemberCardGrid {data} />
+	<MemberCardGrid members={data.members} />
 </div>
