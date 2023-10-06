@@ -19,7 +19,7 @@
 		</div>
 	</a>
 
-	<div id="about" class="py-10">
+	<div id="about" class="bg-muted py-10">
 		<AboutSection />
 	</div>
 </div>
