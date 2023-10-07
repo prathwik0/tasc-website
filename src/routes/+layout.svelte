@@ -9,12 +9,10 @@
 
 <svelte:window bind:scrollY={y} />
 
-<div class="flex min-h-screen flex-col">
-	<div class="sticky top-0 z-50 w-full" class:bg-navbar={y >= 20}>
-		<Navbar />
-	</div>
-
-	<slot />
-
-	<Footer />
+<div class="fixed top-0 z-40 w-full" class:bg-navbar={y >= 20}>
+	<Navbar />
 </div>
+
+<slot />
+
+<Footer />

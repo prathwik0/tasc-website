@@ -11,7 +11,7 @@
 		<div class="px-5">
 			<img class="md:w-21 w-15 h-5 md:h-7" src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/TASCLogo.png?alt=media&token=885899c8-a49c-46d7-9d22-ebc5507964db&_gl=1*1sdhvuu*_ga*MTE2MzE3ODExMC4xNjk1Mzg4Nzkx*_ga_CW55HF8NVT*MTY5NjIxODM2NC4xOS4xLjE2OTYyMTg2ODMuNjAuMC4w" alt="" />
 		</div>
-		<div class="md:text-md py-3 text-center text-sm lg:text-lg">Turing Artificial Intelligence Students Commmittee</div>
+		<div class="md:text-md py-3 text-center text-sm lg:text-lg">Turing Artificial Intelligence Students Committee</div>
 	</div>
 
 	<ul class={'flex space-x-8 text-black dark:text-white'}>
