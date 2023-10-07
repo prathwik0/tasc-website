@@ -14,10 +14,10 @@
 <div class="flex content-center items-center justify-between px-4 py-2 md:px-10">
 	<a href="/"><img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/TASCLogo.png?alt=media&token=885899c8-a49c-46d7-9d22-ebc5507964db&_gl=1*ozy9q7*_ga*MTE2MzE3ODExMC4xNjk1Mzg4Nzkx*_ga_CW55HF8NVT*MTY5NjIxODM2NC4xOS4xLjE2OTYyMTg0MzEuNTcuMC4w" alt="TASC logo" class="w-20 duration-200 hover:scale-110" /></a>
 
-	<ul class="hidden w-max flex-grow justify-evenly px-10 md:flex lg:px-24 xl:px-36">
+	<ul class="hidden w-max flex-grow justify-center md:flex">
 		{#each NAVITEM as item}
 			<a href={`${item.href}`}>
-				<li class=" px-3 py-2 text-xl font-bold duration-200 hover:scale-125 {$page.url.pathname.split('/')[1] === item.title.toLowerCase() || ($page.url.pathname === '/' && item.title === 'Home') ? 'underline underline-offset-4' : ''} ">
+				<li class="py-2 text-xl font-bold duration-200 hover:scale-125 md:px-4 lg:px-10 xl:px-14 {$page.url.pathname.split('/')[1] === item.title.toLowerCase() || ($page.url.pathname === '/' && item.title === 'Home') ? 'underline underline-offset-4' : ''} ">
 					<span>{item.title}</span>
 				</li>
 			</a>
