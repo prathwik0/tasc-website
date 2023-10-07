@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"bits-ui": "^0.5.7",
 		"clsx": "^2.0.0",
 		"firebase": "^10.4.0",
 		"iconify-icon": "^1.0.8",
