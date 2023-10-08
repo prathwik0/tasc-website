@@ -1,4 +1,4 @@
-import { db } from '$lib/firebase/firebase';
+import { db } from '$lib/firebase/firebase_static';
 import { collection, getDocs, type DocumentData } from 'firebase/firestore';
 import type { PageLoad } from './$types';
 import type FacultyData from '$lib/components/types/FacultyData';
