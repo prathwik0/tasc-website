@@ -1,10 +1,14 @@
 <script>
 	import '../app.css';
+	import { user, userData } from '$lib/firebase/firebase';
 
 	import Navbar from '$lib/components/HeaderFooter/Navbar.svelte';
 	import Footer from '$lib/components/HeaderFooter/Footer.svelte';
 
 	let y = 0;
+
+	$user;
+	$userData;
 </script>
 
 <svelte:window bind:scrollY={y} />
