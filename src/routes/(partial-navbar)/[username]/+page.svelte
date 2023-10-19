@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>@{data.username}</title>
+	<title>@{data.username} | TASC</title>
 	<meta name="description" content={data.bio} />
 </svelte:head>
 
