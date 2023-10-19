@@ -65,17 +65,28 @@
 
 			const batch = writeBatch(db);
 
-			// Add a new document with an auto generated id
+			// Create a new user document with an auto generated id
 			const newUserRef = doc(collection(db, 'user'));
-
-			batch.set(doc(db, 'auth', $user!.uid), { user: newUserRef.id });
-
-			batch.set(doc(db, 'usernames', username), { user: newUserRef.id });
-
 			batch.set(newUserRef, {
 				username: username,
 				name: name,
-				usn: usn
+				usn: usn,
+				createdAt: new Date().toISOString()
+			});
+
+			// Add the user to the auth collection
+			batch.set(doc(db, 'auth', $user!.uid), { user: newUserRef.id });
+
+			// Username is unique, so we are using it as the document id
+			batch.set(doc(db, 'usernames', username), { user: newUserRef.id });
+
+			// Create temporary user profile
+			batch.set(doc(db, 'profile', newUserRef.id), {
+				name: name,
+				usn: usn,
+				username: username,
+				photoURL: $user!.photoURL,
+				createdAt: new Date().toISOString()
 			});
 
 			await batch.commit();
