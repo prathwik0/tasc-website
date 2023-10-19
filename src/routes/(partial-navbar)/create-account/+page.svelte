@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AuthCheck from '$lib/components/AuthCheck.svelte';
+	import AuthCheck from '$lib/components/Auth/AuthCheck.svelte';
 
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
@@ -95,69 +95,71 @@
 			<p>Go to <a href="/account">your account</a> settings to make any more changes.</p>
 		</div>
 	{:else if $user}
-		<Card.Root class="m-2">
-			<Card.Header class="space-y-1">
-				<Card.Title class="text-2xl">Enter your details</Card.Title>
-				<h2 class="card-title">Welcome, {$user.displayName}</h2>
-				<Card.Description>You have successfully signed in. Now you can enter your details. Make sure to enter all your details correctly. These cannot be changed later unless you contact the admins.</Card.Description>
-			</Card.Header>
+		<div class="m-2 flex justify-center">
+			<Card.Root class="max-w-2xl">
+				<Card.Header class="space-y-1">
+					<Card.Title class="text-2xl">Enter your details</Card.Title>
+					<h2 class="card-title">Welcome, {$user.displayName}</h2>
+					<Card.Description>You have successfully signed in. Now you can enter your details. Make sure to enter all your details correctly. These cannot be changed later unless you contact the admins.</Card.Description>
+				</Card.Header>
 
-			<form on:submit|preventDefault={createAccount}>
-				<Card.Content>
-					<div>
-						<Label for="name">Name</Label>
-						<Input type="text" id="name" placeholder="Enter your full name" bind:value={name} class={!isValidName && isTouchedName ? 'bg-red-200 dark:bg-red-900' : ''} />
-						<p class="mt-1 text-sm text-muted-foreground">This is the name that will appear on your certificates.</p>
-						{#if isTouchedName && !isValidName}
-							<div class="h-4">
-								<p>The name you have entered is invalid.</p>
-							</div>
-						{/if}
-					</div>
+				<form on:submit|preventDefault={createAccount}>
+					<Card.Content>
+						<div>
+							<Label for="name">Name</Label>
+							<Input type="text" id="name" placeholder="Enter your full name" bind:value={name} class={!isValidName && isTouchedName ? 'bg-red-200 dark:bg-red-900' : ''} />
+							<p class="mt-1 text-sm text-muted-foreground">This is the name that will appear on your certificates.</p>
+							{#if isTouchedName && !isValidName}
+								<div class="h-4">
+									<p>The name you have entered is invalid.</p>
+								</div>
+							{/if}
+						</div>
 
-					<div class="mt-6">
-						<Label for="usn">USN</Label>
-						<Input type="text" id="usn" placeholder="Enter your college USN" bind:value={usn} class={!isValidUSN && isTouchedUSN ? 'bg-red-200 dark:bg-red-900' : ''} />
-						{#if isTouchedUSN && !isValidUSN}
-							<div class="h-4">
-								<p>The USN you have entered is invalid.</p>
-							</div>
-						{/if}
-					</div>
+						<div class="mt-6">
+							<Label for="usn">USN</Label>
+							<Input type="text" id="usn" placeholder="Enter your college USN" bind:value={usn} class={!isValidUSN && isTouchedUSN ? 'bg-red-200 dark:bg-red-900' : ''} />
+							{#if isTouchedUSN && !isValidUSN}
+								<div class="h-4">
+									<p>The USN you have entered is invalid.</p>
+								</div>
+							{/if}
+						</div>
 
-					<div class="mt-6">
-						<Label for="username" class="mt-10">Username</Label>
-						<Input type="text" class="{!isValidUsername && isTouchedUsername ? 'bg-red-200 dark:bg-red-900' : ''} {isTakenUsername ? 'bg-yellow-200 dark:bg-yellow-700' : ''} {isAvailable && isValidUsername && !loading ? 'bg-green-300 dark:bg-green-800' : ''}" id="username" placeholder="Enter a username" bind:value={username} on:input={checkAvailability} />
-						<p class="mt-1 text-sm text-muted-foreground">Your username is public and is used to access your profile page.</p>
+						<div class="mt-6">
+							<Label for="username" class="mt-10">Username</Label>
+							<Input type="text" class="{!isValidUsername && isTouchedUsername ? 'bg-red-200 dark:bg-red-900' : ''} {isTakenUsername ? 'bg-yellow-200 dark:bg-yellow-700' : ''} {isAvailable && isValidUsername && !loading ? 'bg-green-300 dark:bg-green-800' : ''}" id="username" placeholder="Enter a username" bind:value={username} on:input={checkAvailability} />
+							<p class="mt-1 text-sm text-muted-foreground">Your username is public and is used to access your profile page.</p>
 
-						{#if isTouchedUsername}
-							<div class="mt-4 h-12">
-								{#if loading}
-									<p>Checking availability of @{username}...</p>
-								{/if}
+							{#if isTouchedUsername}
+								<div class="mt-4 h-12">
+									{#if loading}
+										<p>Checking availability of @{username}...</p>
+									{/if}
 
-								{#if !isValidUsername && isTouchedUsername}
-									<p class="mt-1 text-sm text-muted-foreground">Username must be 3-16 characters long, alphanumeric only</p>
-								{/if}
+									{#if !isValidUsername && isTouchedUsername}
+										<p class="mt-1 text-sm text-muted-foreground">Username must be 3-16 characters long, alphanumeric only</p>
+									{/if}
 
-								{#if isValidUsername && !isAvailable && !loading}
-									<p>
-										@{username} is not available
-									</p>
-								{/if}
+									{#if isValidUsername && !isAvailable && !loading}
+										<p>
+											@{username} is not available
+										</p>
+									{/if}
 
-								{#if isValidUsername && isAvailable}
-									<p class="text-green-500">@{username} is available</p>
-								{/if}
-							</div>
-						{/if}
-					</div>
-				</Card.Content>
+									{#if isValidUsername && isAvailable}
+										<p class="text-green-500">@{username} is available</p>
+									{/if}
+								</div>
+							{/if}
+						</div>
+					</Card.Content>
 
-				<Card.Footer>
-					<Button class="w-full" type="submit">Submit</Button>
-				</Card.Footer>
-			</form>
-		</Card.Root>
+					<Card.Footer>
+						<Button class="w-full" type="submit">Submit</Button>
+					</Card.Footer>
+				</form>
+			</Card.Root>
+		</div>
 	{/if}
 </AuthCheck>

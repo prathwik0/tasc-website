@@ -1,0 +1,38 @@
+<script lang="ts">
+	import UserLink from '$lib/components/Profile/UserLink.svelte';
+	import Layout from './Layout.svelte';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+</script>
+
+<svelte:head>
+	<title>@{data.username}</title>
+	<meta name="description" content={data.bio} />
+</svelte:head>
+
+<Layout>
+	<h1 slot="navbar" class="text-2xl">{data.name}</h1>
+
+	<div class="mx-2 mb-6 md:mx-4 lg:mx-4">
+		<div class="flex w-full flex-wrap items-start justify-evenly">
+			<div class="mt-6 w-72 sm:w-[420px]">
+				<h1 class="text-2xl">{data.name}</h1>
+				<img src={data.photoURL ?? '/user.png'} alt="photoURL" class="aspect-square h-72 object-cover py-4" />
+				<p>{data.bio ?? 'No bio yet'}</p>
+			</div>
+
+			<div class="mt-6 w-72 sm:w-[420px]">
+				<h1 class="text-2xl">My Social Media</h1>
+
+				<ul class="flex list-none flex-col">
+					{#each data.links as item}
+						<li class="w-full py-2">
+							<UserLink {...item} />
+						</li>
+					{/each}
+				</ul>
+			</div>
+		</div>
+	</div>
+</Layout>

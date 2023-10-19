@@ -1,9 +1,10 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
+import { deleteApp, getApp, getApps, initializeApp, type FirebaseApp } from 'firebase/app';
 import { getFirestore, doc, onSnapshot } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
 import { writable, type Readable, derived } from 'svelte/store';
+import type ProfileData from '$lib/components/types/ProfileData';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,7 +21,18 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+
+// const app = initializeApp(firebaseConfig);
+
+let app: FirebaseApp;
+if (!getApps().length) {
+	app = initializeApp(firebaseConfig);
+} else {
+	app = getApp();
+	deleteApp(app);
+	app = initializeApp(firebaseConfig);
+}
+
 export const db = getFirestore();
 export const auth = getAuth();
 export const storage = getStorage();
@@ -89,7 +101,7 @@ interface AuthData {
 	user: string;
 }
 
-const userID: Readable<AuthData | null> = derived(user, ($user, set) => {
+export const userID: Readable<AuthData | null> = derived(user, ($user, set) => {
 	if ($user) {
 		// console.log('userID updated, now tracking auth/', $user.uid);
 		return docStore<AuthData>(`auth/${$user.uid}`).subscribe(set);
@@ -108,6 +120,14 @@ export const userData: Readable<UserData | null> = derived(userID, ($userID, set
 	if ($userID) {
 		// console.log('userData updated, now tracking user/', $userID.user);
 		return docStore<UserData>(`user/${$userID.user}`).subscribe(set);
+	} else {
+		set(null);
+	}
+});
+
+export const userProfileData: Readable<ProfileData | null> = derived(userID, ($userID, set) => {
+	if ($userID) {
+		return docStore<ProfileData>(`profile/${$userID.user}`).subscribe(set);
 	} else {
 		set(null);
 	}
