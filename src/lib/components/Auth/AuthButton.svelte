@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { Icons } from '$lib/components/docs/icons';
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover';
@@ -62,7 +63,13 @@
 					Login
 				</Button>
 				<div class="px-2 text-lg">Don't have an account?</div>
-				<Button><a href="/signup">Signup</a></Button>
+				<Button
+					on:click={() => {
+						goto('/signup');
+					}}
+				>
+					Signup
+				</Button>
 			</div>
 		</Popover.Content>
 	</Popover.Root>
