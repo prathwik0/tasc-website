@@ -20,6 +20,8 @@
 		const url = await getDownloadURL(result.ref);
 
 		await updateDoc(doc(db, 'profile', $userID!.user), { photoURL: url });
+
+		alert('Your profile photo has been updated!');
 		uploading = false;
 	}
 </script>
