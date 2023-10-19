@@ -26,9 +26,10 @@
 		<Separator />
 
 		<div class="mx-2 mb-6 md:mx-4 lg:mx-4">
+			<!-- Optionally change this to flexbox with flex-wrap -->
 			<div class="grid w-full lg:grid-cols-2">
 				<div class="flex justify-center">
-					<div class="flex flex-col sm:max-w-sm">
+					<div class="flex w-full max-w-sm flex-col">
 						<div class="mt-6">
 							<h1 class="text-2xl">Change your Profile Photo</h1>
 							<p>Choose a new photo to change your profile picture</p>

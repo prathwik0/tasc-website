@@ -16,15 +16,13 @@
 	}
 </script>
 
-<div class="sm:max-w-sm">
-	<div class="w-full pb-6 pt-2">
-		<Label>Current Bio: <span>{$userProfileData?.bio}</span></Label>
-	</div>
-	<form on:submit|preventDefault={updateBio}>
-		<div class="grid gap-1.5">
-			<Label for="bio">New bio</Label>
-			<Textarea name="bio" placeholder="Type your new bio here!" bind:value={bio} />
-		</div>
-		<Button class="mt-4">Update Bio</Button>
-	</form>
+<div class="w-full pb-6 pt-2">
+	<Label>Current Bio: <span>{$userProfileData?.bio}</span></Label>
 </div>
+<form on:submit|preventDefault={updateBio}>
+	<div class="grid gap-1.5">
+		<Label for="bio">New bio</Label>
+		<Textarea name="bio" placeholder="Type your new bio here!" bind:value={bio} />
+	</div>
+	<Button class="mt-4">Update Bio</Button>
+</form>
