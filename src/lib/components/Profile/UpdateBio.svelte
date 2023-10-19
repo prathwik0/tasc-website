@@ -17,11 +17,11 @@
 </script>
 
 <div class="sm:max-w-sm">
-	<div class="pb-6 pt-2">
+	<div class="w-full pb-6 pt-2">
 		<Label>Current Bio: <span>{$userProfileData?.bio}</span></Label>
 	</div>
 	<form on:submit|preventDefault={updateBio}>
-		<div class="grid w-full gap-1.5">
+		<div class="grid gap-1.5">
 			<Label for="bio">New bio</Label>
 			<Textarea name="bio" placeholder="Type your new bio here!" bind:value={bio} />
 		</div>
