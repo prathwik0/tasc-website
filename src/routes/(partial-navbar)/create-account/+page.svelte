@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import AuthCheck from '$lib/components/Auth/AuthCheck.svelte';
 
 	import { Button } from '$lib/components/ui/button';
@@ -86,6 +87,7 @@
 				usn: usn,
 				username: username,
 				photoURL: $user!.photoURL,
+				bio: 'Hello! I am' + name + '.',
 				createdAt: new Date().toISOString()
 			});
 
@@ -101,10 +103,7 @@
 
 <AuthCheck>
 	{#if $userData !== null}
-		<div class="m-4 flex flex-col">
-			<p>You have an account.</p>
-			<p>Go to <a href="/account">your account</a> settings to make any more changes.</p>
-		</div>
+		{goto('/' + $userData.username + '/edit')}
 	{:else if $user}
 		<div class="m-2 flex justify-center">
 			<Card.Root class="max-w-2xl">

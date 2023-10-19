@@ -8,7 +8,7 @@
 </FixedNavbar>
 
 <div class="flex min-h-screen flex-col">
-	<div class="min-h-screen w-full pt-[60px]">
+	<div class="flex min-h-screen w-full flex-col pt-[60px]">
 		<slot />
 	</div>
 </div>
