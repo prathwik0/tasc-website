@@ -3,7 +3,7 @@ import { deleteApp, getApp, getApps, initializeApp, type FirebaseApp } from 'fir
 import { getFirestore, doc, onSnapshot } from 'firebase/firestore';
 import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
-import { writable, type Readable, derived } from 'svelte/store';
+import { get, writable, type Readable, derived, type Writable } from 'svelte/store';
 import type ProfileData from '$lib/components/types/ProfileData';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -140,6 +140,49 @@ export const userProfileData: Readable<ProfileData | null> = derived(userID, ($u
 	} else {
 		set(null);
 	}
+});
+
+/* ************************************************************************** */
+
+/** Helper store for userLoaded */
+export const called: Writable<boolean> = writable(false);
+
+/** indicates whether the user (if present) is loaded or is still currently loading */
+export const userLoaded: Writable<boolean> = writable(false);
+
+// userLoaded.subscribe((val) => console.log('userLoaded ' + val));
+// called.subscribe((val) => console.log('called ' + val));
+
+onAuthStateChanged(auth, (user) => {
+	if (!auth || !globalThis.window) {
+		return;
+	}
+	called.set(true);
+	if (user) {
+		userLoaded.set(false);
+	} else {
+		userLoaded.set(true);
+	}
+});
+
+userID.subscribe((value) => {
+	if (!get(called)) {
+		return;
+	}
+
+	if (value) {
+		userLoaded.set(false);
+	} else {
+		userLoaded.set(true);
+	}
+});
+
+userData.subscribe((value) => {
+	if (!get(called)) {
+		return;
+	}
+
+	userLoaded.set(true);
 });
 
 /* ************************************************************************** */

@@ -4,7 +4,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover';
 
-	import { auth, userData } from '$lib/firebase/firebase';
+	import { auth, userLoaded, userData } from '$lib/firebase/firebase';
 	import { user } from '$lib/firebase/firebase';
 
 	import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
@@ -19,7 +19,9 @@
 	}
 </script>
 
-{#if $user && $userData}
+{#if !$userLoaded}
+	<span></span>
+{:else if $user && $userData}
 	<Popover.Root>
 		<Popover.Trigger>
 			<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">You</Button>
