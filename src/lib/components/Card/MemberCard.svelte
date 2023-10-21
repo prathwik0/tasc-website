@@ -3,7 +3,7 @@
 	export let imageAlt: string = 'profile';
 	export let name: string;
 	export let role: string;
-	export let quote: string = 'I go to class after saying i wont go to class!!! <3333';
+	export let quote: string = 'no description';
 	export let target: string = '_blank';
 	export let github: string | null = null;
 	export let linkedin: string | null = null;
@@ -44,17 +44,17 @@
 	on:click|preventDefault={() => {
 		display = 'block';
 	}}
-	class="dark:custom-shadow-black w-72 cursor-pointer overflow-hidden rounded-lg border py-5 shadow-xl duration-300 ease-in-out hover:scale-110"
+	class="dark:custom-shadow-black w-72 cursor-pointer overflow-hidden rounded-lg border bg-card py-5 shadow-xl duration-300 ease-in-out hover:scale-110"
 >
-	<div class="flex items-center justify-center p-4">
+	<div class="mx-14 flex items-center justify-center">
 		<!-- w-32 h-32 -->
-		<img {src} alt={imageAlt} class="aspect-square w-full rounded-full border object-cover" use:lazyLoad={observer} />
+		<img {src} alt={imageAlt} class="aspect-square w-full rounded-full border border-border object-cover" use:lazyLoad={observer} />
 	</div>
 	<div class="flex flex-col items-center justify-center">
 		<h1 class="pt-4 text-xl font-bold">{name}</h1>
-		<h2 class="p-2 text-base font-medium text-zinc-600 dark:text-slate-400">{role}</h2>
+		<h2 class="p-2 text-lg font-medium text-zinc-600 dark:text-slate-400">{role}</h2>
 
-		<div on:click|stopPropagation={() => {}} class="flex gap-5 py-2">
+		<!-- <div on:click|stopPropagation={() => {}} class="flex gap-5 py-2">
 			{#if instagram}
 				<a href={instagram} {target}>
 					<iconify-icon icon="mdi:instagram" height="2.5rem" />
@@ -70,7 +70,7 @@
 					<iconify-icon icon="mdi:linkedin" height="2.5rem" />
 				</a>
 			{/if}
-		</div>
+		</div> -->
 	</div>
 </div>
 
@@ -82,11 +82,11 @@
 		console.log('close popup');
 	}}
 	style="display: {display};"
-	class="fixed top-0 z-10 h-screen w-full bg-black opacity-60 duration-300"
+	class="fixed top-0 z-10 h-screen w-full duration-300"
 >
-	<div on:click|preventDefault|stopPropagation={() => {}} class="card dark:custom-shadow-black fixed inset-0 top-[20%] z-20 mx-auto flex min-h-max w-[80%] cursor-pointer flex-col items-center overflow-hidden rounded-lg border border-[rgb(237,210,255)] shadow-lg md:min-h-fit md:w-1/2 lg:w-1/4">
+	<div on:click|preventDefault|stopPropagation={() => {}} class="card dark:custom-shadow-black fixed inset-0 top-[20%] z-20 mx-auto flex min-h-max w-[80%] cursor-pointer flex-col items-center overflow-hidden rounded-lg border border-border bg-popover shadow-lg md:min-h-fit md:w-1/2 lg:w-1/4">
 		<div class="flex items-center justify-center p-5" use:lazyLoad={observer}>
-			<img {src} alt={imageAlt} class="w-full border border-[#e5c6fc] object-cover dark:border-[#121928] md:h-64 md:w-64" />
+			<img {src} alt={imageAlt} class="w-full border border-border object-cover md:h-64 md:w-64" />
 		</div>
 		<div class="flex flex-col items-center justify-center">
 			<h1 class="pt-4 text-2xl font-bold">{name}</h1>
