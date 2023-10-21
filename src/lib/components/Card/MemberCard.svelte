@@ -48,7 +48,7 @@
 >
 	<div class="mx-14 flex items-center justify-center">
 		<!-- w-32 h-32 -->
-		<img {src} alt={imageAlt} class="aspect-square w-full rounded-full border object-cover" use:lazyLoad={observer} />
+		<img {src} alt={imageAlt} class="aspect-square w-full rounded-full border border-border object-cover" use:lazyLoad={observer} />
 	</div>
 	<div class="flex flex-col items-center justify-center">
 		<h1 class="pt-4 text-xl font-bold">{name}</h1>
@@ -84,9 +84,9 @@
 	style="display: {display};"
 	class="fixed top-0 z-10 h-screen w-full duration-300"
 >
-	<div on:click|preventDefault|stopPropagation={() => {}} class="card dark:custom-shadow-black fixed inset-0 top-[20%] z-20 mx-auto flex min-h-max w-[80%] cursor-pointer flex-col items-center overflow-hidden rounded-lg border border-[rgb(237,210,255)] bg-[hsl(282,25%,79%)] shadow-lg dark:bg-[hsl(261,88%,16%)] md:min-h-fit md:w-1/2 lg:w-1/4">
+	<div on:click|preventDefault|stopPropagation={() => {}} class="card dark:custom-shadow-black fixed inset-0 top-[20%] z-20 mx-auto flex min-h-max w-[80%] cursor-pointer flex-col items-center overflow-hidden rounded-lg border border-border bg-[hsl(282,25%,79%)] shadow-lg dark:bg-[hsl(261,88%,16%)] md:min-h-fit md:w-1/2 lg:w-1/4">
 		<div class="flex items-center justify-center p-5" use:lazyLoad={observer}>
-			<img {src} alt={imageAlt} class="w-full border border-[#e5c6fc] object-cover dark:border-[#121928] md:h-64 md:w-64" />
+			<img {src} alt={imageAlt} class="w-full border border-border object-cover md:h-64 md:w-64" />
 		</div>
 		<div class="flex flex-col items-center justify-center">
 			<h1 class="pt-4 text-2xl font-bold">{name}</h1>

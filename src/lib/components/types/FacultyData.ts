@@ -5,4 +5,5 @@ export default interface FacultyCardType {
 	email: string;
 	designation: string;
 	designation2: string;
+	about: Array<string>;
 }
