@@ -42,7 +42,7 @@
 	style="display: {display};"
 	class="fixed top-0 z-10 h-screen w-full duration-300"
 >
-	<div on:click|preventDefault|stopPropagation={() => {}} class="card dark:custom-shadow-black fixed inset-0 top-[20%] z-20 mx-auto flex min-h-max w-[80%] cursor-pointer flex-col items-center overflow-hidden rounded-lg border border-border bg-[hsl(282,25%,79%)] shadow-lg dark:bg-[hsl(261,88%,16%)] md:min-h-fit md:w-1/2 lg:w-[66%]">
+	<div on:click|preventDefault|stopPropagation={() => {}} class="card dark:custom-shadow-black fixed inset-0 top-[20%] z-20 mx-auto flex min-h-max w-[80%] cursor-pointer flex-col items-center overflow-hidden rounded-lg border border-border bg-popover shadow-lg md:min-h-fit md:w-1/2 lg:w-[66%]">
 		<div class="grid w-full grid-cols-2">
 			<div class="flex items-center justify-center p-4">
 				<img src={image2} alt={imageAlt} class="w-full border border-border object-cover md:h-96 md:w-96" />
