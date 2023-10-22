@@ -5,17 +5,6 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-
-	/** @type {import('svelte/action').Action<HTMLElement, string>}  */
-	function style(node: any) {
-		node.style['background-color'] = data?.color ?? '';
-
-		return {
-			update() {
-				node.style['background-color'] = data?.color ?? 'white';
-			}
-		};
-	}
 </script>
 
 <svelte:head>
@@ -23,7 +12,7 @@
 	<meta name="description" content={data.bio} />
 </svelte:head>
 
-<svelte:body use:backgroundColor={data.color || ''} />
+<svelte:body use:backgroundColor={data.color ?? ''} />
 
 <Layout>
 	<h1 slot="navbar" class="text-2xl">{data.name} {data.color}</h1>

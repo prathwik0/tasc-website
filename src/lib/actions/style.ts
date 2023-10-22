@@ -5,6 +5,9 @@ export function backgroundColor(node: any, backgroundColor: string) {
 	return {
 		update(backgroundColor: string) {
 			node.style['background-color'] = backgroundColor;
+		},
+		destroy() {
+			node.style['background-color'] = '';
 		}
 	};
 }
