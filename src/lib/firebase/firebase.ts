@@ -113,6 +113,7 @@ interface AuthData {
 export const userID: Readable<AuthData | null> = derived(user, ($user, set) => {
 	if ($user) {
 		// console.log('userID updated, now tracking auth/', $user.uid);
+		set({ user: '' });
 		return docStore<AuthData>(`auth/${$user.uid}`).subscribe(set);
 	} else {
 		set(null);
@@ -126,7 +127,7 @@ interface UserData {
 }
 
 export const userData: Readable<UserData | null> = derived(userID, ($userID, set) => {
-	if ($userID) {
+	if ($userID && $userID.user !== '') {
 		// console.log('userData updated, now tracking user/', $userID.user);
 		return docStore<UserData>(`user/${$userID.user}`).subscribe(set);
 	} else {
@@ -170,7 +171,7 @@ userID.subscribe((value) => {
 		return;
 	}
 
-	if (value) {
+	if (value && value.user !== '') {
 		userLoaded.set(false);
 	} else {
 		userLoaded.set(true);
