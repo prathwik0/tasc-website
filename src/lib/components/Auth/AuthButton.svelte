@@ -19,6 +19,7 @@
 	}
 </script>
 
+<!-- TODO: wrap everthing in a UserLoadCheck component in the future -->
 {#if !$userLoaded}
 	<span></span>
 {:else if $user && $userData}
@@ -31,8 +32,8 @@
 				<div class="px-2 text-lg">
 					Hello {$userData.name},
 				</div>
-				<Button variant="outline"><a href="/{$userData.username}">Your Public Profile</a></Button>
-				<Button variant="outline"><a href="/{$userData.username}/edit">Edit your Profile</a></Button>
+				<a href="/{$userData.username}" class="contents"><Button variant="outline">Your Public Profile</Button></a>
+				<a href="/{$userData.username}/edit" class="contents"><Button variant="outline">Edit your Profile</Button></a>
 				<Button on:click={signOutSSR}>Sign out</Button>
 			</div>
 		</Popover.Content>
@@ -47,7 +48,7 @@
 				<div class="px-2 text-lg">
 					Hello {$user.displayName}, you don't have an account yet.
 				</div>
-				<Button variant="outline"><a href="/create-account">Create Account</a></Button>
+				<a href="/create-account" class="contents"><Button variant="outline">Create Account</Button></a>
 				<Button on:click={signOutSSR}>Sign out</Button>
 			</div>
 		</Popover.Content>
@@ -65,13 +66,7 @@
 					Login
 				</Button>
 				<div class="px-2 text-lg">Don't have an account?</div>
-				<Button
-					on:click={() => {
-						goto('/signup');
-					}}
-				>
-					Signup
-				</Button>
+				<a href="/signup" class="contents"><Button>Signup</Button></a>
 			</div>
 		</Popover.Content>
 	</Popover.Root>
