@@ -1,8 +1,8 @@
 <script lang="ts">
-	import UserLink from '$lib/components/Profile/UserLink.svelte';
 	import { backgroundColor } from '$lib/actions/style';
-	import Layout from './Layout.svelte';
+	import UserLink from '$lib/components/Profile/UserLink.svelte';
 	import type { PageData } from './$types';
+	import Layout from './Layout.svelte';
 
 	export let data: PageData;
 </script>
@@ -15,7 +15,7 @@
 <svelte:body use:backgroundColor={data.color ?? ''} />
 
 <Layout>
-	<h1 slot="navbar" class="text-2xl">{data.name} {data.color}</h1>
+	<h1 slot="navbar" class="hidden text-2xl md:block">{data.name} {data.color}</h1>
 
 	<div class="flex w-full flex-grow flex-wrap items-center justify-evenly align-middle">
 		<div class="mt-6 w-72 sm:w-[420px]">
