@@ -1,14 +1,18 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { userData } from '$lib/firebase/firebase';
+	import { userData, userProfileData } from '$lib/firebase/firebase';
+	import { backgroundColor } from '$lib/actions/style';
 
 	import Layout from './Layout.svelte';
 
 	import UpdatePhoto from '$lib/components/Profile/UpdatePhoto.svelte';
 	import UpdateBio from '$lib/components/Profile/UpdateBio.svelte';
 	import UpdateLinks from '$lib/components/Profile/UpdateLinks.svelte';
+	import UpdateColor from '$lib/components/Profile/UpdateColor.svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 </script>
+
+<svelte:body use:backgroundColor={$userProfileData?.color || ''} />
 
 <Layout>
 	<div slot="navbar">
@@ -43,11 +47,20 @@
 				</div>
 
 				<div class="flex justify-center">
-					<div class="mt-6 w-full max-w-sm">
-						<h1 class="text-2xl">Update your social links</h1>
-						<p>Drag and drop to reorder your links</p>
-						<div class="mt-4">
-							<UpdateLinks />
+					<div class="flex w-full max-w-sm flex-col">
+						<div class="mt-6">
+							<h1 class="text-2xl">Update your social links</h1>
+							<p>Drag and drop to reorder your links</p>
+							<div class="mt-4">
+								<UpdateLinks />
+							</div>
+						</div>
+
+						<div class="mt-6">
+							<h1 class="text-2xl">Pick profile page background-color</h1>
+							<div class="mt-4">
+								<UpdateColor />
+							</div>
 						</div>
 					</div>
 				</div>
