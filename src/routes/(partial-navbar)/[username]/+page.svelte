@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { backgroundColor } from '$lib/actions/style';
 	import EditButton from '$lib/components/Auth/EditButton.svelte';
 	import UserLink from '$lib/components/Profile/UserLink.svelte';
 	import { Button } from '$lib/components/ui/button';
