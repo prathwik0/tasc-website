@@ -3,7 +3,7 @@
 </script>
 
 <div>
-	<div class="flex min-h-screen flex-grow flex-col">
+	<div class="flex min-h-[100dvh] flex-grow flex-col">
 		<div class="flex flex-grow flex-col justify-center">
 			<div class="h-16 w-full"></div>
 
