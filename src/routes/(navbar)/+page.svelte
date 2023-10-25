@@ -3,19 +3,18 @@
 </script>
 
 <div>
-	<div class="h-screen">
-		<div class="flex h-[90vh] items-center justify-center">
-			<div class="space-y-6 px-4">
-				<h1 class="bg-gradient-to-r from-[#835FDC] to-[#CC4FAD] bg-clip-text text-center text-[40px] font-extrabold text-transparent md:text-6xl lg:text-8xl">
-					Turing <br /> Artificial Intelligence <br /> Student Committee
-				</h1>
+	<div class="flex min-h-screen flex-grow flex-col">
+		<div class="flex flex-grow flex-col justify-center">
+			<div class="h-16 w-full"></div>
 
-				<p class="text-smA text-center font-semibold md:text-lg lg:text-2xl">Department of Artificial Intelligence and Machine Learning</p>
+			<div class="title bg-gradient-to-r from-[hsl(257,54%,51%)] to-[#CC4FAD] bg-clip-text text-transparent dark:from-[#835FDC] dark:to-[#CC4FAD]">
+				Turing <br /> Artificial <br class="sm:hidden" /> Intelligence <br /> Student <br class="sm:hidden" />Committee
 			</div>
-		</div>
 
-		<a href="/#about">
-			<div class={'flex animate-bounce justify-center pb-16'}>
+			<p class="mx-1 text-lg font-semibold lg:text-2xl">Department of Artificial Intelligence and Machine Learning</p>
+		</div>
+		<a href="/#about" class="flex h-24 flex-grow-0 items-end justify-center">
+			<div class="flex animate-bounce justify-center">
 				<iconify-icon icon="solar:arrow-down-linear" height="4rem"></iconify-icon>
 			</div>
 		</a>
@@ -25,3 +24,18 @@
 		<AboutSection />
 	</div>
 </div>
+
+<style>
+	.title {
+		font-weight: 900;
+		font-size: calc(100vw / 6.9);
+
+		flex-shrink: 0;
+		line-height: 1;
+	}
+	@media (min-width: 640px) {
+		.title {
+			font-size: calc(100vw / 11);
+		}
+	}
+</style>
