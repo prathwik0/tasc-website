@@ -1,4 +1,4 @@
-import { db } from '$lib/firebase/firebase_static';
+import { db } from '$lib/firebase/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import type { PageLoad } from './$types';
 import type EventData from '$lib/components/types/EventData';

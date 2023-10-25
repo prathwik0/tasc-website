@@ -20,6 +20,7 @@
 
 <div class="w-full pb-6 pt-2">
 	<Label>Current Lightmode Color: {$userProfileData?.color_light}</Label>
+  <br />
 	<Label>Current Darkmode Color: {$userProfileData?.color_dark}</Label>
 </div>
 <form on:submit|preventDefault={updateColor}>

@@ -14,6 +14,7 @@ export function backgroundColor(node: any, color: { color_light: string; color_d
 	};
 }
 
+
 /*
  * todo: fix the race condition
  * currently while navigating to a new page, the background color is set
