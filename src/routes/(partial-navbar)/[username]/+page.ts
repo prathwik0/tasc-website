@@ -38,6 +38,8 @@ export const load = (async ({ params }) => {
 		username: userData.username,
 		photoURL: profileData?.photoURL,
 		bio: profileData?.bio,
-		links: profileData?.links ?? []
+		links: profileData?.links ?? [],
+		color_dark: profileData?.color_dark,
+		color_light: profileData?.color_light
 	} as ProfileData;
 }) satisfies PageLoad;

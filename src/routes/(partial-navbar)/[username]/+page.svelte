@@ -2,6 +2,8 @@
 	import UserLink from '$lib/components/Profile/UserLink.svelte';
 	import Layout from './Layout.svelte';
 	import type { PageData } from './$types';
+	import { backgroundColor } from '$lib/actions/style';
+	import { darkTheme } from '$lib/stores/theme';
 
 	export let data: PageData;
 </script>
@@ -10,6 +12,14 @@
 	<title>@{data.username} | TASC</title>
 	<meta name="description" content={data.bio} />
 </svelte:head>
+
+<svelte:body
+	use:backgroundColor={{
+		color_light: data.color_light ?? '',
+		color_dark: data.color_dark ?? '',
+		darkTheme: $darkTheme
+	}}
+/>
 
 <Layout>
 	<h1 slot="navbar" class="text-2xl">{data.name}</h1>
