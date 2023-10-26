@@ -32,8 +32,9 @@
 					<p class="text-md md:text-lg lg:text-xl">To participate, simply fill out the form below and let the games begin! (TEAM LEADER ONLY)</p>
 					<div class="text-md md:text-lg lg:text-xl">
 						<p class="font-bold text-red-600">NOTE:</p>
-						<p>1. Entry fee will be collected at venue.</p>
-						<p>2. Details of the teammates will also be collected there.</p>
+						<p>1. Spot registrations will be open during the event.</p>
+						<p>2. Entry fee will be collected at venue.</p>
+						<p>3. Details of the teammates will also be collected there.</p>
 					</div>
 				</div>
 			</div>
