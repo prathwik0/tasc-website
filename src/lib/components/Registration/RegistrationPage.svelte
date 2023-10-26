@@ -8,7 +8,7 @@
 		<div class="w-full max-w-[100rem] space-y-6 rounded-xl bg-gray-300 p-6 dark:bg-muted-dark">
 			<div class="flex flex-col items-center space-y-6 md:flex-row md:space-y-0">
 				<div class="w-full md:w-1/2 md:pr-10">
-					<img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/Images%2FEventBanners%2FEsports23.jpeg?alt=media&token=adde05ad-73ee-4f21-a2b0-bdf51226cde4&_gl=1*ajibe2*_ga*NjA3MDQ1Mzk1LjE2OTY0MjUwNDM.*_ga_CW55HF8NVT*MTY5ODI3MDU3Mi4zNi4w.LjE2OTgyNzA1NzIuNjAuMC4w" alt="Banner" class="w-full rounded-xl" />
+					<img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/Images%2FEventBanners%2FEsports23.png?alt=media&token=29f029a0-2456-426c-97e3-38b0f42426b0" alt="Banner" class="w-full rounded-xl" />
 				</div>
 
 				<div class="flex w-full flex-col justify-center space-y-6 md:max-w-7xl">
