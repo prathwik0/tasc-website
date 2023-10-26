@@ -8,7 +8,7 @@
 		<div class="w-full max-w-[100rem] space-y-6 rounded-xl bg-gray-300 p-6 dark:bg-muted-dark">
 			<div class="flex flex-col items-center space-y-6 md:flex-row md:space-y-0">
 				<div class="w-full md:w-1/2 md:pr-10">
-					<img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/Images%2FEventBanners%2FEsports23.png?alt=media&token=29f029a0-2456-426c-97e3-38b0f42426b0" alt="Banner" class="w-full rounded-xl" />
+					<img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/Images%2FEventBanners%2FESports23.png?alt=media&token=afd00a57-9ea0-466d-af4f-718e2022c9bf&_gl=1*1q0psxo*_ga*NjA3MDQ1MzkxLjE2OTY0MjUwNDM.*_ga_CW55HF8NVT*MTY5ODMzMDAyOC4zOS4xLjE2OTgzMzAxNzQuNy4wLjA." alt="Banner" class="w-full rounded-xl" />
 				</div>
 
 				<div class="flex w-full flex-col justify-center space-y-6 md:max-w-7xl">
@@ -32,8 +32,9 @@
 					<p class="text-md md:text-lg lg:text-xl">To participate, simply fill out the form below and let the games begin! (TEAM LEADER ONLY)</p>
 					<div class="text-md md:text-lg lg:text-xl">
 						<p class="font-bold text-red-600">NOTE:</p>
-						<p>1. Entry fee will be collected at venue.</p>
-						<p>2. Details of the teammates will also be collected there.</p>
+						<p>1. Spot registrations will be open during the event.</p>
+						<p>2. Entry fee will be collected at venue.</p>
+						<p>3. Details of the teammates will also be collected there.</p>
 					</div>
 				</div>
 			</div>
