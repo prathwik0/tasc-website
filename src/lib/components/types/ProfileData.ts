@@ -11,5 +11,7 @@ export default interface ProfileData {
 	usn?: string;
 	photoURL: string;
 	bio: string;
+	color_light: string;
+	color_dark: string;
 	links: Link[];
 }
