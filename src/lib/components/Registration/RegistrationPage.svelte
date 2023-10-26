@@ -50,7 +50,7 @@
 							<li>COD Mobile: 150 INR</li>
 						</ul>
 					</div>
-					<p class="text-lg md:text-2xl">To participate, simply fill out the form below and let the games begin!</p>
+					<p class="text-lg md:text-2xl">To participate, simply fill out the form below and let the games begin! (TEAM LEADER ONLY)</p>
 				</div>
 			</div>
 		</div>
@@ -119,7 +119,7 @@
 						</section>
 
 						<section class="space-y-4">
-							<label for="proof">Upload proof of payment*</label>
+							<label for="proof">Upload proof of payment* <br /> Pay to : brijwinbalakrishna@oksbi</label>
 							<Input on:change={upload} name="photoURL" type="file" accept="image/*" id="proof" required class="font-semibold text-brand" />
 						</section>
 						{#if uploading}
