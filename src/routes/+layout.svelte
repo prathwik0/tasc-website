@@ -1,16 +1,14 @@
-<script>
-    import Navbar from "$lib/components/HeaderFooter/Navbar.svelte";
-    import Footer from "$lib/components/HeaderFooter/Footer.svelte";
-    import '../app.css';
+<script lang="ts">
+	import '../app.css';
+	import { darkTheme } from '$lib/stores/theme';
+	import { user, userData, userLoaded, called } from '$lib/firebase/firebase';
+
+	/* Subscribe to stores in root layout */
+	$darkTheme;
+	$user;
+	$userData;
+	$userLoaded;
+	$called;
 </script>
 
-<div class="app bg-secondary-light dark:bg-secondary-dark text-black dark:text-white duration-200">
-    <div>
-        <Navbar />
-    </div>
-    <main>
-        <slot />
-    </main>
-    <Footer />
-</div>
-
+<slot />
