@@ -2,10 +2,10 @@
 	import { page } from '$app/stores';
 	import { userData, userProfileData } from '$lib/firebase/firebase';
 	import Layout from './Layout.svelte';
-	import UpdatePhoto from '$lib/components/Profile/UpdatePhoto.svelte';
 	import UpdateBio from '$lib/components/Profile/UpdateBio.svelte';
-	import UpdateLinks from '$lib/components/Profile/UpdateLinks.svelte';
 	import UpdateColor from '$lib/components/Profile/UpdateColor.svelte';
+	import UpdateLinks from '$lib/components/Profile/UpdateLinks.svelte';
+	import UpdatePhoto from '$lib/components/Profile/UpdatePhoto.svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import { darkTheme } from '$lib/stores/theme';
 	import { backgroundColor } from '$lib/actions/style';
