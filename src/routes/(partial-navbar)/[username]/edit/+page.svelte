@@ -1,29 +1,34 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { backgroundColor } from '$lib/actions/style';
 	import { userData, userProfileData } from '$lib/firebase/firebase';
-
 	import Layout from './Layout.svelte';
-
 	import UpdateBio from '$lib/components/Profile/UpdateBio.svelte';
 	import UpdateColor from '$lib/components/Profile/UpdateColor.svelte';
 	import UpdateLinks from '$lib/components/Profile/UpdateLinks.svelte';
 	import UpdatePhoto from '$lib/components/Profile/UpdatePhoto.svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
+	import { darkTheme } from '$lib/stores/theme';
+	import { backgroundColor } from '$lib/actions/style';
 </script>
 
-<svelte:body use:backgroundColor={$userProfileData?.color || ''} />
+<svelte:body
+	use:backgroundColor={{
+		color_light: $userProfileData?.color_light ?? '',
+		color_dark: $userProfileData?.color_dark ?? '',
+		darkTheme: $darkTheme
+	}}
+/>
 
 <Layout>
 	<div slot="navbar">
 		<h1 class="text-center text-2xl">Edit your Profile</h1>
 
-		<div class="hidden justify-center md:flex">
+		<!-- <div class="hidden justify-center md:flex">
 			Profile Link:
 			<a href={`/${$userData?.username}`}>
 				https://localhost:5173/{$userData?.username}
 			</a>
-		</div>
+		</div> -->
 	</div>
 
 	{#if $userData?.username == $page.params.username}

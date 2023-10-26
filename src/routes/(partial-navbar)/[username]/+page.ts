@@ -39,6 +39,7 @@ export const load = (async ({ params }) => {
 		photoURL: profileData?.photoURL,
 		bio: profileData?.bio,
 		links: profileData?.links ?? [],
-		color: profileData?.color
+		color_dark: profileData?.color_dark,
+		color_light: profileData?.color_light
 	} as ProfileData;
 }) satisfies PageLoad;
