@@ -28,7 +28,7 @@
 	<div class="mx-10 flex items-center justify-center py-10">
 		<div class="w-full max-w-[100rem] space-y-6 rounded-xl bg-gray-300 p-6 dark:bg-muted-dark">
 			<div class="flex flex-col items-center space-y-6 md:flex-row md:space-y-0">
-				<div class="w-full md:w-4/5 md:pr-10">
+				<div class="w-full md:w-1/2 md:pr-10">
 					<img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/Images%2FEventBanners%2FEsports23.jpeg?alt=media&token=adde05ad-73ee-4f21-a2b0-bdf51226cde4&_gl=1*ajibe2*_ga*NjA3MDQ1Mzk1LjE2OTY0MjUwNDM.*_ga_CW55HF8NVT*MTY5ODI3MDU3Mi4zNi4w.LjE2OTgyNzA1NzIuNjAuMC4w" alt="Banner" class="w-full rounded-xl" />
 				</div>
 
@@ -50,13 +50,13 @@
 							<li>COD Mobile: 150 INR</li>
 						</ul>
 					</div>
-					<p class="text-lg md:text-2xl">To participate, simply fill out the form below and let the games begin!</p>
+					<p class="text-lg md:text-2xl">To participate, simply fill out the form below and let the games begin! (TEAM LEADER ONLY)</p>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="mx-10 space-y-6">
+	<div class=" space-y-6">
 		<h3 class="text-center text-5xl text-brand">Register</h3>
 
 		<div class=" mx-10 flex items-center justify-center py-10">
@@ -64,19 +64,19 @@
 				<form action="https://docs.google.com/forms/d/e/1FAIpQLSdB47YWfENsSlr6c-00g1OOjX9m25_6sXeiID9MmE2K4peOyg/formResponse" method="POST" enctype="multipart/form-data">
 					<div class="grid-column-1 grid w-full max-w-[100rem] space-y-6 text-black dark:text-white">
 						<section class="space-y-4">
-							<label for="name">Name</label>
-							<Input type="text" id="name" name="entry.1148244634" class=" bg-transparent" />
+							<label for="name">Name*</label>
+							<Input type="text" id="name" name="entry.1148244634" class=" bg-transparent font-semibold text-brand" required />
 						</section>
 
 						<section class="space-y-4">
-							<label for="usn">USN</label>
-							<Input type="text" id="usn" name="entry.1585445463" class=" bg-transparent" />
+							<label for="usn">USN*</label>
+							<Input type="text" id="usn" name="entry.1585445463" class=" bg-transparent font-semibold text-brand" required />
 						</section>
 
 						<section class="space-y-4">
-							<label for="sem">Semester</label>
+							<label for="sem">Semester*</label>
 							<div id="sem" class="w-full">
-								<select name="entry.277806095" class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+								<select name="entry.277806095" class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm font-semibold text-brand ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required>
 									<option value="">Choose Semester</option>
 									<option value="1">1</option>
 									<option value="3">3</option>
@@ -87,24 +87,24 @@
 						</section>
 
 						<section class="space-y-4">
-							<label for="ceid">College Email ID</label>
-							<Input type="text" id="ceid" name="entry.1208215970" class="bg-transparent" />
+							<label for="ceid">College Email ID*</label>
+							<Input type="text" id="ceid" name="entry.1208215970" class="bg-transparent font-semibold text-brand" required />
 						</section>
 
 						<section class="space-y-4">
-							<label for="peid">Personal Email ID</label>
-							<Input type="text" id="peid" name="entry.975491952" class=" bg-transparent" />
+							<label for="peid">Personal Email ID*</label>
+							<Input type="text" id="peid" name="entry.975491952" class="bg-transparent font-semibold text-brand" required />
 						</section>
 
 						<section class="space-y-4">
-							<label for="pno">Phone Number</label>
-							<Input type="text" name="entry.449953573" class=" bg-transparent" />
+							<label for="pno">Phone Number*</label>
+							<Input type="text" name="entry.449953573" class="bg-transparent font-semibold text-brand" required />
 						</section>
 
 						<section class="space-y-4">
-							<label for="event">Event</label>
+							<label for="event">Event*</label>
 							<div id="event" class="w-full">
-								<select name="entry.1222655786" class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+								<select name="entry.1222655786" class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm font-semibold text-brand ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required>
 									<option value="">Choose Event</option>
 									<option value="CODM">Call of Duty Mobile</option>
 									<option value="BGMI">BatlleGrounds Mobile India</option>
@@ -114,13 +114,13 @@
 						</section>
 
 						<section class="space-y-4">
-							<label for="proof">Upload proof of Payment</label>
-							<Input id="proof" type="text" name="entry.1257526011" placeholder="Team Name" class=" bg-transparent" bind:value={teamName} />
+							<label for="proof">Team name*</label>
+							<Input id="proof" type="text" name="entry.1257526011" placeholder="Team Name" class="bg-transparent font-semibold text-brand" bind:value={teamName} required />
 						</section>
 
 						<section class="space-y-4">
-							<label for="proof">Upload proof of payment</label>
-							<Input on:change={upload} name="photoURL" type="file" accept="image/*" id="proof" />
+							<label for="proof">Upload proof of payment* <br /> Pay to : brijwinbalakrishna@oksbi</label>
+							<Input on:change={upload} name="photoURL" type="file" accept="image/*" id="proof" required class="font-semibold text-brand" />
 						</section>
 						{#if uploading}
 							<p>Uploading...</p>
