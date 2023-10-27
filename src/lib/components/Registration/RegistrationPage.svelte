@@ -93,7 +93,7 @@
 								<select name="entry.1222655786" class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm font-semibold text-brand ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required>
 									<option value="">Choose Event</option>
 									<option value="CODM">Call of Duty Mobile</option>
-									<option value="BGMI">BatlleGrounds Mobile India</option>
+									<option value="BGMI">BattleGrounds Mobile India</option>
 									<option value="Valorant">Valorant</option>
 								</select>
 							</div>
