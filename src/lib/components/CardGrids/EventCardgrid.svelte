@@ -13,10 +13,10 @@
 <div class={`grid-container mx-20 gap-10 py-16 `}>
 	{#each events as event}
 		<div class="flex w-full flex-col">
-			<div class="bg-muted-light dark:bg-muted-dark dark:custom-shadow-black flex-1 rounded-lg px-5 py-8 shadow-xl dark:drop-shadow-md">
+			<div class="dark:custom-shadow-black flex-1 rounded-lg bg-muted-light px-5 py-8 shadow-xl dark:bg-muted-dark dark:drop-shadow-md">
 				<div class="flex justify-center">
 					{#if event.image}
-						<img src={event?.image} alt={event.title} class="border-muted-light dark:border-muted-dark border object-cover" />
+						<img src={event?.image} alt={event.title} class="border border-muted-light object-cover dark:border-muted-dark" />
 					{/if}
 				</div>
 				<h1 class="py-4 text-center text-2xl font-bold">{event.title}</h1>
@@ -31,11 +31,12 @@
 				{/if}
 
 				<div class="flex items-center justify-center pt-4">
-					{#if event.registrationLink}
+					<!-- {#if event.registrationLink}
 						<a href={event.registrationLink} target="_blank">
 							<button class="bg-brand rounded-xl px-4 py-2 text-white duration-200 hover:scale-110"> Register Now </button>
 						</a>
-					{/if}
+					{/if} -->
+					<button class="rounded-xl bg-brand px-4 py-2 text-white">Registration Closed! Spot Registrations are Available</button>
 				</div>
 			</div>
 		</div>
