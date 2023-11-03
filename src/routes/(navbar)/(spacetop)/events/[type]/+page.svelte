@@ -1,7 +1,7 @@
 <script lang="ts">
 	import EventCardgrid from '$lib/components/CardGrids/EventCardgrid.svelte';
 	import { page } from '$app/stores';
-	import RegistrationPage from '$lib/components/Registration/RegistrationPage.svelte';
+	import Prompting from '$lib/components/Registration/Prompting.svelte';
 	let eventType = $page.params.type;
 
 	import type { PageData } from './$types';
@@ -22,5 +22,5 @@
 		<EventCardgrid events={data.events} />
 	</div>
 {:else}
-	<RegistrationPage />
+	<Prompting />
 {/if}

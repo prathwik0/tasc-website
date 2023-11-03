@@ -22,12 +22,17 @@
 					<div class="text-md space-y-2 md:text-lg lg:text-xl">
 						<p>Prize Pool: Rs. 1000</p>
 					</div>
-					<p class="text-md md:text-lg lg:text-xl">To participate, simply fill out the form below and lets begin prompting! (all participants)</p>
+					<p class="text-md md:text-lg lg:text-xl">To participate, simply fill out the form below and lets begin prompting!</p>
 					<div class="text-md md:text-lg lg:text-xl">
 						<p class="font-bold text-red-600">NOTE:</p>
-						<p>1. Spot registrations will be open during the event.</p>
-						<p>2. Register here as individuals. Team name and details will be collected at the venue.</p>
-						<p>3. Once you register, you will be added to a WhatsApp group where we will inform you the rules of the event and we will answer your queries.</p>
+						<ol>
+							<li>1. Every team must have at-least 1 laptop. We will provide LAN cables as well as WiFi to connect into. We will help you out with any technical issues you face but we are not responsible for any of your issues.</li>
+							<li>2. The team must have a ChatGPT as well as a HackerRank account.</li>
+							<li>3. Spot registrations will be open during the event from 9:00 to 10:45. The first round will last around 15 to 20 minutes. You can try the first round anytime from 9:00 to 10:45 and then be on your way.</li>
+							<li>4. The first round will consist of 3 stages - AI Hallucination (making ChatGPT hallucinate), Coding using AI and Trivia.</li>
+							<li>6. Register here as individuals! Team name and details will be collected at the venue.</li>
+							<li>7. Once you register, you will be added to a WhatsApp group where we will inform you the rules of the event and we will answer your queries.</li>
+						</ol>
 					</div>
 				</div>
 			</div>
