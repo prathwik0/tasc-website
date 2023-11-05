@@ -65,9 +65,16 @@ const config = {
 			fontFamily: {
 				sans: [...fontFamily.sans]
 			}
+		},
+		fontFamily: {
+			jbExtrabolditalic: ['JetBrainsMono-ExtraBoldItalic', 'mono'],
+			jbExtrabold: ['JetBrainsMono-ExtraBold', 'mono'],
+			jbBold: ['JetBrainsMono-Bold', 'mono'],
+			jbMedium: ['JetBrainsMono-Medium', 'mono'],
+			jbRegular: ['JetBrainsMono-Regular', 'mono']
 		}
 	},
-	plugins: []
+	plugins: [require('flowbite/plugin')]
 };
 
 export default config;
