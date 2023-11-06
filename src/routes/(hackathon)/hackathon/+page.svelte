@@ -2,6 +2,7 @@
 	import AboutSection from '$lib/components/Hackfest/AboutSection.svelte';
 	import DateComponent from '$lib/components/Hackfest/DateComponent.svelte';
 	import Hero from '$lib/components/Hackfest/HeroSection.svelte';
+	import Themes from '$lib/components/Hackfest/Themes.svelte';
 	import Timeline from '$lib/components/Hackfest/Timeline.svelte';
 	import TimelineBetter from '$lib/components/Hackfest/TimelineBetter.svelte';
 	const images = [
@@ -60,7 +61,7 @@
 		<TimelineBetter />
 	</section>
 	<section id="themes">
-		<!-- <Themes /> -->
+		<Themes />
 	</section>
 	<section id="prizes">
 		<!-- <Rewards />
