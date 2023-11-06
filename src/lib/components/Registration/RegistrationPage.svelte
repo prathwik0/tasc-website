@@ -8,7 +8,7 @@
 		<div class="w-full max-w-[100rem] space-y-6 rounded-xl bg-gray-300 p-6 dark:bg-muted-dark">
 			<div class="flex flex-col items-center space-y-6 md:flex-row md:space-y-0">
 				<div class="w-full md:w-1/2 md:pr-10">
-					<img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/Images%2FEventBanners%2FESports23.png?alt=media&token=afd00a57-9ea0-466d-af4f-718e2022c9bf&_gl=1*1q0psxo*_ga*NjA3MDQ1MzkxLjE2OTY0MjUwNDM.*_ga_CW55HF8NVT*MTY5ODMzMDAyOC4zOS4xLjE2OTgzMzAxNzQuNy4wLjA." alt="Banner" class="w-full rounded-xl" />
+					<img src="/Images/Events/Current.png" alt="Banner" class="w-full rounded-xl" />
 				</div>
 
 				<div class="flex w-full flex-col justify-center space-y-6 md:max-w-7xl">
@@ -93,7 +93,7 @@
 								<select name="entry.1222655786" class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm font-semibold text-brand ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required>
 									<option value="">Choose Event</option>
 									<option value="CODM">Call of Duty Mobile</option>
-									<option value="BGMI">BatlleGrounds Mobile India</option>
+									<option value="BGMI">BattleGrounds Mobile India</option>
 									<option value="Valorant">Valorant</option>
 								</select>
 							</div>

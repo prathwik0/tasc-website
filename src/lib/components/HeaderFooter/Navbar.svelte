@@ -12,7 +12,7 @@
 </script>
 
 <div class="my-[6px] flex h-12 content-center items-center justify-between px-4 md:px-10">
-	<a href="/"><img src="https://firebasestorage.googleapis.com/v0/b/tasc-8df79.appspot.com/o/TASCLogo.png?alt=media&token=885899c8-a49c-46d7-9d22-ebc5507964db&_gl=1*ozy9q7*_ga*MTE2MzE3ODExMC4xNjk1Mzg4Nzkx*_ga_CW55HF8NVT*MTY5NjIxODM2NC4xOS4xLjE2OTYyMTg0MzEuNTcuMC4w" alt="TASC logo" class="w-20 duration-200 hover:scale-110" /></a>
+	<a href="/"><img src="/TASCLogo.png" alt="TASC logo" class="w-20 duration-200 hover:scale-110" /></a>
 
 	<slot />
 
