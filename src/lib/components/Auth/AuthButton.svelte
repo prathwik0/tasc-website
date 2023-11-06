@@ -12,11 +12,14 @@
 	async function signInWithGoogle() {
 		const provider = new GoogleAuthProvider();
 		await signInWithPopup(auth, provider);
+		loggedIn = true;
 	}
 
 	async function signOutSSR() {
 		await signOut(auth);
 	}
+
+	let loggedIn = false;
 </script>
 
 <!-- TODO: wrap everthing in a UserLoadCheck component in the future -->
@@ -39,20 +42,24 @@
 		</Popover.Content>
 	</Popover.Root>
 {:else if $user}
-	<Popover.Root>
-		<Popover.Trigger>
-			<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">You</Button>
-		</Popover.Trigger>
-		<Popover.Content>
-			<div class="flex max-w-xs flex-col gap-2">
-				<div class="px-2 text-lg">
-					Hello {$user.displayName}, you don't have an account yet.
+	{#if loggedIn}
+		{goto('/create-account')}
+	{:else}
+		<Popover.Root>
+			<Popover.Trigger>
+				<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">Create Account</Button>
+			</Popover.Trigger>
+			<Popover.Content>
+				<div class="flex max-w-xs flex-col gap-2">
+					<div class="px-2 text-lg">
+						Hello {$user.displayName}, you don't have an account yet!
+					</div>
+					<a href="/create-account" class="contents"><Button variant="outline">Create Account</Button></a>
+					<Button on:click={signOutSSR}>Sign out</Button>
 				</div>
-				<a href="/create-account" class="contents"><Button variant="outline">Create Account</Button></a>
-				<Button on:click={signOutSSR}>Sign out</Button>
-			</div>
-		</Popover.Content>
-	</Popover.Root>
+			</Popover.Content>
+		</Popover.Root>
+	{/if}
 {:else}
 	<Popover.Root>
 		<Popover.Trigger>
