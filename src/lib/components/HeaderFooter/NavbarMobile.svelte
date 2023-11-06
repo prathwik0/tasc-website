@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { NAVITEM } from '$lib/data/NavItems.js';
+	import { NAVITEM } from '$lib/data/NavbarItems.js';
 	import { menuToggle } from '$lib/stores/menuToggle';
 	const toggleMenu = () => {
 		menuToggle.set(!$menuToggle);

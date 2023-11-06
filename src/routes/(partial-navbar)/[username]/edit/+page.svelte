@@ -9,6 +9,7 @@
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import { darkTheme } from '$lib/stores/theme';
 	import { backgroundColor } from '$lib/actions/style';
+	import UpdatePhone from '$lib/components/Profile/UpdatePhone.svelte';
 </script>
 
 <svelte:body
@@ -47,6 +48,10 @@
 						<div class="mt-6">
 							<h1 class="text-2xl">Update your bio</h1>
 							<UpdateBio />
+						</div>
+						<div class="mt-6">
+							<h1 class="text-2xl">Update your Phone Number</h1>
+							<UpdatePhone />
 						</div>
 					</div>
 				</div>

@@ -1,8 +1,8 @@
 <script>
-	import AboutSection from '$lib/components/Hackfest/AboutSection.svelte';
-	import DateComponent from '$lib/components/Hackfest/DateComponent.svelte';
-	import Hero from '$lib/components/Hackfest/HeroSection.svelte';
-	import TimelineBetter from '$lib/components/Hackfest/TimelineBetter.svelte';
+	import AboutSection from '$lib/components/Hackathon/AboutSection.svelte';
+	import DateComponent from '$lib/components/Hackathon/DateComponent.svelte';
+	import Hero from '$lib/components/Hackathon/HeroSection.svelte';
+	import TimelineBetter from '$lib/components/Hackathon/TimelineBetter.svelte';
 	const images = [
 		{
 			src: '/assets/icons/13@1x.png',
