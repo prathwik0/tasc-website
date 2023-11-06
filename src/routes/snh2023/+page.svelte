@@ -2,8 +2,6 @@
 	import AboutSection from '$lib/components/Hackfest/AboutSection.svelte';
 	import DateComponent from '$lib/components/Hackfest/DateComponent.svelte';
 	import Hero from '$lib/components/Hackfest/HeroSection.svelte';
-	import Themes from '$lib/components/Hackfest/Themes.svelte';
-	import Timeline from '$lib/components/Hackfest/Timeline.svelte';
 	import TimelineBetter from '$lib/components/Hackfest/TimelineBetter.svelte';
 	const images = [
 		{
@@ -47,25 +45,31 @@
 			<img src={image.src} alt={image.alt} class={image.className} />
 		{/each}
 	</div>
+
 	<section id="home">
 		<Hero />
 	</section>
+
 	<section id="date">
 		<DateComponent />
 	</section>
+
 	<!-- <TextSlide /> -->
 	<div id="about">
 		<AboutSection />
 	</div>
+
 	<section id="timeline">
 		<TimelineBetter />
 	</section>
-	<section id="themes">
+
+	<!-- <section id="themes">
 		<Themes />
 	</section>
+
 	<section id="prizes">
-		<!-- <Rewards />
-      <Sponsors />
-      <Footer /> -->
-	</section>
+		<Rewards />
+		<Sponsors />
+		<Footer />
+	</section> -->
 </main>
