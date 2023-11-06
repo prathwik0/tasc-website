@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { NAVITEM } from '$lib/data/NavItems';
+	import { NAVITEM } from '$lib/data/NavbarItems';
 	import { page } from '$app/stores';
 </script>
 
