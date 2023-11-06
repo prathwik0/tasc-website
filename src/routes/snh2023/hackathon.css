@@ -1,31 +1,21 @@
-* {
-	color: white;
-}
-
-body {
-	background-color: #020817;
-	scroll-behavior: smooth;
-	scroll-padding-top: 5rem;
-}
-
 /* Scroll Bar */
 
-::-webkit-scrollbar {
+.hackathon::-webkit-scrollbar {
 	width: 10px;
 	height: 3px;
 }
 
-::-webkit-scrollbar-track {
+.hackathon::-webkit-scrollbar-track {
 	border-radius: 10px;
 	background-color: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+.hackathon::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	background: #d2b863;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.hackathon::-webkit-scrollbar-thumb:hover {
 	background: #ad832d;
 }
 
