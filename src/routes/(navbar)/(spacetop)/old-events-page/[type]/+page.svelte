@@ -1,7 +1,7 @@
 <script lang="ts">
 	import EventCardgrid from '$lib/components/CardGrids/EventCardgrid.svelte';
 	import { page } from '$app/stores';
-	import Prompting from '$lib/components/Registration/Prompting.svelte';
+	import Prompting from '$lib/components/EventRegistrationOld/Prompting.svelte';
 	let eventType = $page.params.type;
 
 	import type { PageData } from './$types';
