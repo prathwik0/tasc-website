@@ -1,12 +1,19 @@
+<script>
+	// @ts-ignore
+	import { concurrent } from 'svelte-typewriter';
+</script>
+
+<h1 use:concurrent={{ interval: 100 }} class="my-10 py-5 text-center font-jbExtrabold text-4xl md:py-10 md:text-5xl">Timeline</h1>
+
 <section class="timeline">
 	<div class="timeline__block">
 		<div class="timeline__midpoint"></div>
 		<div class="timeline__content timeline__content--left">
-			<h3 class="timeline__year font-jbBold">1989</h3>
+			<h3 class="timeline__year font-jbBold">10 November 2023</h3>
 			<div class="gradient_border mr-10 w-auto cursor-default bg-[#d1f2f9] bg-opacity-5 p-10 backdrop-blur-sm transition duration-300 md:hover:scale-[102%]">
-				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Hackfest</h3>
+				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Reveal of Problem Statements</h3>
 				<ul class="mt-5 space-y-2">
-					<li class="pb-1 font-jbRegular text-sm text-secondary md:text-[16px]">Hello World</li>
+					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">The list of Problem Statements for the Smart Nitte Hackathon will be revealed on our website on 10 November 2023. We will be having 3 categories of problem statements for our Hackathon. The variety of problem statement types ensures that participants have diverse challenges to choose from and encourages a wide range of creative solutions. This diversity also attracts participants with different expertise, allowing for rich and innovative discussions during the event.</li>
 				</ul>
 			</div>
 		</div>
@@ -15,11 +22,50 @@
 	<div class="timeline__block">
 		<div class="timeline__midpoint"></div>
 		<div class="timeline__content timeline__content--right">
-			<h3 class="timeline__year font-jbBold">1991</h3>
+			<h3 class="timeline__year font-jbBold">10 - 18 November 2023</h3>
 			<div class="gradient_border mr-10 w-auto cursor-default bg-[#d1f2f9] bg-opacity-5 p-10 backdrop-blur-sm transition duration-300 md:hover:scale-[102%]">
-				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Hackfest</h3>
+				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Idea Submission</h3>
 				<ul class="mt-5 space-y-2">
-					<li class="pb-1 font-jbRegular text-sm text-secondary md:text-[16px]">Hello World</li>
+					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">The submission of project ideas and presentations will open on the website from 10 November 2023 to 18 November 2023. This stage of the hackathon sets the foundation for the entire event and marks the beginning of the innovative and collaborative atmosphere of the hackathon, ultimately leading to the selection of the most promising solutions during the final event.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="timeline__block">
+		<div class="timeline__midpoint"></div>
+		<div class="timeline__content timeline__content--left">
+			<h3 class="timeline__year font-jbBold">22 November 2023</h3>
+			<div class="gradient_border mr-10 w-auto cursor-default bg-[#d1f2f9] bg-opacity-5 p-10 backdrop-blur-sm transition duration-300 md:hover:scale-[102%]">
+				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Announcement of Shortlisted Teams</h3>
+				<ul class="mt-5 space-y-2">
+					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">The list of shortlisted teams will be announced on 22 November 2023. This will mark the transition from the idea submission phase to the practical implementation and development phase. The selected teams are encouraged to start preparing for the upcoming challenges and opportunities they face during the Hackathon.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="timeline__block">
+		<div class="timeline__midpoint"></div>
+		<div class="timeline__content timeline__content--right">
+			<h3 class="timeline__year font-jbBold">22 - 24 November 2023</h3>
+			<div class="gradient_border mr-10 w-auto cursor-default bg-[#d1f2f9] bg-opacity-5 p-10 backdrop-blur-sm transition duration-300 md:hover:scale-[102%]">
+				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Registration for the Second Round</h3>
+				<ul class="mt-5 space-y-2">
+					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">All the shortlisted teams are required to confirm their availability for the hackathon and complete the final registration process as they advance to the next stage of the Smart Nitte Hackathon 2023. The final registration allows the organisers to ascertain the exact number of participating teams, facilitating the arrangement of resources, venues, and materials needed for the hackathon. This ensures a smooth and well-organised event for all involved.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="timeline__block">
+		<div class="timeline__midpoint"></div>
+		<div class="timeline__content timeline__content--left">
+			<h3 class="timeline__year font-jbBold">25 & 26 November 2023</h3>
+			<div class="gradient_border mr-10 w-auto cursor-default bg-[#d1f2f9] bg-opacity-5 p-10 backdrop-blur-sm transition duration-300 md:hover:scale-[102%]">
+				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">24 Hour Hackathon</h3>
+				<ul class="mt-5 space-y-2">
+					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">The final stage of the Smart Nitte Hackathon is an intense 24-hour event where teams work tirelessly to develop and present their solutions to the given problem statements. This will take place on November 25 and 26. This 24-hour hackathon is a culmination of participants' hard work and innovation, leading to the judging and selection of winners, as well as the prize distribution.</li>
 				</ul>
 			</div>
 		</div>
@@ -42,7 +88,7 @@
 			@content;
 		}
 	}
-	
+
 	.timeline {
 		position: relative;
 		margin-top: 55px;

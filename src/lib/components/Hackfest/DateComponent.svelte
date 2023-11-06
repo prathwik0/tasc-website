@@ -32,13 +32,13 @@
 </script>
 
 <div>
-	<div class="my-20 mx-10 flex h-full flex-col items-center justify-center py-20">
-		<h1 class="font-jbExtrabold z-40 text-center text-2xl md:text-4xl">November 25th and 26th, 2023</h1>
-		<div class="font-jbExtrabold z-40 pt-5 text-center text-2xl md:text-4xl">
+	<div class="mx-10 my-20 flex h-full flex-col items-center justify-center py-20">
+		<h1 class="z-40 text-center font-jbExtrabold text-2xl md:text-4xl">November 25th and 26th, 2023</h1>
+		<div class="z-40 pt-5 text-center font-jbExtrabold text-2xl md:text-4xl">
 			{#if !isRevealed}
-				<div class="text-[#fffba4]">{timeRemaining}</div>
+				CountDown - <span class="text-[#fffba4]">{timeRemaining}</span>
 			{:else}
-				<div class="text-[#fffba4]">The hackathon is now revealed!</div>
+				<div class="text-[#fffba4]">The hackathon is now ongoing!</div>
 			{/if}
 		</div>
 	</div>
