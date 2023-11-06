@@ -79,6 +79,26 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	@font-face {
+		font-family: 'JetBrainsMono-ExtraBoldItalic';
+		src: url('/fonts/JetBrainsMono-ExtraBoldItalic.ttf');
+	}
+	@font-face {
+		font-family: 'JetBrainsMono-ExtraBold';
+		src: url('/fonts/JetBrainsMono-ExtraBold.ttf');
+	}
+	@font-face {
+		font-family: 'JetBrainsMono-Bold';
+		src: url('/fonts/JetBrainsMono-Bold.ttf');
+	}
+	@font-face {
+		font-family: 'JetBrainsMono-Medium';
+		src: url('/fonts/JetBrainsMono-Medium.ttf');
+	}
+	@font-face {
+		font-family: 'JetBrainsMono-Regular';
+		src: url('/fonts/JetBrainsMono-Regular.ttf');
+	}
 }
 
 @layer utilities {
