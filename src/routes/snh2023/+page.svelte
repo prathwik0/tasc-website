@@ -68,7 +68,8 @@
 <!-- 
 	<section id="themes">
 		<Themes />
-	</section> -->
+	</section> 
+-->
 
 	<section id="goodies">
 		<Rewards />
