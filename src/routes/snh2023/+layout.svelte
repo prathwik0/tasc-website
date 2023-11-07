@@ -1,7 +1,9 @@
 <script>
-	import Navbar from '$lib/components/Hackfest/Navbar.svelte';
+	import Navbar from '$lib/components/Hackathon/Navbar.svelte';
+	import Footer from '$lib/components/Hackathon/Footer.svelte';
 	import { get } from 'svelte/store';
-	import './OverrideGlobal.css';
+	import { hackathonStyles } from '$lib/actions/style';
+	import './hackathon.css';
 	import { darkTheme } from '$lib/stores/theme';
 
 	if (get(darkTheme) === false) {
@@ -9,5 +11,8 @@
 	}
 </script>
 
+<svelte:body use:hackathonStyles />
+
 <Navbar />
 <slot />
+<Footer />

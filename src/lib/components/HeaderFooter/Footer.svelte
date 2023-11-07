@@ -1,6 +1,6 @@
 <script>
 	import 'iconify-icon';
-	import { NAVITEM } from '$lib/data/NavItems';
+	import { NAVITEM } from '$lib/data/NavbarItems';
 	import { page } from '$app/stores';
 </script>
 

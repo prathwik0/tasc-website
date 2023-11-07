@@ -24,7 +24,7 @@
 />
 
 <Layout>
-	<h1 slot="navbar" class="hidden text-2xl md:block">{data.name} {data.color}</h1>
+	<h1 slot="navbar" class="hidden text-2xl md:block">{data.name}</h1>
 	<EditButton currentUsername={data.username} />
 	<div class="flex w-full flex-grow flex-wrap items-center justify-evenly align-middle">
 		<div class="mt-6 w-72 sm:w-[420px]">

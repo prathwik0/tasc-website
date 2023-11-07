@@ -11,15 +11,23 @@
 	import { db, user, userData } from '$lib/firebase/firebase';
 	import { doc, collection, getDoc, setDoc, writeBatch } from 'firebase/firestore';
 
+	import { page } from '$app/stores';
+	let redirect = $page.url.searchParams.get('redirect') ?? '';
+
 	let name = '';
 	let usn = '';
 	let username = '';
+	let phone = '';
 	let loading = false;
 	let isAvailable = false;
 
 	const reUsername = /^(?=[a-zA-Z0-9._]{3,16}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
-	const reName = /^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$/;
-	const reUSN = /^[1-4][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/;
+	const reName = /(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/;
+	const reUSN = /^[a-zA-Z0-9]*$/;
+	const rePhone = /^[0-9]{10}$/;
+
+	$: isValidPhone = phone?.length === 10 && rePhone.test(phone);
+	$: isTouchedPhone = phone.length >= 1;
 
 	$: isValidName = name?.length > 4 && name.length < 48 && reName.test(name);
 	$: isTouchedName = name.length >= 1;
@@ -85,9 +93,10 @@
 			batch.set(doc(db, 'profile', newUserRef.id), {
 				name: name,
 				usn: usn,
+				phone: isValidPhone ? phone : '',
 				username: username,
 				photoURL: $user!.photoURL,
-				bio: 'Hello! I am' + name + '.',
+				bio: 'Hello! I am ' + name + '.',
 				createdAt: new Date().toISOString()
 			});
 
@@ -103,9 +112,13 @@
 
 <AuthCheck>
 	{#if $userData !== null}
-		{goto('/' + $userData.username + '/edit')}
+		{#if redirect !== ''}
+			{goto(redirect)}
+		{:else}
+			{goto('/' + $userData.username + '/edit')}
+		{/if}
 	{:else if $user}
-		<div class="m-2 flex justify-center">
+		<div class="m-2 flex min-h-screen items-center justify-center">
 			<Card.Root class="max-w-2xl">
 				<Card.Header class="space-y-1">
 					<Card.Title class="text-2xl">Enter your details</Card.Title>
@@ -131,7 +144,7 @@
 							<Input type="text" id="usn" placeholder="Enter your college USN" bind:value={usn} class={!isValidUSN && isTouchedUSN ? 'bg-red-200 dark:bg-red-900' : ''} />
 							{#if isTouchedUSN && !isValidUSN}
 								<div class="h-4">
-									<p>The USN you have entered is invalid.</p>
+									<p>USN should contain only numbers and CAPITAL letters.</p>
 								</div>
 							{/if}
 						</div>
@@ -142,7 +155,7 @@
 							<p class="mt-1 text-sm text-muted-foreground">Your username is public and is used to access your profile page.</p>
 
 							{#if isTouchedUsername}
-								<div class="mt-4 h-12">
+								<div class="mt-4">
 									{#if loading}
 										<p>Checking availability of @{username}...</p>
 									{/if}
@@ -162,6 +175,20 @@
 									{/if}
 								</div>
 							{/if}
+						</div>
+
+						<div class="mt-6">
+							<Label for="whatsapp" class="mt-10">Phone Number</Label>
+							<Input type="text" class="{!isValidPhone && isTouchedPhone ? 'bg-red-200 dark:bg-red-900' : ''} {isValidPhone ? 'bg-green-300 dark:bg-green-800' : ''}" id="usn" placeholder="Enter your WhatsApp Phone Number" bind:value={phone} />
+
+							{#if isTouchedPhone && !isValidPhone}
+								<div class="h-4">
+									<p>Write your number as 10 digits with no other characters</p>
+								</div>
+							{/if}
+
+							<p class="mt-1 text-sm text-muted-foreground">We will use this number to contact you if necessary.</p>
+							<p class="mt-1 text-sm text-muted-foreground">You can also change this number in your account settings.</p>
 						</div>
 					</Card.Content>
 
