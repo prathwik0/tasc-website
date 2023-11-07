@@ -70,7 +70,7 @@
 		<Themes />
 	</section> -->
 
-	<section id="prizes">
+	<section id="goodies">
 		<Rewards />
 		<!-- <Sponsors /> -->
 	</section>
