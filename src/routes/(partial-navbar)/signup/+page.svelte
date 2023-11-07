@@ -1,9 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import UserAuthForm from '$lib/components/Auth/user-auth-form.svelte';
 	import { userLoaded } from '$lib/firebase/firebase';
-
-	let pageNumber = $page.url.searchParams.get('redirect');
 </script>
 
 <div class="container relative flex min-h-screen flex-col items-center justify-center">
