@@ -1,7 +1,10 @@
 <script>
 	import AboutSection from '$lib/components/Hackathon/AboutSection.svelte';
 	import DateComponent from '$lib/components/Hackathon/DateComponent.svelte';
+	import Footer from '$lib/components/Hackathon/Footer.svelte';
 	import Hero from '$lib/components/Hackathon/HeroSection.svelte';
+	import Rewards from '$lib/components/Hackathon/Rewards.svelte';
+	import Themes from '$lib/components/Hackathon/Themes.svelte';
 	import TimelineBetter from '$lib/components/Hackathon/TimelineBetter.svelte';
 	const images = [
 		{
@@ -62,14 +65,13 @@
 	<section id="timeline">
 		<TimelineBetter />
 	</section>
-
-	<!-- <section id="themes">
+<!-- 
+	<section id="themes">
 		<Themes />
-	</section>
+	</section> -->
 
 	<section id="prizes">
 		<Rewards />
-		<Sponsors />
-		<Footer />
-	</section> -->
+		<!-- <Sponsors /> -->
+	</section>
 </main>
