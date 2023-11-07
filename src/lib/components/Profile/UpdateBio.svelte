@@ -14,6 +14,12 @@
 			bio
 		});
 	}
+	let msg = '';
+	$: if (bio.length >= 150) {
+		msg = 'You have reached the maximum character limit!';
+	} else {
+		msg = '';
+	}
 </script>
 
 <div class="w-full pb-6 pt-2">
@@ -22,7 +28,8 @@
 <form on:submit|preventDefault={updateBio}>
 	<div class="grid gap-1.5">
 		<Label for="bio">New bio</Label>
-		<Textarea name="bio" placeholder="Type your new bio here!" bind:value={bio} />
+		<Textarea name="bio" placeholder="Type your new bio here!" bind:value={bio} class="resize-none" rows={5} maxlength={150} />
+		<p class="font-semibold text-red-600">{msg}</p>
 	</div>
 	<Button class="mt-4">Update Bio</Button>
 </form>
