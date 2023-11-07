@@ -3,12 +3,12 @@
 	import Footer from '$lib/components/HeaderFooter/Footer.svelte';
 </script>
 
-<!-- <FixedNavbar>
+<FixedNavbar>
 	<slot name="navbar" />
-</FixedNavbar> -->
+</FixedNavbar>
 
 <div class="flex min-h-screen flex-col">
-	<div class="flex min-h-screen w-full flex-col pt-[60px]">
+	<div class="min-h-screen w-full pt-[60px]">
 		<slot />
 	</div>
 </div>

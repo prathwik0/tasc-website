@@ -21,16 +21,16 @@
 />
 
 <Layout>
-	<!-- <div slot="navbar">
+	<div slot="navbar">
 		<h1 class="text-center text-2xl">Edit your Profile</h1>
 
-		<div class="hidden justify-center md:flex">
+		<!-- <div class="hidden justify-center md:flex">
 			Profile Link:
 			<a href={`/${$userData?.username}`}>
 				https://localhost:5173/{$userData?.username}
 			</a>
-		</div>
-	</div> -->
+		</div> -->
+	</div>
 
 	{#if $userData?.username == $page.params.username}
 		<Separator />
