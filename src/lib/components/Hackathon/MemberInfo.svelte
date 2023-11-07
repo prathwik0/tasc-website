@@ -9,10 +9,12 @@
 {#if !$userLoaded}
 	<span></span>
 {:else if $user && $userData}
-	<p class="pt-6 text-2xl">Hello {$userData.name}!</p>
+	<p class="pt-6 text-center text-2xl">Hello {$userData.name}!</p>
 	<div class="flex gap-2">
 		<MainButton hrefId="#">Create Team (soon...)</MainButton>
-		<MutedButton hrefId="#">Join Team (soon...)</MutedButton>
+		<div class="hidden sm:block">
+			<MutedButton hrefId="#">Join Team (soon...)</MutedButton>
+		</div>
 	</div>
 {:else}
 	<RegisterButton />
