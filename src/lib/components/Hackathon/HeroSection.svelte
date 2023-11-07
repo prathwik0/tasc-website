@@ -1,7 +1,7 @@
 <script>
 	// @ts-ignore
 	import { concurrent } from 'svelte-typewriter';
-	import RegisterButton from './RegisterButton.svelte';
+	import MemberInfo from './MemberInfo.svelte';
 </script>
 
 <div class="flex h-screen items-center justify-center">
@@ -23,7 +23,7 @@
 					<p use:concurrent={{ interval: 100, mode: 'loop' }}>Smart Nitte Hackathon 2023</p>
 					<!-- <p use:concurrent={{ interval: 100, mode: 'loop' }}>24-hour intercollege coding challenge</p> -->
 				</div>
-				<RegisterButton />
+				<MemberInfo />
 			</div>
 		</div>
 	</div>
