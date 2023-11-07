@@ -12,8 +12,8 @@
 {:else if $user && $userData}
 	<p class="pb-4 pt-6 text-center text-2xl">Hello {$userData.name}!</p>
 	<div class="flex flex-col gap-2 sm:flex-row">
-		<a href="/snh2023"><MainButton>Create Team (soon...)</MainButton></a>
-		<a href="/snh2023"><MutedButton>Join Team (soon...)</MutedButton></a>
+		<a href="/snh2023/create"><MainButton>Create Team</MainButton></a>
+		<a href="/snh2023/join"><MutedButton>Join Team</MutedButton></a>
 	</div>
 {:else}
 	<RegisterButton />
