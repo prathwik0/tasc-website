@@ -1,6 +1,6 @@
 <script>
 	const githubLink = 'https://github.com/tasc-nmamit';
-	const linkedinLink = 'https://linkedin.com/company/tasc';
+	const linkedinLink = 'https://www.linkedin.com/company/tasc-aiml/';
 	const instagramLink = 'https://www.instagram.com/tasc_nmamit';
 	import { GithubIcon, InstagramIcon, LinkedinIcon } from 'lucide-svelte';
 </script>
@@ -31,7 +31,7 @@
 			<div class="mx-10 flex flex-shrink-0 flex-col gap-2 text-white md:w-1/3">
 				<p class="pt-4 font-jbBold">TASC</p>
 				<p class="font-jbBold">Department of AIML</p>
-				<p class="">NMAM Institute of Technology, Nitte, Karkala</p>
+				<p class="">NMAM Institute of Technology, Nitte, Karkala Taluk, Udupi-574110 Karnataka, India</p>
 				<a href="mailto:tasc@nmamit.in" target="_blank">tasc_aiml@nmamit.in</a>
 			</div>
 		</div>
