@@ -1,5 +1,5 @@
 <script>
-	import { user, userLoaded, userData } from '$lib/firebase/firebase';
+	import { user, userData, userLoaded } from '$lib/firebase/firebase';
 	import MainButton from './MainButton.svelte';
 	import MutedButton from './MutedButton.svelte';
 
@@ -9,12 +9,10 @@
 {#if !$userLoaded}
 	<span></span>
 {:else if $user && $userData}
-	<p class="pt-6 text-center text-2xl">Hello {$userData.name}!</p>
-	<div class="flex gap-2">
+	<p class="pb-4 pt-6 text-center text-2xl">Hello {$userData.name}!</p>
+	<div class="flex flex-col gap-2 sm:flex-row">
 		<MainButton hrefId="#">Create Team (soon...)</MainButton>
-		<div class="hidden sm:block">
-			<MutedButton hrefId="#">Join Team (soon...)</MutedButton>
-		</div>
+		<MutedButton hrefId="#">Join Team (soon...)&nbsp;&nbsp;</MutedButton>
 	</div>
 {:else}
 	<RegisterButton />
