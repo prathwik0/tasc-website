@@ -32,7 +32,10 @@
 			<Accordion.Root>
 				<Accordion.Item value={theme.name}>
 					<Accordion.Trigger><div class="gradient_border group relative aspect-video h-full w-full overflow-hidden rounded-md border"><Card theme={theme.name} img={theme.image} /></div></Accordion.Trigger>
-					<Accordion.Content>Yes. It adheres to the WAI-ARIA design pattern.</Accordion.Content>
+					<Accordion.Content
+						><h2 class="font-jbBold text-2xl">Problem Statement</h2>
+						<div class="font-jbRegular text-lg text-slate-400">Yes. It adheres to the WAI-ARIA design pattern.</div></Accordion.Content
+					>
 				</Accordion.Item>
 			</Accordion.Root>
 		{/each}
