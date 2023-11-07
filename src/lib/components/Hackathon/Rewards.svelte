@@ -51,7 +51,7 @@
 					<div class="flex flex-col items-center justify-center rounded-2xl bg-[#d1f2f9] bg-opacity-5 px-5 py-16 font-jbBold text-4xl backdrop-blur-sm sm:px-20">
 						<div class="flex flex-col items-center justify-center md:flex-row">
 							<!-- <img class="mb-5 w-20 md:mb-0 md:pr-5" src={`/assets/prize/${img}`} alt="prize" /> -->
-							<div class="text-2xl text-[#fffba4] transition duration-300 lg:text-3xl">Internship Oppertunities</div>
+							<div class="text-2xl text-[#fffba4] transition duration-300 lg:text-3xl">Internship Opportunities</div>
 						</div>
 						<ul class="mt-5 w-fit text-center text-lg md:text-2xl">
 							<li class="py-1">The leading team for each problem statement will have the opportunity to secure internships for all of its members from the participating companies.</li>
