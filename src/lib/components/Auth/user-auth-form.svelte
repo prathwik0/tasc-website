@@ -11,6 +11,9 @@
 	import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 	import { goto } from '$app/navigation';
 
+	import { page } from '$app/stores';
+	let redirect = $page.url.searchParams.get('redirect') ?? '';
+
 	async function signInWithGoogle() {
 		const provider = new GoogleAuthProvider();
 		await signInWithPopup(auth, provider);
@@ -33,7 +36,11 @@
 		</Card.Footer>
 	</Card.Root>
 {:else if $user}
-	{goto('/create-account')}
+	{#if redirect !== ''}
+		{goto('/create-account')}
+	{:else}
+		{goto('/create-account?redirect=' + redirect)}
+	{/if}
 	<!-- <Card.Root class="m-2">
 		<Card.Content class="mt-4 flex flex-col gap-4">
 			<h2 class="card-title">Welcome, {$user.displayName}</h2>

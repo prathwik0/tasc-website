@@ -11,6 +11,9 @@
 	import { db, user, userData } from '$lib/firebase/firebase';
 	import { doc, collection, getDoc, setDoc, writeBatch } from 'firebase/firestore';
 
+	import { page } from '$app/stores';
+	let redirect = $page.url.searchParams.get('redirect') ?? '';
+
 	let name = '';
 	let usn = '';
 	let username = '';
@@ -109,7 +112,11 @@
 
 <AuthCheck>
 	{#if $userData !== null}
-		{goto('/' + $userData.username + '/edit')}
+		{#if redirect !== ''}
+			{goto(redirect)}
+		{:else}
+			{goto('/' + $userData.username + '/edit')}
+		{/if}
 	{:else if $user}
 		<div class="m-2 flex min-h-screen items-center justify-center">
 			<Card.Root class="max-w-2xl">
