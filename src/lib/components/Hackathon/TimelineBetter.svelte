@@ -13,7 +13,7 @@
 			<div class="gradient_border mr-10 w-auto cursor-default bg-[#d1f2f9] bg-opacity-5 p-10 backdrop-blur-sm transition duration-300 md:hover:scale-[102%]">
 				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Reveal of Problem Statements</h3>
 				<ul class="mt-5 space-y-2">
-					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">The list of Problem Statements for the Smart Nitte Hackathon will be revealed on our website on 10 November 2023. We will be having 3 categories of problem statements for our Hackathon. The variety of problem statement types ensures that participants have diverse challenges to choose from and encourages a wide range of creative solutions. This diversity also attracts participants with different expertise, allowing for rich and innovative discussions during the event.</li>
+					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">The list of Problem Statements for the Smart Nitte Hackathon will be revealed on our website on 10 November 2023. We will be having around 10 problem statements for our Hackathon. The variety of problem statement types ensures that participants have diverse challenges to choose from and encourages a wide range of creative solutions.</li>
 				</ul>
 			</div>
 		</div>
@@ -52,7 +52,7 @@
 			<div class="gradient_border mr-10 w-auto cursor-default bg-[#d1f2f9] bg-opacity-5 p-10 backdrop-blur-sm transition duration-300 md:hover:scale-[102%]">
 				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Registration for the Second Round</h3>
 				<ul class="mt-5 space-y-2">
-					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">All the shortlisted teams are required to confirm their availability for the hackathon and complete the final registration process as they advance to the next stage of the Smart Nitte Hackathon 2023. The final registration allows the organisers to ascertain the exact number of participating teams, facilitating the arrangement of resources, venues, and materials needed for the hackathon. This ensures a smooth and well-organised event for all involved.</li>
+					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">All the shortlisted teams are required to confirm their availability for the hackathon and complete the final registration process as they advance to the next stage of the Smart Nitte Hackathon 2023. <span class="font-jbExtrabold">The fee structure is based on the number of team members, with each team member contributing Rs. 100. For a team of 3, this amounts to Rs. 300, and for a team of 4,the fee is Rs. 400.</span> The registration fee serves various purposes, including covering event expenses and ensuring the dedication of the participating teams.</li>
 				</ul>
 			</div>
 		</div>
