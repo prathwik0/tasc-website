@@ -3,7 +3,7 @@
 	import MainButton from './MainButton.svelte';
 
 	import { db, user, userData, userID, userProfileData } from '$lib/firebase/firebase';
-	import { doc, collection, getDocs, setDoc, writeBatch, limit, query, where, updateDoc, arrayUnion, increment } from 'firebase/firestore';
+	import { doc, collection, getDoc, setDoc, writeBatch, limit, query, where, updateDoc, arrayUnion, increment } from 'firebase/firestore';
 	import { goto } from '$app/navigation';
 
 	let teamID: string = '';
@@ -16,56 +16,61 @@
 		const batch = writeBatch(db);
 
 		const teamRef = doc(db, 'snh2023', teamID);
+		const teamDoc = await getDoc(teamRef);
+		console.log(teamDoc.data()?.members.length);
+		if (teamDoc.data()?.memberCount < 3) {
+			batch.update(teamRef, {
+				members: arrayUnion($userID!.user)
+			});
 
-		batch.update(teamRef, {
-			members: arrayUnion($userID!.user)
-		});
+			batch.update(teamRef, {
+				teamSecret: teamSecret,
+				memberInfo: arrayUnion({
+					id: $userID!.user,
+					name: $userData!.name,
+					usn: $userData!.usn,
+					phone: $userProfileData!.phone,
+					email: $user!.email
+				}),
+				memberCount: increment(1)
+			});
 
-		batch.update(teamRef, {
-			teamSecret: teamSecret,
-			memberInfo: arrayUnion({
-				id: $userID!.user,
-				name: $userData!.name,
-				usn: $userData!.usn,
-				phone: $userProfileData!.phone,
-				email: $user!.email
-			}),
-			memberCount: increment(1)
-		});
+			const profileRef = doc(db, 'profile', $userID!.user);
 
-		const profileRef = doc(db, 'profile', $userID!.user);
+			batch.update(profileRef, {
+				snh2023: teamID
+			});
 
-		batch.update(profileRef, {
-			snh2023: teamID
-		});
+			const eventRef = doc(db, 'events', 'snh2023');
 
-		const eventRef = doc(db, 'events', 'snh2023');
+			batch.update(eventRef, {
+				members: arrayUnion($userID!.user)
+			});
 
-		batch.update(eventRef, {
-			members: arrayUnion($userID!.user)
-		});
+			await batch.commit();
 
-		await batch.commit();
-
-		alert("Team joined! You'll be redirected to the team page.");
-		goto('/snh2023/team/' + teamID);
+			alert("Team joined! You'll be redirected to the team page.");
+			goto('/snh2023/team/' + teamID);
+		} else {
+			alert('Team is full!');
+		}
 	}
 
 	// check if a user is in a team or not
-	async function checkTeam() {
-		if (!$userID) return;
+	// async function checkTeam() {
+	// 	if (!$userID) return;
 
-		const teamCollectionRef = collection(db, 'snh2023');
+	// 	const teamCollectionRef = collection(db, 'snh2023');
 
-		const q = query(teamCollectionRef, where('members', 'array-contains', $userID!.user), limit(1));
-		const snapshot = await getDocs(q);
+	// 	const q = query(teamCollectionRef, where('members', 'array-contains', $userID!.user), limit(1));
+	// 	const snapshot = await getDoc(q);
 
-		const exists = snapshot.docs[0]?.exists();
-		if (exists) {
-			//redirect to team page
-			//goto('/snh2023/team/' + snapshot.docs[0].id);
-		}
-	}
+	// 	const exists = snapshot.doc[0]?.exists();
+	// 	if (exists) {
+	// 		//redirect to team page
+	// 		//goto('/snh2023/team/' + snapshot.docs[0].id);
+	// 	}
+	// }
 
 	// $: $userID && checkTeam();
 </script>

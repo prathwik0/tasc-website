@@ -47,7 +47,7 @@
 			<h2 class="bg-gradient-to-tr pt-4 font-jbExtrabold text-2xl drop-shadow-[0_0_0.15rem_#d2b863]">Team Members</h2>
 			<div class="flex flex-col space-y-2">
 				{#each data.memberInfo as memberInfo}
-					{#if memberInfo.name == data.leaderName}
+					{#if memberInfo.id == data.leader}
 						<p class="font-jbRegular text-lg text-[#fffba4] sm:text-2xl">👑 {memberInfo.name}</p>
 					{:else}
 						<p class="font-jbRegular text-lg text-[#fffba4] sm:text-2xl">♟️ {memberInfo.name}</p>
