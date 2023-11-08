@@ -5,7 +5,6 @@
 	import type { PageData } from './$types';
 	import { backgroundColor } from '$lib/actions/style';
 	import { darkTheme } from '$lib/stores/theme';
-	import Layout from './Layout.svelte';
 
 	export let data: PageData;
 </script>
@@ -23,8 +22,7 @@
 	}}
 />
 
-<Layout>
-	<h1 slot="navbar" class="hidden text-2xl md:block">{data.name}</h1>
+<div class="flex flex-col items-center justify-center pt-10">
 	<EditButton currentUsername={data.username} />
 	<div class="flex w-full flex-grow flex-wrap items-center justify-evenly align-middle">
 		<div class="mt-6 w-72 sm:w-[420px]">
@@ -47,4 +45,4 @@
 	</div>
 
 	<div class="m-24"></div>
-</Layout>
+</div>
