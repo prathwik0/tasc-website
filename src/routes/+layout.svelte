@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { navigating } from '$app/stores';
 	import { called, user, userData, userLoaded, userProfileData } from '$lib/firebase/firebase';
+	import Navbar from '$lib/components/HeaderFooter/Navbar.svelte';
+	import Footer from '$lib/components/HeaderFooter/Footer.svelte';
 	import LoadingSVG from '$lib/loader/spinnerDark.svg';
 	import { loading } from '$lib/stores/loading';
 	import { darkTheme } from '$lib/stores/theme';
