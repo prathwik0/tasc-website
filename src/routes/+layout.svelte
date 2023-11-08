@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { navigating } from '$app/stores';
-	import { called, user, userData, userLoaded } from '$lib/firebase/firebase';
+	import { called, user, userData, userLoaded, userProfileData } from '$lib/firebase/firebase';
 	import LoadingSVG from '$lib/loader/spinnerDark.svg';
 	import { loading } from '$lib/stores/loading';
 	import { darkTheme } from '$lib/stores/theme';
@@ -10,8 +10,12 @@
 	$darkTheme;
 	$user;
 	$userData;
+	$userProfileData;
+
 	$userLoaded;
 	$called;
+
+	//$: console.log('user', $userData);
 	$: $loading = !!$navigating;
 </script>
 
