@@ -21,7 +21,7 @@
 	let loading = false;
 	let isAvailable = false;
 
-	const reUsername = /^(?=[a-zA-Z0-9._]{3,16}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
+	const reUsername = /^(?=[a-z0-9._]{3,16}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
 	const reName = /(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/;
 	const reUSN = /^[a-zA-Z0-9]*$/;
 	const rePhone = /^[0-9]{10}$/;
@@ -161,7 +161,7 @@
 									{/if}
 
 									{#if !isValidUsername && isTouchedUsername}
-										<p class="mt-1 text-sm text-muted-foreground">Username must be 3-16 characters long, alphanumeric only</p>
+										<p class="mt-1 text-sm text-muted-foreground">Username must be 3-16 characters long and alphanumeric (small letters only)</p>
 									{/if}
 
 									{#if isValidUsername && !isAvailable && !loading}
