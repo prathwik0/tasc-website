@@ -2,6 +2,7 @@
 	import MainButton from '$lib/components/Hackathon/MainButton.svelte';
 	import { copy } from 'svelte-copy';
 	import type { PageData } from './$types';
+	import LeaveTeam from '$lib/components/Hackathon/LeaveTeam.svelte';
 
 	export let data: PageData;
 </script>
@@ -64,4 +65,5 @@
 	</div>
 
 	<MainButton>Solution Submission (soon...)</MainButton>
+	<LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} />
 </div>

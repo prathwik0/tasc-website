@@ -15,45 +15,34 @@
 
 		const batch = writeBatch(db);
 
+		const profileRef = doc(db, 'profile', $userID!.user);
+		batch.update(profileRef, {
+			snh2023: teamID
+		});
+
+		const eventRef = doc(db, 'events', 'snh2023');
+		batch.update(eventRef, {
+			members: arrayUnion($userID!.user)
+		});
+
 		const teamRef = doc(db, 'snh2023', teamID);
-		const teamDoc = await getDoc(teamRef);
-		console.log(teamDoc.data()?.members.length);
-		if (teamDoc.data()?.memberCount < 3) {
-			batch.update(teamRef, {
-				members: arrayUnion($userID!.user)
-			});
+		batch.update(teamRef, {
+			members: arrayUnion($userID!.user),
+			teamSecret: teamSecret,
+			memberInfo: arrayUnion({
+				id: $userID!.user,
+				name: $userData!.name,
+				usn: $userData!.usn,
+				phone: $userProfileData!.phone,
+				email: $user!.email
+			}),
+			memberCount: increment(1)
+		});
 
-			batch.update(teamRef, {
-				teamSecret: teamSecret,
-				memberInfo: arrayUnion({
-					id: $userID!.user,
-					name: $userData!.name,
-					usn: $userData!.usn,
-					phone: $userProfileData!.phone,
-					email: $user!.email
-				}),
-				memberCount: increment(1)
-			});
+		await batch.commit();
 
-			const profileRef = doc(db, 'profile', $userID!.user);
-
-			batch.update(profileRef, {
-				snh2023: teamID
-			});
-
-			const eventRef = doc(db, 'events', 'snh2023');
-
-			batch.update(eventRef, {
-				members: arrayUnion($userID!.user)
-			});
-
-			await batch.commit();
-
-			alert("Team joined! You'll be redirected to the team page.");
-			goto('/snh2023/team/' + teamID);
-		} else {
-			alert('Team is full!');
-		}
+		alert("Team joined! You'll be redirected to the team page.");
+		goto('/snh2023/team/' + teamID);
 	}
 
 	// check if a user is in a team or not
