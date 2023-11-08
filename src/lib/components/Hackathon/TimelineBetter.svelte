@@ -9,11 +9,11 @@
 	<div class="timeline__block">
 		<div class="timeline__midpoint"></div>
 		<div class="timeline__content timeline__content--left">
-			<h3 class="timeline__year font-jbBold">10 November 2023</h3>
+			<h3 class="timeline__year font-jbBold">9 November 2023</h3>
 			<div class="gradient_border mr-10 w-auto cursor-default bg-[#d1f2f9] bg-opacity-5 p-10 backdrop-blur-sm transition duration-300 md:hover:scale-[102%]">
 				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Reveal of Problem Statements</h3>
 				<ul class="mt-5 space-y-2">
-					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">The list of Problem Statements for the Smart Nitte Hackathon will be revealed on our website on 10 November 2023. We will be having around 10 problem statements for our Hackathon. The variety of problem statement types ensures that participants have diverse challenges to choose from and encourages a wide range of creative solutions.</li>
+					<li class="pb-1 font-jbRegular text-sm md:text-[16px]">The list of Problem Statements for the Smart Nitte Hackathon will be revealed on our website on 9 November 2023. We will be having around 10 problem statements for our Hackathon. The variety of problem statement types ensures that participants have diverse challenges to choose from and encourages a wide range of creative solutions.</li>
 				</ul>
 			</div>
 		</div>

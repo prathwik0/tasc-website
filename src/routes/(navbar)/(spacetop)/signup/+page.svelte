@@ -3,7 +3,7 @@
 	import { userLoaded } from '$lib/firebase/firebase';
 </script>
 
-<div class="container relative flex min-h-screen flex-col items-center justify-center">
+<div class="container relative flex h-[85vh] flex-col items-center justify-center">
 	<div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
 		{#if $userLoaded}
 			<div class="flex flex-col space-y-2 text-center">

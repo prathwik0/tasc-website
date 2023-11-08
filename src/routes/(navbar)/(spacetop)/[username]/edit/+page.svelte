@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { userData, userProfileData } from '$lib/firebase/firebase';
-	import Layout from './Layout.svelte';
 	import UpdateBio from '$lib/components/Profile/UpdateBio.svelte';
 	import UpdateColor from '$lib/components/Profile/UpdateColor.svelte';
 	import UpdateLinks from '$lib/components/Profile/UpdateLinks.svelte';
@@ -20,18 +19,7 @@
 	}}
 />
 
-<Layout>
-	<div slot="navbar">
-		<h1 class="text-center text-2xl">Edit your Profile</h1>
-
-		<!-- <div class="hidden justify-center md:flex">
-			Profile Link:
-			<a href={`/${$userData?.username}`}>
-				https://localhost:5173/{$userData?.username}
-			</a>
-		</div> -->
-	</div>
-
+<div class="flex flex-col items-center justify-center pt-10">
 	{#if $userData?.username == $page.params.username}
 		<Separator />
 
@@ -79,4 +67,4 @@
 	{:else}
 		You aren't authorized to edit this profile
 	{/if}
-</Layout>
+</div>

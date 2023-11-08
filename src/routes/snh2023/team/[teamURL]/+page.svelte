@@ -28,6 +28,7 @@
 					>
 				</button>
 			</p>
+
 			<p class="font-jbRegular text-lg sm:text-2xl">
 				Team Secret :
 				<span class="text-[#fffba4]">{data.teamSecret}</span>
