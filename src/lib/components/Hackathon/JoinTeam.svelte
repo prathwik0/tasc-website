@@ -15,13 +15,19 @@
 
 		const batch = writeBatch(db);
 
-		const teamRef = doc(db, 'snh2023', teamID);
+		const profileRef = doc(db, 'profile', $userID!.user);
+		batch.update(profileRef, {
+			snh2023: teamID
+		});
 
-		batch.update(teamRef, {
+		const eventRef = doc(db, 'events', 'snh2023');
+		batch.update(eventRef, {
 			members: arrayUnion($userID!.user)
 		});
 
+		const teamRef = doc(db, 'snh2023', teamID);
 		batch.update(teamRef, {
+			members: arrayUnion($userID!.user),
 			teamSecret: teamSecret,
 			memberInfo: arrayUnion({
 				id: $userID!.user,
@@ -31,18 +37,6 @@
 				email: $user!.email
 			}),
 			memberCount: increment(1)
-		});
-
-		const profileRef = doc(db, 'profile', $userID!.user);
-
-		batch.update(profileRef, {
-			snh2023: teamID
-		});
-
-		const eventRef = doc(db, 'events', 'snh2023');
-
-		batch.update(eventRef, {
-			members: arrayUnion($userID!.user)
 		});
 
 		await batch.commit();
