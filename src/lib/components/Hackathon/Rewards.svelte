@@ -29,7 +29,7 @@
 	</div>
 	<div class="px-10 pb-5 md:mb-0 md:px-20 lg:px-32">
 		<h1 class="my-10 text-center font-jbExtrabold text-4xl md:py-10 md:text-5xl lg:text-5xl">
-			<p use:concurrent={{ interval: 100 }}>Goodies</p>
+			<p use:concurrent={{ interval: 100 }}>Rewards & Goodies</p>
 		</h1>
 		<div class="grid place-items-center items-center gap-5">
 			<div class="mt-5 rounded-2xl bg-gray-600 from-[#ec4237] via-[#d2b863] to-[#33b6d8] p-0.5 font-jbMedium transition duration-300 hover:bg-gradient-to-tr hover:drop-shadow-[0_0_0.2rem_#d2b863] md:w-[35rem] lg:w-[45rem]">
