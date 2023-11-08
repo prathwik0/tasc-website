@@ -9,17 +9,6 @@
 	let teamID: string = '';
 	let teamSecret: string = '';
 
-	//function to generate random 5 character alphanumeric string
-	function genSecret(length: number) {
-		let result = '';
-		const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-		const charactersLength = characters.length;
-		for (let i = 0; i < length; i++) {
-			result += characters.charAt(Math.floor(Math.random() * charactersLength));
-		}
-		return result;
-	}
-
 	async function joinTeam() {
 		//return if user is not logged in
 		if (!$userID) return;
@@ -33,16 +22,27 @@
 		});
 
 		batch.update(teamRef, {
+			teamSecret: teamSecret,
 			memberInfo: arrayUnion({
 				id: $userID!.user,
 				name: $userData!.name,
+				usn: $userData!.usn,
 				phone: $userProfileData!.phone,
 				email: $user!.email
-			})
+			}),
+			memberCount: increment(1)
 		});
 
-		batch.update(teamRef, {
-			memberCount: increment(1)
+		const profileRef = doc(db, 'profile', $userID!.user);
+
+		batch.update(profileRef, {
+			snh2023: teamID
+		});
+
+		const eventRef = doc(db, 'events', 'snh2023');
+
+		batch.update(eventRef, {
+			members: arrayUnion($userID!.user)
 		});
 
 		await batch.commit();
@@ -63,16 +63,14 @@
 		const exists = snapshot.docs[0]?.exists();
 		if (exists) {
 			//redirect to team page
-			goto('/snh2023/team/' + snapshot.docs[0].id);
+			//goto('/snh2023/team/' + snapshot.docs[0].id);
 		}
 	}
 
-	$: $userID && checkTeam();
+	// $: $userID && checkTeam();
 </script>
 
 <div class="mx-10 flex h-[22rem] w-[25rem] flex-col items-center justify-center rounded-2xl border-[1px] border-gray-700 p-10">
-	<!-- Not in a team -->
-
 	<div class="flex h-full w-full flex-col items-center justify-center space-y-6">
 		<h2 class="font-jbExtrabold text-4xl">Join A Team</h2>
 		<Input type="text" bind:value={teamID} placeholder="Enter the team ID" class="mb-4 h-14 w-80 rounded-2xl bg-gray-600 p-4 font-jbMedium text-white" />
