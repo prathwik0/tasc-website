@@ -136,7 +136,7 @@ export const userData: Readable<UserData | null> = derived(userID, ($userID, set
 });
 
 export const userProfileData: Readable<ProfileData | null> = derived(userID, ($userID, set) => {
-	if ($userID) {
+	if ($userID && $userID.user !== '') {
 		return docStore<ProfileData>(`profile/${$userID.user}`).subscribe(set);
 	} else {
 		set(null);
