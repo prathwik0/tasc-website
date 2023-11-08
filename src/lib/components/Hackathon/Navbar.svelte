@@ -1,5 +1,5 @@
 <script>
-	import { userProfileData } from '$lib/firebase/firebase';
+	import { user, userData, userLoaded, userProfileData } from '$lib/firebase/firebase';
 
 	const closeMenu = () => {
 		// @ts-ignore
@@ -19,7 +19,11 @@
 				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#timeline" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Timeline</a></div>
 				<!-- <div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#themes" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Themes</a></div> -->
 				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#goodies" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Rewards</a></div>
-				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023/team" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Team</a></div>
+				{#if $user && $userData && $userProfileData && !$userProfileData.snh2023}
+					<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023/team" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Team</a></div>
+				{:else}
+					<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href={`/snh2023/team/${$userProfileData?.snh2023}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Team</a></div>
+				{/if}
 			</ul>
 		</div>
 	</div>
@@ -40,7 +44,11 @@
 					<a class="mb-10 font-jbBold text-2xl" href="/snh2023#timeline" on:click={closeMenu}> Timeline </a>
 					<!-- <a class="font-jbBold mb-10 text-2xl" href="/snh2023#themes" on:click={closeMenu}> Themes </a> -->
 					<a class="mb-10 font-jbBold text-2xl" href="/snh2023#goodies" on:click={closeMenu}> Rewards </a>
-					<a class="mb-10 font-jbBold text-2xl" href="/snh2023/team" on:click={closeMenu}> Team </a>
+					{#if $user && $userData && $userProfileData && !$userProfileData.snh2023}
+						<a class="mb-10 font-jbBold text-2xl" href="/snh2023/team" on:click={closeMenu}> Team </a>
+					{:else}
+						<a class="mb-10 font-jbBold text-2xl" href={`/snh2023/team/${$userProfileData?.snh2023}`} on:click={closeMenu}> Team </a>
+					{/if}
 				</ul>
 			</div>
 		</nav>
