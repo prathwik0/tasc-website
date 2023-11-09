@@ -92,3 +92,12 @@
 		transform: translateY(0px);
 	}
 }
+
+.hideScrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.hideScrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}

@@ -1,6 +1,6 @@
 export const ProblemStatements = [
 	{
-		title: 'Revolutionize supply chain transparency with a Web3 solution to overcome challenges like data silos, limited interoperability, and fraud susceptibility in the era of global commerce',
+		title: 'Revolutionize supply chain transparency with Web3 solution to overcome challenges like data silos, limited interoperability, and fraud susceptibility in the era of global commerce',
 		description: 'Revolutionize supply chain transparency with a Web3-enabled track and trace system. Empowering businesses and consumers, it provides real-time, immutable product journey data using blockchain. Interoperability and smart contracts enhance functionality, fostering sustainability and reducing fraud. User-friendly interfaces enable informed decisions, reshaping global commerce with trust and transparency',
 		startup: 'Karpine Technologies Private Limited',
 		startupDescription: 'Karpine.io is at the forefront of technology innovation in the fashion and luxury retail industry with its cutting-edge Blockchain & IoT based Supply Chain Track & Trace solution. By creating digital twins of physical products, Karpine.io enables businesses to leverage the full potential of the Web3 world, including Digital Product Passports, NFTs and the Metaverse',
