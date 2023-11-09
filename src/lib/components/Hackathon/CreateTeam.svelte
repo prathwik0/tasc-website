@@ -20,6 +20,11 @@
 	}
 
 	async function createTeam() {
+		if (teamName == '') {
+			alert('Please enter a team name!');
+			return;
+		}
+
 		const batch = writeBatch(db);
 
 		const eventRef = doc(db, 'events', 'snh2023');

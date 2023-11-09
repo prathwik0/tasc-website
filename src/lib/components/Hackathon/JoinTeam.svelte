@@ -67,8 +67,8 @@
 <div class="mx-10 flex h-[22rem] w-[25rem] flex-col items-center justify-center rounded-2xl border-[1px] border-gray-700 p-10">
 	<div class="flex h-full w-full flex-col items-center justify-center space-y-6">
 		<h2 class="font-jbExtrabold text-4xl">Join A Team</h2>
-		<Input type="text" bind:value={teamID} placeholder="Enter the team ID" class="mb-4 h-14 w-80 rounded-2xl bg-gray-600 p-4 font-jbMedium text-white" />
-		<Input type="text" bind:value={teamSecret} placeholder="Enter the team Secret" class="h-14 w-80 rounded-2xl bg-gray-600 p-4 font-jbMedium text-white" />
+		<Input type="text" bind:value={teamID} placeholder="Enter the team ID" class="mb-4 h-14 w-80 rounded-2xl bg-gray-600 p-4 font-jbMedium text-white" required />
+		<Input type="text" bind:value={teamSecret} placeholder="Enter the team Secret" class="h-14 w-80 rounded-2xl bg-gray-600 p-4 font-jbMedium text-white" required />
 		<button on:click={joinTeam}><MainButton>Join Team</MainButton></button>
 	</div>
 
