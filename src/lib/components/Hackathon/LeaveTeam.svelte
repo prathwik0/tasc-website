@@ -29,12 +29,30 @@
 			const teamRef = doc(db, 'snh2023', teamID);
 
 			if ($userID.user === leader) {
-				batch.delete(teamRef);
+				if (memberInfo.length === 1) {
+					batch.delete(teamRef);
+				} else {
+					for (let i = 0; i < memberInfo.length; i++) {
+						if (memberInfo[i].id === $userID!.user) {
+							batch.update(teamRef, {
+								memberInfo: arrayRemove(memberInfo[i])
+							});
+						}
+					}
+
+					batch.update(teamRef, {
+						members: arrayRemove($userID!.user),
+						memberCount: increment(-1),
+						leader: memberInfo[1].id,
+						leaderName: memberInfo[1].name,
+						leaderUSN: memberInfo[1].usn,
+						leaderPhone: memberInfo[1].phone,
+						leaderEmail: memberInfo[1].email
+					});
+				}
 			} else {
-				console.log(memberInfo);
 				for (let i = 0; i < memberInfo.length; i++) {
 					if (memberInfo[i].id === $userID!.user) {
-						console.log(memberInfo[i]);
 						batch.update(teamRef, {
 							memberInfo: arrayRemove(memberInfo[i])
 						});
