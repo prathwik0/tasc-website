@@ -76,4 +76,3 @@
 </script>
 
 <button on:click={leaveTeam}><MainButton>Leave Team</MainButton> </button>
-Note that if you're a team leader, leaving your team will delete it.

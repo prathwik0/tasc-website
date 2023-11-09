@@ -20,6 +20,11 @@
 	}
 
 	async function createTeam() {
+		if (teamName == '') {
+			alert('Please enter a team name!');
+			return;
+		}
+
 		const batch = writeBatch(db);
 
 		const eventRef = doc(db, 'events', 'snh2023');
@@ -81,9 +86,9 @@
 	//$: $userID && checkTeam();
 </script>
 
-<div class="mx-10 h-[22rem] w-[25rem] flex-col items-center justify-center rounded-2xl border-[1px] border-gray-700 p-10">
+<div class="mx-10 h-[16rem] w-[18rem] flex-col items-center justify-center rounded-2xl border-[1px] border-[#d2b863] p-10 md:h-[22rem] md:w-[25rem]">
 	<div class="flex h-full w-full flex-col items-center justify-center space-y-6">
-		<h2 class="font-jbExtrabold text-3xl md:text-4xl">Create a Team</h2>
+		<h2 class="font-jbExtrabold text-2xl md:text-4xl">Create a Team</h2>
 		<Input type="text" placeholder="Enter your team name!" bind:value={teamName} class="h-12 w-60  rounded-2xl bg-gray-600 p-4 font-jbMedium text-white md:h-14 md:w-80" />
 		<button on:click={createTeam}><MainButton>Create Team</MainButton></button>
 	</div>
