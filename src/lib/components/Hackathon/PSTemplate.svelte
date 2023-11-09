@@ -22,7 +22,7 @@
 			<Dialog.Title>{PID}</Dialog.Title>
 		</Dialog.Header>
 
-		<Table.Root class="text-[11px] md:text-lg">
+		<Table.Root class="text-[13px] md:text-lg">
 			<Table.Body>
 				<Table.Row>
 					<Table.Cell>Problem Statement</Table.Cell>
