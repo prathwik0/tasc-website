@@ -1,18 +1,24 @@
 <script lang="ts">
 	import { Input } from '$lib/components/ui/input';
 	import MainButton from './MainButton.svelte';
-
+	//@ts-ignore
+	import { Button } from '$lib/components/ui/button';
+	import * as DropdownMenu from '$lib/components/ui/DropdownMenu';
 	import { db, user, userData, userID, userProfileData } from '$lib/firebase/firebase';
 	import { doc, collection, getDoc, setDoc, writeBatch, limit, query, where, updateDoc, arrayUnion, increment } from 'firebase/firestore';
 	import ProblemStatements from './ProblemStatements.svelte';
 
 	export let teamID: string;
-	export let statement: string = '';
+	export let PID: string = '';
 	export let title: string = '';
-	export let description: string = '';
 	export let link: string = '';
 
 	async function joinTeam() {
+		if (title == '' || PID == '' || link == '') {
+			alert('Please fill all the fields before submission!');
+			return;
+		}
+
 		//return if user is not logged in
 		if (!$userID || !teamID) return;
 
@@ -22,23 +28,36 @@
 		batch.update(teamRef, {
 			submissions: arrayUnion({
 				title: title,
-				problemStatement: statement,
-				description: description,
+				PID: PID,
 				link: link
 			})
 		});
 		await batch.commit();
 
-		alert('Your submission has been recorded!');
+		alert('Your submission has been recorded :)');
 	}
 </script>
 
-<div class="mx-10 flex w-[18rem] flex-col items-center justify-center rounded-2xl border-[1px] border-[#d2b863] p-10 md:h-[22rem] md:w-[25rem]">
-	<div class="flex w-full flex-col items-center justify-center space-y-6 py-6">
-		<h2 class="font-jbExtrabold text-2xl md:text-4xl">Submit solution for your problem statement</h2>
-		<Input type="text" bind:value={title} placeholder="Enter Title for your solution" class="mb-4 h-12 w-60 rounded-2xl bg-gray-600 p-4 font-jbMedium text-white md:h-14 md:w-80" />
-		<Input type="text" bind:value={description} placeholder="Enter the description of your solution" class="mb-4 h-12 w-60 rounded-2xl bg-gray-600 p-4 font-jbMedium text-white md:h-14 md:w-80" />
-		<Input type="text" bind:value={link} placeholder="Enter the link to your presentation" class="h-12 w-60 rounded-2xl bg-gray-600 p-4 font-jbMedium text-white md:h-14 md:w-80" />
-		<button on:click={joinTeam}><MainButton>Submit</MainButton></button>
+<h2 class="pb-4 text-center font-jbExtrabold text-2xl md:text-4xl">Submit solution for your problem statement</h2>
+
+<div class="flex w-[90vw] flex-col items-center justify-center rounded-2xl border-[1px] border-[#d2b863] p-6">
+	<div class="flex w-full flex-col items-center justify-center">
+		<DropdownMenu.Root>
+			<DropdownMenu.Trigger asChild let:builder>
+				<Button variant="outline" builders={[builder]}>Choose problem statement</Button>
+			</DropdownMenu.Trigger>
+			<DropdownMenu.Content class="w-56">
+				<DropdownMenu.RadioGroup bind:value={PID}>
+					<DropdownMenu.RadioItem value="SNH01">SNH01</DropdownMenu.RadioItem>
+					<DropdownMenu.RadioItem value="SNH02">SNH02</DropdownMenu.RadioItem>
+					<DropdownMenu.RadioItem value="SNH03">SNH03</DropdownMenu.RadioItem>
+					<DropdownMenu.RadioItem value="SNH04">SNH04</DropdownMenu.RadioItem>
+					<DropdownMenu.RadioItem value="SNH05">SNH05</DropdownMenu.RadioItem>
+				</DropdownMenu.RadioGroup>
+			</DropdownMenu.Content>
+		</DropdownMenu.Root>
+		<Input type="text" bind:value={title} placeholder="Enter Title for your solution" class="mb-4 h-12 w-60 rounded-2xl bg-gray-600 p-4 text-center font-jbMedium text-white md:h-14 md:w-80" />
+		<Input type="text" bind:value={link} placeholder="Enter link to your presentation" class="h-12 w-60 rounded-2xl bg-gray-600 p-4 text-center font-jbMedium text-white md:h-14 md:w-80" />
+		<button on:click={joinTeam} class="pt-6"><MainButton>Submit</MainButton></button>
 	</div>
 </div>
