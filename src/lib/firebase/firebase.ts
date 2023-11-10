@@ -19,6 +19,8 @@ import type ProfileData from '$lib/components/types/ProfileData';
 // 	appId: '1:954495946912:web:ce0eab04499e86a75039c5',
 // 	measurementId: 'G-X47HSPHZ51'
 // };
+
+// Production
 const firebaseConfig = {
 	apiKey: 'AIzaSyDkfk7CuVog5P79QgJ5kfONzGr3Rpfi2dU',
 	authDomain: 'tasc-8df79.firebaseapp.com',

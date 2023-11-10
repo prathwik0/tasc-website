@@ -131,7 +131,7 @@
 					<Card.Content>
 						<div>
 							<Label for="name">Name</Label>
-							<Input type="text" id="name" placeholder="Enter your full name" bind:value={name} class={!isValidName && isTouchedName ? 'bg-red-200 dark:bg-red-900' : ''} />
+							<Input type="text" id="name" placeholder="Enter your full name" bind:value={name} class={!isValidName && isTouchedName ? 'bg-red-200 dark:bg-red-900' : ''} required />
 							<p class="mt-1 text-sm text-muted-foreground">This is the name that will appear on your certificates.</p>
 							{#if isTouchedName && !isValidName}
 								<div class="h-4">
@@ -142,7 +142,7 @@
 
 						<div class="mt-6">
 							<Label for="usn">USN</Label>
-							<Input type="text" id="usn" placeholder="Enter your college USN" bind:value={usn} class={!isValidUSN && isTouchedUSN ? 'bg-red-200 dark:bg-red-900' : ''} />
+							<Input type="text" id="usn" placeholder="Enter your college USN" bind:value={usn} class={!isValidUSN && isTouchedUSN ? 'bg-red-200 dark:bg-red-900' : ''} required />
 							{#if isTouchedUSN && !isValidUSN}
 								<div class="h-4">
 									<p>USN should contain only numbers and CAPITAL letters.</p>
@@ -152,7 +152,7 @@
 
 						<div class="mt-6">
 							<Label for="username" class="mt-10">Username</Label>
-							<Input type="text" class="{!isValidUsername && isTouchedUsername ? 'bg-red-200 dark:bg-red-900' : ''} {isTakenUsername ? 'bg-yellow-200 dark:bg-yellow-700' : ''} {isAvailable && isValidUsername && !loading ? 'bg-green-300 dark:bg-green-800' : ''}" id="username" placeholder="Enter a username" bind:value={username} on:input={checkAvailability} />
+							<Input type="text" class="{!isValidUsername && isTouchedUsername ? 'bg-red-200 dark:bg-red-900' : ''} {isTakenUsername ? 'bg-yellow-200 dark:bg-yellow-700' : ''} {isAvailable && isValidUsername && !loading ? 'bg-green-300 dark:bg-green-800' : ''}" id="username" placeholder="Enter a username" bind:value={username} on:input={checkAvailability} required />
 							<p class="mt-1 text-sm text-muted-foreground">Your username is public and is used to access your profile page.</p>
 
 							{#if isTouchedUsername}
@@ -180,7 +180,7 @@
 
 						<div class="mt-6">
 							<Label for="whatsapp" class="mt-10">Phone Number</Label>
-							<Input type="text" class="{!isValidPhone && isTouchedPhone ? 'bg-red-200 dark:bg-red-900' : ''} {isValidPhone ? 'bg-green-300 dark:bg-green-800' : ''}" id="usn" placeholder="Enter your WhatsApp Phone Number" bind:value={phone} />
+							<Input type="text" class="{!isValidPhone && isTouchedPhone ? 'bg-red-200 dark:bg-red-900' : ''} {isValidPhone ? 'bg-green-300 dark:bg-green-800' : ''}" id="usn" placeholder="Enter your WhatsApp Phone Number" bind:value={phone} required />
 
 							{#if isTouchedPhone && !isValidPhone}
 								<div class="h-4">

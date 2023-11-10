@@ -6,6 +6,7 @@
 	import Rewards from '$lib/components/Hackathon/Rewards.svelte';
 	import Themes from '$lib/components/Hackathon/Themes.svelte';
 	import TimelineBetter from '$lib/components/Hackathon/TimelineBetter.svelte';
+	import ProblemStatements from '$lib/components/Hackathon/ProblemStatements.svelte';
 	const images = [
 		{
 			src: '/assets/icons/13@1x.png',
@@ -65,11 +66,15 @@
 	<section id="timeline">
 		<TimelineBetter />
 	</section>
-<!-- 
+	<!-- 
 	<section id="themes">
 		<Themes />
 	</section> 
 -->
+
+	<section id="ps" class="flex w-full justify-center">
+		<ProblemStatements />
+	</section>
 
 	<section id="goodies">
 		<Rewards />
