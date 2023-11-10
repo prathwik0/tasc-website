@@ -3,6 +3,7 @@
 	import { copy } from 'svelte-copy';
 	import type { PageData } from './$types';
 	import LeaveTeam from '$lib/components/Hackathon/LeaveTeam.svelte';
+	import Submission from '$lib/components/Hackathon/Submission.svelte';
 
 	export let data: PageData;
 </script>
@@ -65,5 +66,6 @@
 	</div>
 
 	<LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} />
-	<MainButton>Solution Submission (soon...)</MainButton>
+	<Submission teamID={data.teamURL}></Submission>
+	<!-- <MainButton>Solution Submission (soon...)</MainButton> -->
 </div>

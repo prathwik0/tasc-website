@@ -1,4 +1,11 @@
-export default interface TeamData {
+export interface Submission {
+	title?: string;
+	description?: string;
+	link?: string;
+	problemStatement?: string;
+}
+
+export interface TeamData {
 	teamName: string;
 	teamURL: string;
 	teamSecret: string;
@@ -11,4 +18,5 @@ export default interface TeamData {
 	memberCount: number;
 	acceptingMembers: boolean;
 	createdAt: string;
+	submissions?: Submission[];
 }
