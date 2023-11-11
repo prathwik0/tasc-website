@@ -1,45 +1,3 @@
-<!-- <script lang="ts">
-	import ThemeToggle from '$lib/components/HeaderFooter/ThemeToggle.svelte';
-	import { NAVITEM } from '$lib/data/NavbarItems';
-	import NavbarMobile from '$lib/components/HeaderFooter/NavbarMobile.svelte';
-	import AuthButton from '$lib/components/Auth/AuthButton.svelte';
-	import { page } from '$app/stores';
-	import { menuToggle } from '$lib/stores/menuToggle';
-	const toggleMenu = () => {
-		menuToggle.set(!$menuToggle); // Toggle the menu state
-	};
-
-	import { fade } from 'svelte/transition';
-</script>
-
-<div class="my-[6px] flex h-12 content-center items-center justify-between px-2">
-	<a href="/" class="hidden sm:block"><img src="/TASCLogo.png" alt="TASC logo" class="w-20 duration-200 hover:scale-110" /></a>
-
-	<ul class="flex">
-		{#each NAVITEM as item}
-			<a href={`${item.href}`}>
-				<li class="py-2 text-xl font-bold duration-200 hover:scale-125 md:px-4 lg:px-10 xl:px-14 {$page.url.pathname.split('/')[1] === item.title.toLowerCase() || ($page.url.pathname === '/' && item.title === 'Home') ? 'underline underline-offset-4' : ''} ">
-					<span>{item.title}</span>
-				</li>
-			</a>
-		{/each}
-	</ul>
-
-	<div class="flex flex-grow items-center justify-between space-x-5 sm:flex-grow-0">
-		<AuthButton />
-		<div class="flex items-center space-x-2 sm:space-x-5">
-			<div class="flex-1 duration-200 hover:scale-110"><ThemeToggle /></div>
-			<button class="flex md:hidden" on:click={toggleMenu}>
-				<iconify-icon icon="eva:menu-outline" height="2rem" width="2rem"></iconify-icon>
-			</button>
-		</div>
-	</div>
-</div>
-<div class="fixed right-0 top-0 z-50 flex md:hidden" class:hidden={!menuToggle} transition:fade={{ delay: 250, duration: 300 }}>
-	<NavbarMobile />
-</div>
- -->
-
 <script>
 	import { NAVITEM } from '$lib/data/NavbarItems';
 	import AuthButton from '$lib/components/Auth/AuthButton.svelte';
@@ -51,27 +9,26 @@
 	};
 </script>
 
-<div>
-	<div class="fixed top-0 z-50 hidden w-full backdrop-blur-md lg:grid">
-		<div class="flex items-center justify-between px-4 py-3">
-			<a href="/" class="w-28">
+<div class="">
+	<div class="fixed top-0 z-50 hidden w-full md:grid">
+		<div class="md: flex items-center justify-between px-6 py-2 md:px-10 md:py-6">
+			<a href="/">
 				<img src="/TASCLogo.png" class="w-20" alt="logo" />
 			</a>
 			<ul class="flex flex-wrap items-center space-x-8 tracking-wider md:text-lg">
 				{#each NAVITEM as nav}
-					<div class=" hover:drop-shadow-[0_0_0.2rem_#eb71cc]"><a href={`${nav.href}`} class="scroll-smooth font-bold underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">{nav.title}</a></div>
+					<div class="transition duration-300 hover:drop-shadow-[0_0_0.3rem_#ffffff]"><a href={`${nav.href}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">{nav.title}</a></div>
 				{/each}
 			</ul>
 			<div class="flex w-28 justify-center space-x-5">
 				<AuthButton />
-				<ThemeToggle />
 			</div>
 		</div>
 	</div>
 
-	<div class="fixed z-50 flex w-full px-3 py-6 backdrop-blur-md lg:hidden">
-		<a href="/" class="w-20">
-			<img src="/TASCLogo.png" alt="logo" />
+	<div class="fixed z-50 flex w-full px-10 py-6 md:hidden">
+		<a href="/">
+			<img src="/TASCLogo.png" class=" w-20" alt="logo" />
 		</a>
 		<nav>
 			<div id="menuToggle" class="py-6 pr-3">
@@ -80,15 +37,12 @@
 				<span class="bg-black dark:bg-white"></span>
 				<span class="bg-black dark:bg-white"></span>
 
-				<ul id="menu" class="bg-secondary text-right text-black dark:bg-primary-dark dark:text-white">
+				<ul id="menu" class=" bg-white bg-opacity-5 pr-4 text-right drop-shadow-xl backdrop-blur-lg">
 					{#each NAVITEM as nav}
-						<a class="mb-10 font-jbBold text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
+						<a class="mb-10 mt-10 text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
 					{/each}
 					<div class="mb-10 flex justify-end font-jbBold text-2xl">
 						<AuthButton />
-					</div>
-					<div class="mb-10 flex justify-end font-jbBold text-2xl">
-						<ThemeToggle />
 					</div>
 				</ul>
 			</div>
@@ -187,7 +141,7 @@
 		display: flex;
 		flex-direction: column;
 		position: absolute;
-		width: 100vw;
+		width: 50vw;
 		padding-top: 5rem;
 		padding-right: 2rem;
 		z-index: 0;
@@ -196,9 +150,9 @@
 		height: 100vh;
 		list-style-type: none;
 		-webkit-font-smoothing: antialiased;
+		box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 		transform-origin: 0% 0%;
-		transform: translate(100%, 0);
-
+		transform: translate(103%, 0);
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 	}
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Icons } from '$lib/components/docs/icons';
-	import { Button } from '$lib/components/ui/button';
+	import { Button } from '$lib/components/ui/custom_button';
 
 	import { auth } from '$lib/firebase/firebase';
 	import { user } from '$lib/firebase/firebase';

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { user, userData, userLoaded } from '$lib/firebase/firebase';
-	import { Button } from '../ui/button';
+	import { Button } from '../ui/custom_button';
 	export let currentUsername: string | undefined;
 </script>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { doc, updateDoc } from 'firebase/firestore';
 	import { db, userID, userProfileData } from '$lib/firebase/firebase';
-	import Button from '../ui/button/button.svelte';
+	import Button from '../ui/custom_button/button.svelte';
 	import Label from '../ui/label/label.svelte';
 	import Input from '../ui/input/input.svelte';
 
