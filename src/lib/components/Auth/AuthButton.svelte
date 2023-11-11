@@ -4,7 +4,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Popover from '$lib/components/ui/popover';
 
-	import { auth, userLoaded, userData } from '$lib/firebase/firebase';
+	import { auth, userData, userLoaded } from '$lib/firebase/firebase';
 	import { user } from '$lib/firebase/firebase';
 
 	import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
@@ -23,58 +23,59 @@
 </script>
 
 <!-- TODO: wrap everthing in a UserLoadCheck component in the future -->
-{#if !$userLoaded}
-	<span></span>
-{:else if $user && $userData}
-	<Popover.Root>
-		<Popover.Trigger>
-			<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">You</Button>
-		</Popover.Trigger>
-		<Popover.Content>
-			<div class="flex max-w-xs flex-col gap-2">
-				<div class="px-2 text-lg">
-					Hello {$userData.name},
-				</div>
-				<a href="/{$userData.username}" class="contents"><Button variant="outline">Your Public Profile</Button></a>
-				<a href="/{$userData.username}/edit" class="contents"><Button variant="outline">Edit your Profile</Button></a>
-				<Button on:click={signOutSSR}>Sign out</Button>
-			</div>
-		</Popover.Content>
-	</Popover.Root>
-{:else if $user}
-	{#if loggedIn}
-		{goto('/create-account')}
-	{:else}
+{#if $userLoaded === true}
+	{#if $user && $userData}
 		<Popover.Root>
 			<Popover.Trigger>
-				<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">Create Account</Button>
+				<span class="lg:hidden">You</span>
+				<Button class="hidden text-lg font-bold duration-200 hover:scale-110 lg:block" variant="ghost">You</Button>
 			</Popover.Trigger>
 			<Popover.Content>
 				<div class="flex max-w-xs flex-col gap-2">
 					<div class="px-2 text-lg">
-						Hello {$user.displayName}, you don't have an account yet!
+						Hello {$userData.name},
 					</div>
-					<a href="/create-account" class="contents"><Button variant="outline">Create Account</Button></a>
+					<a href="/{$userData.username}" class="contents"><Button variant="outline">Your Public Profile</Button></a>
+					<a href="/{$userData.username}/edit" class="contents"><Button variant="outline">Edit your Profile</Button></a>
 					<Button on:click={signOutSSR}>Sign out</Button>
 				</div>
 			</Popover.Content>
 		</Popover.Root>
+	{:else if $user}
+		{#if loggedIn}
+			{goto('/create-account')}
+		{:else}
+			<Popover.Root>
+				<Popover.Trigger>
+					<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">Create Account</Button>
+				</Popover.Trigger>
+				<Popover.Content>
+					<div class="flex max-w-xs flex-col gap-2">
+						<div class="px-2 text-lg">
+							Hello {$user.displayName}, you don't have an account yet!
+						</div>
+						<a href="/create-account" class="contents"><Button variant="outline">Create Account</Button></a>
+						<Button on:click={signOutSSR}>Sign out</Button>
+					</div>
+				</Popover.Content>
+			</Popover.Root>
+		{/if}
+	{:else}
+		<Popover.Root>
+			<Popover.Trigger>
+				<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">Login</Button>
+			</Popover.Trigger>
+			<Popover.Content>
+				<div class="flex max-w-xs flex-col gap-2">
+					<div class="px-2 text-lg">Login via Google</div>
+					<Button on:click={signInWithGoogle}>
+						<Icons.google class="mr-2 h-4 w-4" />
+						Login
+					</Button>
+					<div class="px-2 text-lg">Don't have an account?</div>
+					<a href="/signup" class="contents"><Button>Signup</Button></a>
+				</div>
+			</Popover.Content>
+		</Popover.Root>
 	{/if}
-{:else}
-	<Popover.Root>
-		<Popover.Trigger>
-			<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">Login</Button>
-		</Popover.Trigger>
-		<Popover.Content>
-			<div class="flex max-w-xs flex-col gap-2">
-				<div class="px-2 text-lg">Login via Google</div>
-				<Button on:click={signInWithGoogle}>
-					<Icons.google class="mr-2 h-4 w-4" />
-					Login
-				</Button>
-				<div class="px-2 text-lg">Don't have an account?</div>
-				<a href="/signup" class="contents"><Button>Signup</Button></a>
-			</div>
-		</Popover.Content>
-	</Popover.Root>
 {/if}
