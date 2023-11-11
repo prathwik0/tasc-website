@@ -1,5 +1,5 @@
 <script>
-	import AboutSection from '$lib/components/Others/AboutSection.svelte';
+	import AboutSection from './AboutSection.svelte';
 </script>
 
 <div>

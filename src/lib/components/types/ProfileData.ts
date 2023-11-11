@@ -9,8 +9,11 @@ export default interface ProfileData {
 	username?: string;
 	name?: string;
 	usn?: string;
+	phone?: string;
 	photoURL: string;
 	bio: string;
-	color: string;
+	color_light: string;
+	color_dark: string;
 	links: Link[];
+	snh2023: string;
 }

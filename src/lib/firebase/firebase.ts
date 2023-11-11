@@ -19,6 +19,8 @@ import type ProfileData from '$lib/components/types/ProfileData';
 // 	appId: '1:954495946912:web:ce0eab04499e86a75039c5',
 // 	measurementId: 'G-X47HSPHZ51'
 // };
+
+// Production
 const firebaseConfig = {
 	apiKey: 'AIzaSyDkfk7CuVog5P79QgJ5kfONzGr3Rpfi2dU',
 	authDomain: 'tasc-8df79.firebaseapp.com',
@@ -113,6 +115,7 @@ interface AuthData {
 export const userID: Readable<AuthData | null> = derived(user, ($user, set) => {
 	if ($user) {
 		// console.log('userID updated, now tracking auth/', $user.uid);
+		set({ user: '' });
 		return docStore<AuthData>(`auth/${$user.uid}`).subscribe(set);
 	} else {
 		set(null);
@@ -126,7 +129,7 @@ interface UserData {
 }
 
 export const userData: Readable<UserData | null> = derived(userID, ($userID, set) => {
-	if ($userID) {
+	if ($userID && $userID.user !== '') {
 		// console.log('userData updated, now tracking user/', $userID.user);
 		return docStore<UserData>(`user/${$userID.user}`).subscribe(set);
 	} else {
@@ -135,7 +138,7 @@ export const userData: Readable<UserData | null> = derived(userID, ($userID, set
 });
 
 export const userProfileData: Readable<ProfileData | null> = derived(userID, ($userID, set) => {
-	if ($userID) {
+	if ($userID && $userID.user !== '') {
 		return docStore<ProfileData>(`profile/${$userID.user}`).subscribe(set);
 	} else {
 		set(null);
@@ -170,7 +173,7 @@ userID.subscribe((value) => {
 		return;
 	}
 
-	if (value) {
+	if (value && value.user !== '') {
 		userLoaded.set(false);
 	} else {
 		userLoaded.set(true);

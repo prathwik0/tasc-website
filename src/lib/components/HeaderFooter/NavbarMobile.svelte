@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { NAVITEM } from '$lib/data/NavItems.js';
+	import { NAVITEM } from '$lib/data/NavbarItems.js';
 	import { menuToggle } from '$lib/stores/menuToggle';
+	import AuthButton from '../Auth/AuthButton.svelte';
 	const toggleMenu = () => {
 		menuToggle.set(!$menuToggle);
 	};
@@ -17,7 +18,5 @@
 			</a>
 		{/each}
 	</ul>
-	<!-- <div class="flex w-full justify-center pt-4">
-		<button class="rounded-xl bg-brand px-4 py-2 text-white duration-200 hover:scale-110"> Login </button>
-	</div> -->
+	<AuthButton />
 </div>

@@ -1,0 +1,103 @@
+/* Scroll Bar */
+
+.hackathon::-webkit-scrollbar {
+	width: 10px;
+	height: 3px;
+}
+
+.hackathon::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+.hackathon::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: #d2b863;
+}
+
+.hackathon::-webkit-scrollbar-thumb:hover {
+	background: #ad832d;
+}
+
+.gradient_border {
+	border: 0.5px solid transparent;
+	border-image: linear-gradient(to top right, #ec4237, #d2b863, #33b6d8);
+	border-image-slice: 1;
+}
+
+.float {
+	transform: translateX(0px);
+	animation: float 4s ease-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-30px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.float1 {
+	transform: translateX(0px);
+	animation: float1 4s ease-out infinite;
+}
+
+@keyframes float1 {
+	0% {
+		transform: translateY(-30px);
+	}
+	50% {
+		transform: translateY(0px);
+	}
+	100% {
+		transform: translateY(-30px);
+	}
+}
+
+.float2 {
+	transform: translateY(0px);
+	animation: float2 4s ease-in-out infinite;
+}
+
+@keyframes float2 {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(40px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.float3 {
+	transform: translateX(0px);
+	animation: float3 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+@keyframes float3 {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+.hideScrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.hideScrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}

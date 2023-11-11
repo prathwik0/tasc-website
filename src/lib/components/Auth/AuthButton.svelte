@@ -12,13 +12,17 @@
 	async function signInWithGoogle() {
 		const provider = new GoogleAuthProvider();
 		await signInWithPopup(auth, provider);
+		loggedIn = true;
 	}
 
 	async function signOutSSR() {
 		await signOut(auth);
 	}
+
+	let loggedIn = false;
 </script>
 
+<!-- TODO: wrap everthing in a UserLoadCheck component in the future -->
 {#if !$userLoaded}
 	<span></span>
 {:else if $user && $userData}
@@ -31,27 +35,31 @@
 				<div class="px-2 text-lg">
 					Hello {$userData.name},
 				</div>
-				<Button variant="outline"><a href="/{$userData.username}">Your Public Profile</a></Button>
-				<Button variant="outline"><a href="/{$userData.username}/edit">Edit your Profile</a></Button>
+				<a href="/{$userData.username}" class="contents"><Button variant="outline">Your Public Profile</Button></a>
+				<a href="/{$userData.username}/edit" class="contents"><Button variant="outline">Edit your Profile</Button></a>
 				<Button on:click={signOutSSR}>Sign out</Button>
 			</div>
 		</Popover.Content>
 	</Popover.Root>
 {:else if $user}
-	<Popover.Root>
-		<Popover.Trigger>
-			<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">You</Button>
-		</Popover.Trigger>
-		<Popover.Content>
-			<div class="flex max-w-xs flex-col gap-2">
-				<div class="px-2 text-lg">
-					Hello {$user.displayName}, you don't have an account yet.
+	{#if loggedIn}
+		{goto('/create-account')}
+	{:else}
+		<Popover.Root>
+			<Popover.Trigger>
+				<Button class="text-lg font-bold duration-200 hover:scale-110" variant="ghost">Create Account</Button>
+			</Popover.Trigger>
+			<Popover.Content>
+				<div class="flex max-w-xs flex-col gap-2">
+					<div class="px-2 text-lg">
+						Hello {$user.displayName}, you don't have an account yet!
+					</div>
+					<a href="/create-account" class="contents"><Button variant="outline">Create Account</Button></a>
+					<Button on:click={signOutSSR}>Sign out</Button>
 				</div>
-				<Button variant="outline"><a href="/create-account">Create Account</a></Button>
-				<Button on:click={signOutSSR}>Sign out</Button>
-			</div>
-		</Popover.Content>
-	</Popover.Root>
+			</Popover.Content>
+		</Popover.Root>
+	{/if}
 {:else}
 	<Popover.Root>
 		<Popover.Trigger>
@@ -65,13 +73,7 @@
 					Login
 				</Button>
 				<div class="px-2 text-lg">Don't have an account?</div>
-				<Button
-					on:click={() => {
-						goto('/signup');
-					}}
-				>
-					Signup
-				</Button>
+				<a href="/signup" class="contents"><Button>Signup</Button></a>
 			</div>
 		</Popover.Content>
 	</Popover.Root>

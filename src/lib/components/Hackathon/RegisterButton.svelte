@@ -1,0 +1,29 @@
+<script lang="ts">
+	import { goto } from '$app/navigation';
+	import { auth, user } from '$lib/firebase/firebase';
+	import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
+	async function buttonClick() {
+		if ($user) {
+			goto('/create-account?redirect=/snh2023');
+		} else {
+			await signInWithGoogle();
+			goto('/create-account?redirect=/snh2023');
+		}
+	}
+
+	async function signInWithGoogle() {
+		const provider = new GoogleAuthProvider();
+		await signInWithPopup(auth, provider);
+	}
+</script>
+
+<button on:click={buttonClick} class="my-5 flex flex-col items-center justify-center">
+	<div class="rounded-2xl bg-gray-600 from-[#ec4237] via-[#d2b863] to-[#33b6d8] p-0.5 font-jbMedium transition duration-300 hover:bg-gradient-to-tr hover:drop-shadow-[0_0_0.2rem_#d2b863]">
+		<div class="rounded-2xl bg-[#0f0913] py-3 underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">
+			<div class=" transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]">
+				<div class="px-5 underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Register Now!</div>
+			</div>
+		</div>
+	</div>
+</button>
