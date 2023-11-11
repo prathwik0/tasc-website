@@ -21,7 +21,9 @@
 		<Dialog.Header>
 			<Dialog.Title>{PID}</Dialog.Title>
 		</Dialog.Header>
-
+		{#if startup == ''}
+			<h3 class="px-2 text-[15px] text-[#d2b863] md:text-xl">This problem statement qualifies only for cash price and NOT internship</h3>
+		{/if}
 		<Table.Root class="text-[13px] md:text-lg">
 			<Table.Body>
 				<Table.Row>
@@ -32,14 +34,16 @@
 					<Table.Cell>Description</Table.Cell>
 					<Table.Cell>{description}</Table.Cell>
 				</Table.Row>
-				<Table.Row>
-					<Table.Cell>Startup</Table.Cell>
-					<Table.Cell>{startup}</Table.Cell>
-				</Table.Row>
-				<Table.Row>
-					<Table.Cell>About</Table.Cell>
-					<Table.Cell>{startupDescription}</Table.Cell>
-				</Table.Row>
+				{#if startup !== ''}
+					<Table.Row>
+						<Table.Cell>Startup</Table.Cell>
+						<Table.Cell>{startup}</Table.Cell>
+					</Table.Row>
+					<Table.Row>
+						<Table.Cell>About</Table.Cell>
+						<Table.Cell>{startupDescription}</Table.Cell>
+					</Table.Row>
+				{/if}
 			</Table.Body>
 		</Table.Root>
 	</Dialog.Content>
