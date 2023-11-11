@@ -22,8 +22,8 @@
 	let isAvailable = false;
 
 	const reUsername = /^(?=[a-z0-9._]{3,16}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
-	const reName = /(^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$)/;
-	const reUSN = /^[a-zA-Z0-9]*$/;
+	const reName = /(^[a-zA-Z][a-zA-Z\s]{0,48}[a-zA-Z]$)/;
+	const reUSN = /^[A-Z0-9]*$/;
 	const rePhone = /^[0-9]{10}$/;
 
 	$: isValidPhone = phone?.length === 10 && rePhone.test(phone);
@@ -122,36 +122,38 @@
 		<div class="m-2 flex min-h-screen items-center justify-center">
 			<Card.Root class="max-w-2xl">
 				<Card.Header class="space-y-1">
-					<Card.Title class="text-2xl">Enter your details</Card.Title>
+					<Card.Title class="text-3xl">Enter your details</Card.Title>
 					<h2 class="card-title">Welcome, {$user.displayName}</h2>
-					<Card.Description>You have successfully signed in. Now you can enter your details. Make sure to enter all your details correctly. These cannot be changed later unless you contact the admins.</Card.Description>
+					<Card.Description>You have successfully signed in. Now you can enter your details. Make sure to enter all your details correctly. Some of these details like your name cannot be changed later unless you contact the admins.</Card.Description>
 				</Card.Header>
 
 				<form on:submit|preventDefault={createAccount}>
 					<Card.Content>
 						<div>
-							<Label for="name">Name</Label>
+							<Label class="text-xl" for="name">Name</Label>
 							<Input type="text" id="name" placeholder="Enter your full name" bind:value={name} class={!isValidName && isTouchedName ? 'bg-red-200 dark:bg-red-900' : ''} required />
 							<p class="mt-1 text-sm text-muted-foreground">This is the name that will appear on your certificates.</p>
 							{#if isTouchedName && !isValidName}
-								<div class="h-4">
+								<div>
 									<p>The name you have entered is invalid.</p>
+									<p class="text-sm text-muted-foreground">Your name must begin with a Capital letter and shouldn't begin or end with a space.</p>
 								</div>
 							{/if}
 						</div>
 
 						<div class="mt-6">
-							<Label for="usn">USN</Label>
+							<Label class="text-xl" for="usn">USN</Label>
 							<Input type="text" id="usn" placeholder="Enter your college USN" bind:value={usn} class={!isValidUSN && isTouchedUSN ? 'bg-red-200 dark:bg-red-900' : ''} required />
 							{#if isTouchedUSN && !isValidUSN}
-								<div class="h-4">
+								<div class="mb-2">
 									<p>USN should contain only numbers and CAPITAL letters.</p>
+									<p class="text-sm text-muted-foreground">USN must be 4-14 characters long and alphanumeric (CAPITAL letters only)</p>
 								</div>
 							{/if}
 						</div>
 
 						<div class="mt-6">
-							<Label for="username" class="mt-10">Username</Label>
+							<Label for="username" class="mt-10 text-xl">Username</Label>
 							<Input type="text" class="{!isValidUsername && isTouchedUsername ? 'bg-red-200 dark:bg-red-900' : ''} {isTakenUsername ? 'bg-yellow-200 dark:bg-yellow-700' : ''} {isAvailable && isValidUsername && !loading ? 'bg-green-300 dark:bg-green-800' : ''}" id="username" placeholder="Enter a username" bind:value={username} on:input={checkAvailability} required />
 							<p class="mt-1 text-sm text-muted-foreground">Your username is public and is used to access your profile page.</p>
 
@@ -179,11 +181,11 @@
 						</div>
 
 						<div class="mt-6">
-							<Label for="whatsapp" class="mt-10">Phone Number</Label>
+							<Label for="whatsapp" class="mt-10 text-xl">Phone Number</Label>
 							<Input type="text" class="{!isValidPhone && isTouchedPhone ? 'bg-red-200 dark:bg-red-900' : ''} {isValidPhone ? 'bg-green-300 dark:bg-green-800' : ''}" id="usn" placeholder="Enter your WhatsApp Phone Number" bind:value={phone} required />
 
 							{#if isTouchedPhone && !isValidPhone}
-								<div class="h-4">
+								<div>
 									<p>Write your number as 10 digits with no other characters</p>
 								</div>
 							{/if}
