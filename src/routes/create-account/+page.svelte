@@ -32,7 +32,7 @@
 	$: isValidName = name?.length > 4 && name.length < 48 && reName.test(name);
 	$: isTouchedName = name.length >= 1;
 
-	$: isValidUSN = usn?.length > 4 && usn.length < 11 && reUSN.test(usn);
+	$: isValidUSN = usn?.length > 3 && usn.length < 15 && reUSN.test(usn);
 	$: isTouchedUSN = usn.length >= 1;
 
 	$: isValidUsername = username?.length > 2 && username.length < 16 && reUsername.test(username);

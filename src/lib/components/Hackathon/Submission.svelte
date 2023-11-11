@@ -4,7 +4,7 @@
 	import { db, user, userData, userID, userProfileData } from '$lib/firebase/firebase';
 	import { doc, collection, getDoc, setDoc, writeBatch, limit, query, where, updateDoc, arrayUnion, increment } from 'firebase/firestore';
 
-	const collegeList = ['NMAMIT, Nitte', 'Sahyadri, Mangalore', 'NITK, Surathkal', 'Other'];
+	const collegeList = ['NMAMIT, Nitte', 'Sahyadri, Mangalore', 'NITK, Surathkal', 'MAHE, Manipal', 'St Joseph Engineering College, Mangalore', "Alva's College, Moodbidri", 'Yenepoya College, Mangalore', 'Other'];
 	const PList = ['SNH01', 'SNH02', 'SNH03', 'SNH04', 'SNH05', 'SNH06', 'SNH07'];
 
 	export let teamID: string;
@@ -18,7 +18,10 @@
 		collegeEntered = true;
 	}
 
-	$: console.log('pid = ', PID);
+	$: if (college == 'Other') {
+		collegeEntered = true;
+		college = '';
+	}
 
 	async function joinTeam() {
 		if (title == '' || PID == '' || link == '' || college == '' || college == 'Other') {
