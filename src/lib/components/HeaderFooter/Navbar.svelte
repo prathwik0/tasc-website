@@ -12,7 +12,7 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<div class="fixed top-0 z-40 my-[6px] hidden h-12 w-full content-center items-center justify-between px-4 md:flex md:px-10">
+<div class="my-[6px] flex h-12 content-center items-center justify-between px-2">
 	<a href="/" class="hidden sm:block"><img src="/TASCLogo.png" alt="TASC logo" class="w-20 duration-200 hover:scale-110" /></a>
 
 	<ul class="flex">
