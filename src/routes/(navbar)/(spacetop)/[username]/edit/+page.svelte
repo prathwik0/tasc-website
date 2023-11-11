@@ -21,7 +21,7 @@
 
 <div class="flex flex-col items-center justify-center pt-10">
 	{#if $userData?.username == $page.params.username}
-		<Separator />
+		<!-- <Separator /> -->
 
 		<div class="mx-2 mb-6 md:mx-4 lg:mx-4">
 			<!-- Optionally change this to flexbox with flex-wrap -->

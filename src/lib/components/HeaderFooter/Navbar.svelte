@@ -52,40 +52,42 @@
 </script>
 
 <div>
-	<div class="fixed top-0 z-50 hidden w-full backdrop-blur-md md:grid">
-		<div class="md: flex items-center justify-between px-6 py-2 md:px-10 md:py-4">
-			<a href="/">
+	<div class="fixed top-0 z-50 hidden w-full backdrop-blur-md lg:grid">
+		<div class="flex items-center justify-between px-4 py-3">
+			<a href="/" class="w-28">
 				<img src="/TASCLogo.png" class="w-20" alt="logo" />
 			</a>
-			<ul class="flex flex-wrap items-center space-x-8 font-jbBold tracking-wider md:text-lg">
+			<ul class="flex flex-wrap items-center space-x-8 tracking-wider md:text-lg">
 				{#each NAVITEM as nav}
-					<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href={`${nav.href}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">{nav.title}</a></div>
+					<div class=" hover:drop-shadow-[0_0_0.2rem_#eb71cc]"><a href={`${nav.href}`} class="scroll-smooth font-bold underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">{nav.title}</a></div>
 				{/each}
 			</ul>
-			<div class="flex space-x-5">
+			<div class="flex w-28 justify-center space-x-5">
 				<AuthButton />
 				<ThemeToggle />
 			</div>
 		</div>
 	</div>
 
-	<div class="fixed z-50 flex w-full px-10 py-6 backdrop-blur-md md:hidden">
-		<a href="/">
-			<img src="/TASCLogo.png" class="w-20" alt="logo" />
+	<div class="fixed z-50 flex w-full px-3 py-6 backdrop-blur-md lg:hidden">
+		<a href="/" class="w-20">
+			<img src="/TASCLogo.png" alt="logo" />
 		</a>
 		<nav>
-			<div id="menuToggle" class="px-10 py-6">
+			<div id="menuToggle" class="py-6 pr-3">
 				<input type="checkbox" />
 				<span class="bg-black dark:bg-white"></span>
 				<span class="bg-black dark:bg-white"></span>
 				<span class="bg-black dark:bg-white"></span>
 
-				<ul id="menu" class="bg-secondary-light pr-4 text-right text-black dark:bg-primary-dark dark:text-white">
+				<ul id="menu" class="bg-secondary text-right text-black dark:bg-primary-dark dark:text-white">
 					{#each NAVITEM as nav}
-						<a class="mb-10 mt-10 font-jbBold text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
+						<a class="mb-10 font-jbBold text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
 					{/each}
-					<div class="flex justify-end space-x-5">
+					<div class="mb-10 flex justify-end font-jbBold text-2xl">
 						<AuthButton />
+					</div>
+					<div class="mb-10 flex justify-end font-jbBold text-2xl">
 						<ThemeToggle />
 					</div>
 				</ul>
