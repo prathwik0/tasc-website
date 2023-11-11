@@ -18,7 +18,10 @@
 		collegeEntered = true;
 	}
 
-	$: console.log('pid = ', PID);
+	$: if (college == 'Other') {
+		collegeEntered = true;
+		college = '';
+	}
 
 	async function joinTeam() {
 		if (title == '' || PID == '' || link == '' || college == '' || college == 'Other') {
