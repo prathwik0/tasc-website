@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { doc, updateDoc } from 'firebase/firestore';
 	import { db, userID, userProfileData } from '$lib/firebase/firebase';
-	import Button from '$lib/components/ui/button/button.svelte';
+	import Button from '$lib/components/ui/custom_button/button.svelte';
 	import Label from '$lib/components/ui/label/label.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
 
@@ -20,7 +20,7 @@
 
 <div class="w-full pb-6 pt-2">
 	<Label>Current Lightmode Color: {$userProfileData?.color_light}</Label>
-  <br />
+	<br />
 	<Label>Current Darkmode Color: {$userProfileData?.color_dark}</Label>
 </div>
 <form on:submit|preventDefault={updateColor}>

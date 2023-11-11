@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import AuthCheck from '$lib/components/Auth/AuthCheck.svelte';
 
-	import { Button } from '$lib/components/ui/button';
+	import { Button } from '$lib/components/ui/custom_button';
 	import * as Card from '$lib/components/ui/card';
 
 	import Input from '$lib/components/ui/input/input.svelte';

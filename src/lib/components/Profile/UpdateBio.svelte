@@ -2,7 +2,7 @@
 	import { doc, updateDoc } from 'firebase/firestore';
 	import { db, userID, userProfileData } from '$lib/firebase/firebase';
 	import Textarea from '../ui/textarea/textarea.svelte';
-	import Button from '../ui/button/button.svelte';
+	import Button from '../ui/custom_button/button.svelte';
 	import Label from '../ui/label/label.svelte';
 
 	let bio: string = '';

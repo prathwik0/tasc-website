@@ -7,7 +7,7 @@
 
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { Input } from '$lib/components/ui/input';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import { Button, buttonVariants } from '$lib/components/ui/custom_button';
 
 	import * as Select from '$lib/components/ui/select';
 	import Label from '$lib/components/ui/label/label.svelte';

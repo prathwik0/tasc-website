@@ -1,7 +1,7 @@
 <script lang="ts">
 	import EditButton from '$lib/components/Auth/EditButton.svelte';
 	import UserLink from '$lib/components/Profile/UserLink.svelte';
-	import { Button } from '$lib/components/ui/button';
+	import { Button } from '$lib/components/ui/custom_button';
 	import type { PageData } from './$types';
 	import { backgroundColor } from '$lib/actions/style';
 	import { darkTheme } from '$lib/stores/theme';
