@@ -3,12 +3,13 @@
 	import { copy } from 'svelte-copy';
 	import type { PageData } from './$types';
 	import LeaveTeam from '$lib/components/Hackathon/LeaveTeam.svelte';
+	import Submission from '$lib/components/Hackathon/Submission.svelte';
 
 	export let data: PageData;
 </script>
 
 <!-- Not in a team -->
-<div class="flex h-full min-h-screen w-full flex-col items-center justify-center space-y-6">
+<div class="flex h-full min-h-screen w-full flex-col items-center justify-center space-y-6 pt-[8dvh]">
 	<h2 class="pt-4 font-jbExtrabold text-3xl md:text-4xl">Your Team</h2>
 
 	<div class="text-md mx-5 w-[23rem] cursor-default rounded-2xl border-[1px] border-[#d2b863] bg-gray-400 bg-opacity-5 px-5 py-2 backdrop-blur-sm transition duration-300 md:w-[35rem] md:p-10 md:text-2xl">
@@ -65,5 +66,8 @@
 	</div>
 
 	<LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} />
-	<MainButton>Solution Submission (soon...)</MainButton>
+	<div class="flex flex-col items-center justify-center py-8">
+		<Submission teamID={data.teamURL}></Submission>
+	</div>
+	<!-- <MainButton>Solution Submission (soon...)</MainButton> -->
 </div>

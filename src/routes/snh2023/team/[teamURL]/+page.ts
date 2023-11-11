@@ -2,7 +2,7 @@ import { collection, doc, getDoc, getDocs, limit, query, where } from 'firebase/
 import type { PageLoad } from './$types';
 import { db } from '$lib/firebase/firebase';
 import { error } from '@sveltejs/kit';
-import type TeamData from './TeamData';
+import type { TeamData, Submission } from './TeamData';
 
 export const load = (async ({ params }) => {
 	// update the datamodel to include username in the profile collection
@@ -35,6 +35,7 @@ export const load = (async ({ params }) => {
 		memberInfo: teamData.memberInfo,
 		memberCount: teamData.memberCount,
 		acceptingMembers: teamData.acceptingMembers,
-		createdAt: teamData.createdAt
+		createdAt: teamData.createdAt,
+		submissions: <Submission>[]
 	} as TeamData;
 }) satisfies PageLoad;
