@@ -119,7 +119,7 @@
 			{goto('/')}
 		{/if}
 	{:else if $user}
-		<div class="m-2 flex h-[90vh] items-center justify-center">
+		<div class="m-2 flex min-h-screen items-center justify-center">
 			<Card.Root class="max-w-2xl">
 				<Card.Header class="space-y-1">
 					<Card.Title class="text-2xl">Enter your details</Card.Title>
