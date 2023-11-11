@@ -26,6 +26,7 @@
 
 		const teamRef = doc(db, 'snh2023', teamID);
 		batch.update(teamRef, {
+			PID: PID,
 			submissions: arrayUnion({
 				title: title,
 				PID: PID,
@@ -40,7 +41,7 @@
 
 <h2 class="pb-4 text-center font-jbExtrabold text-2xl md:text-4xl">Submit solution for your problem statement</h2>
 
-<div class="flex w-[90vw] flex-col items-center justify-center rounded-2xl border-[1px] border-[#d2b863] p-6">
+<div class="w-[23rem]flex-col mx-5 flex items-center justify-center rounded-2xl border-[1px] border-[#d2b863] p-6 md:w-[25rem] md:p-10">
 	<div class="flex w-full flex-col items-center justify-center">
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger asChild let:builder>
@@ -56,8 +57,8 @@
 				</DropdownMenu.RadioGroup>
 			</DropdownMenu.Content>
 		</DropdownMenu.Root>
-		<Input type="text" bind:value={title} placeholder="Enter Title for your solution" class="mb-4 h-12 w-60 rounded-2xl bg-gray-600 p-4 text-center font-jbMedium text-white md:h-14 md:w-80" />
-		<Input type="text" bind:value={link} placeholder="Enter link to your presentation" class="h-12 w-60 rounded-2xl bg-gray-600 p-4 text-center font-jbMedium text-white md:h-14 md:w-80" />
+		<Input type="text" bind:value={title} placeholder="Title for your solution" class="mb-4 h-12 w-60 rounded-2xl bg-gray-600 p-4 text-center font-jbMedium text-white md:h-14 md:w-80" />
+		<Input type="text" bind:value={link} placeholder="Link to presentation" class="h-12 w-60 rounded-2xl bg-gray-600 p-4 text-center font-jbMedium text-white md:h-14 md:w-80" />
 		<button on:click={joinTeam} class="pt-6"><MainButton>Submit</MainButton></button>
 	</div>
 </div>
