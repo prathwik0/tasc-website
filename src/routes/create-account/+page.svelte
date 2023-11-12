@@ -32,7 +32,7 @@
 	$: isValidName = name?.length > 4 && name.length < 48 && reName.test(name);
 	$: isTouchedName = name.length >= 1;
 
-	$: isValidUSN = usn?.length > 3 && usn.length < 15 && reUSN.test(usn);
+	$: isValidUSN = usn?.length > 1 && usn.length < 15 && reUSN.test(usn);
 	$: isTouchedUSN = usn.length >= 1;
 
 	$: isValidUsername = username?.length > 2 && username.length < 16 && reUsername.test(username);
@@ -147,7 +147,7 @@
 							{#if isTouchedUSN && !isValidUSN}
 								<div class="mb-2">
 									<p>USN should contain only numbers and CAPITAL letters.</p>
-									<p class="text-sm text-muted-foreground">USN must be 4-14 characters long and alphanumeric (CAPITAL letters only)</p>
+									<p class="text-sm text-muted-foreground">USN must be 2-14 characters long and alphanumeric (CAPITAL letters only)</p>
 								</div>
 							{/if}
 						</div>
