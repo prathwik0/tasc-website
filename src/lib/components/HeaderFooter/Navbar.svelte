@@ -2,16 +2,18 @@
 	import { NAVITEM } from '$lib/data/NavbarItems';
 	import AuthButton from '$lib/components/Auth/AuthButton.svelte';
 	import ThemeToggle from '$lib/components/HeaderFooter/ThemeToggle.svelte';
-
+	let y = 0;
 	const closeMenu = () => {
 		// @ts-ignore
 		document.getElementById('menuToggle').querySelector('input').checked = false;
 	};
 </script>
 
-<div class="">
+<svelte:window bind:scrollY={y} />
+
+<div class="z-50">
 	<div class="fixed top-0 z-50 hidden w-full md:grid">
-		<div class="md: flex items-center justify-between px-6 py-2 md:px-10 md:py-6">
+		<div class={`md: flex items-center justify-between px-6 py-2 md:px-10 md:py-6 ${y > 0 ? 'backdrop-blur-xl' : ''}`}>
 			<a href="/">
 				<img src="/TASCLogo.png" class="w-20" alt="logo" />
 			</a>
@@ -27,9 +29,11 @@
 	</div>
 
 	<div class="fixed z-50 flex w-full px-10 py-6 md:hidden">
-		<a href="/">
-			<img src="/TASCLogo.png" class=" w-20" alt="logo" />
-		</a>
+		<div>
+			<a href="/">
+				<img src="/TASCLogo.png" class="w-20" alt="logo" />
+			</a>
+		</div>
 		<nav>
 			<div id="menuToggle" class="py-6 pr-3">
 				<input type="checkbox" />
@@ -141,7 +145,7 @@
 		display: flex;
 		flex-direction: column;
 		position: absolute;
-		width: 50vw;
+		width: 70vw;
 		padding-top: 5rem;
 		padding-right: 2rem;
 		z-index: 0;

@@ -1,5 +1,5 @@
 <div class="w-[100vw]">
-	<div class="mx-6 flex h-screen space-y-10 rounded-xl px-6 py-10 md:mx-16 md:px-14">
+	<div class="mx-6 flex space-y-10 rounded-xl px-6 py-10 md:mx-16 md:px-14">
 		<div class="flex flex-col">
 			<h1 class="text-center text-4xl font-extrabold lg:text-5xl">About Us</h1>
 			<div class="items-center space-y-10 md:grid md:grid-cols-2 md:gap-x-10">
