@@ -50,7 +50,7 @@ export const ProblemStatements = [
 		PID: 'SNH07'
 	},
 	{
-		title: 'AI based material movement for handling the Assembly Department , give a description for this problem statement',
+		title: 'AI based material movement for handling the Assembly Department',
 		description:
 			'The challenge lies in revolutionizing the material movement process within the Assembly Department through a software-driven approach. Traditional methods often result in bottlenecks, delays, and inefficient resource allocation. The proposed solution involves leveraging artificial intelligence algorithms to dynamically plan, monitor, and optimize the movement of materials. By integrating real-time data, predictive analytics, and machine learning, the system can adapt to changing production demands, anticipate potential disruptions, and recommend optimal routes for material transportation. This approach not only ensures a smoother workflow but also minimizes downtime, enhances overall efficiency, and contributes to a more agile and responsive assembly process—all achieved without the need for additional hardware components, making it a cost-effective and scalable solution',
 		startup: '',

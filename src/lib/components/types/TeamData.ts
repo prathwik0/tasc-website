@@ -1,8 +1,7 @@
 export interface Submission {
-	title?: string;
-	description?: string;
+	PID?: string;
 	link?: string;
-	problemStatement?: string;
+	title?: string;
 }
 
 export interface TeamData {
@@ -18,5 +17,8 @@ export interface TeamData {
 	memberCount: number;
 	acceptingMembers: boolean;
 	createdAt: string;
-	submissions?: Submission[];
+	submission?: Submission;
+	submissionHistory?: Submission[];
+	PID?: string;
+	college?: string;
 }
