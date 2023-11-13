@@ -7,8 +7,8 @@
 	import { db, user, userData, userID, userProfileData } from '$lib/firebase/firebase';
 	import { doc, collection, getDoc, setDoc, writeBatch, limit, query, where, updateDoc, arrayUnion, increment } from 'firebase/firestore';
 
-	const collegeList = ['NMAMIT, Nitte', 'Sahyadri, Mangalore', 'NITK, Surathkal', 'MAHE, Manipal', 'St Joseph Engineering College, Mangalore', "Alva's College, Moodbidri", 'Yenepoya College, Mangalore', 'Other'];
-	const PList = ['SNH01', 'SNH02', 'SNH03', 'SNH04', 'SNH05', 'SNH06', 'SNH07'];
+	const collegeList = ['NMAMIT, Nitte', 'NITK, Surathkal', 'MAHE, Manipal', 'Sahyadri, Mangalore', 'St Joseph Engineering College, Mangalore', "Alva's College, Moodbidri", 'Yenepoya College, Mangalore', 'Other'];
+	const PList = ['SNH01', 'SNH02', 'SNH03', 'SNH04', 'SNH05', 'SNH06', 'SNH07', 'SNH08', 'SNH09', 'SNH10'];
 
 	export let teamID: string;
 	export let PID: string = '';
