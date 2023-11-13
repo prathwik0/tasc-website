@@ -735,10 +735,10 @@
 					</defs>
 				</svg>
 			</div>
-			<div class="">
-				<div class=" flex w-full translate-y-[-10%] flex-col items-center">
-					<img src="/CenterGraphic.png" alt="Center Graphic" class="translate-y-[12dvh] scale-50" />
-					<div class=" z-50 flex w-full flex-col items-center justify-center bg-gradient-to-r from-brand to-[#C850AF] to-[20%] bg-clip-text py-10 md:ml-16">
+			<div>
+				<div class="flex w-full translate-y-[-10%] flex-col items-center">
+					<img src="/CenterGraphic.png" alt="Center Graphic" class="translate-y-[8dvh] scale-50 md:translate-y-[12dvh]" />
+					<div class="z-50 flex w-full flex-col items-center justify-center bg-gradient-to-r from-brand to-[#C850AF] to-[20%] bg-clip-text md:ml-16 md:py-10">
 						<div class="istok_web pl-[5vw] text-left text-5xl">
 							<p class="text-transparent">Turing</p>
 							<p class="text-transparent">Artificial Intelligence</p>
@@ -757,7 +757,7 @@
 				</div>
 			</div>
 
-			<div class="absolute bottom-36 flex w-full justify-center text-center">
+			<div class="flex w-full justify-center text-center">
 				<p class="text-sm">Welcome to the official website of TASC,<br /> Department of Artificial Intelligence and Machine Learning</p>
 			</div>
 			<a href="/#about">

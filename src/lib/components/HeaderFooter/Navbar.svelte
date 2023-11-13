@@ -43,9 +43,9 @@
 
 				<ul id="menu" class=" bg-white bg-opacity-5 pr-4 text-right drop-shadow-xl backdrop-blur-lg">
 					{#each NAVITEM as nav}
-						<a class="mb-10 mt-10 text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
+						<a class="mt-10 text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
 					{/each}
-					<div class="mb-10 flex justify-end font-jbBold text-2xl">
+					<div class="mt-10 flex justify-end font-jbBold text-2xl">
 						<AuthButton />
 					</div>
 				</ul>
