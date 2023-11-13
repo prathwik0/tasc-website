@@ -4,6 +4,8 @@
 	import Navbar from '$lib/components/HeaderFooter/Navbar.svelte';
 </script>
 
-<Navbar />
-<slot />
-<Footer />
+<div class="bg-[#020817]">
+	<Navbar />
+	<slot />
+	<Footer />
+</div>

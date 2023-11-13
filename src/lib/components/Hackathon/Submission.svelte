@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { Input } from '$lib/components/ui/input';
 	import MainButton from './MainButton.svelte';
+	//@ts-ignore
+	import { Button } from '$lib/components/ui/custom_button';
+	import * as DropdownMenu from '$lib/components/ui/DropdownMenu';
 	import { db, user, userData, userID, userProfileData } from '$lib/firebase/firebase';
 	import { doc, collection, getDoc, setDoc, writeBatch, limit, query, where, updateDoc, arrayUnion, increment } from 'firebase/firestore';
 

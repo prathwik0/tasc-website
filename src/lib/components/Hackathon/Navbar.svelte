@@ -1,10 +1,26 @@
 <script>
-	import { user, userData, userLoaded, userProfileData } from '$lib/firebase/firebase';
+	import { user, userData, userLoaded, userProfileData, auth } from '$lib/firebase/firebase';
 
 	const closeMenu = () => {
 		// @ts-ignore
 		document.getElementById('menuToggle').querySelector('input').checked = false;
 	};
+	import { goto } from '$app/navigation';
+	import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
+	async function buttonClick() {
+		if ($user) {
+			goto('/create-account?redirect=/snh2023');
+		} else {
+			await signInWithGoogle();
+			goto('/create-account?redirect=/snh2023');
+		}
+	}
+
+	async function signInWithGoogle() {
+		const provider = new GoogleAuthProvider();
+		await signInWithPopup(auth, provider);
+	}
 </script>
 
 <div>
@@ -20,7 +36,7 @@
 				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#ps" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Problems</a></div>
 				<!-- <div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#themes" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Themes</a></div> -->
 				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#goodies" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Rewards</a></div>
-				{#if $user && $userData && $userProfileData && !$userProfileData.snh2023}
+				{#if ($user && $userData && $userProfileData && !$userProfileData.snh2023) || !$user || !$userData || !$userProfileData}
 					<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023/team" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Team</a></div>
 				{:else}
 					<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href={`/snh2023/team/${$userProfileData?.snh2023}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Team</a></div>

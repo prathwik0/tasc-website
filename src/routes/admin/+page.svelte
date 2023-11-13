@@ -2,9 +2,9 @@
 	import { user } from '$lib/firebase/firebase';
 	import * as Table from '$lib/components/ui/table';
 	import { getDoc, getDocs, collection } from 'firebase/firestore';
-	import { Button } from '$lib/components/ui/button';
+	import { Button } from '$lib/components/ui/custom_button';
 	import { db } from '$lib/firebase/firebase';
-	import type TeamData from '../snh2023/team/[teamURL]/TeamData';
+	import type { TeamData } from '../snh2023/team/[teamURL]/TeamData';
 
 	let data: TeamData[] = [];
 
