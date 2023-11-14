@@ -1,7 +1,7 @@
 <script>
-	import { NAVITEM } from '$lib/data/NavbarItems';
 	import AuthButton from '$lib/components/Auth/AuthButton.svelte';
 	import ThemeToggle from '$lib/components/HeaderFooter/ThemeToggle.svelte';
+	import { NAVITEM } from '$lib/data/NavbarItems';
 	let y = 0;
 	const closeMenu = () => {
 		// @ts-ignore
@@ -21,10 +21,10 @@
 				{#each NAVITEM as nav}
 					<div class="transition duration-300 hover:drop-shadow-[0_0_0.3rem_#ffffff]"><a href={`${nav.href}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">{nav.title}</a></div>
 				{/each}
+				<div class="flex w-28 justify-center space-x-5">
+					<AuthButton />
+				</div>
 			</ul>
-			<div class="flex w-28 justify-center space-x-5">
-				<AuthButton />
-			</div>
 		</div>
 	</div>
 
