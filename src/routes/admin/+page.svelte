@@ -73,24 +73,13 @@
 				<Table.Head class="text-center">Member Count</Table.Head>
 				<Table.Head class="text-center">Submitted</Table.Head>
 				<Table.Head class="text-center">PID</Table.Head>
-				<Table.Head class="text-center">Link</Table.Head>
+				<Table.Head class="max-w-[5rem] text-center">Link</Table.Head>
 				<Table.Head class="text-center">Team ID</Table.Head>
 				<Table.Head class="text-center">Team Secret</Table.Head>
 			</Table.Row>
 		</Table.Header>
 		<Table.Body>
 			{#each data as team, i}
-				<script>
-					if (team.submission) {
-						submitted = 'Yes';
-						PID = team.submission.PID || '';
-						pLink = team.submission.link || '';
-					} else {
-						submitted = 'No';
-						PID = '';
-						pLink = '';
-					}
-				</script>
 				<Table.Row class="text-center">
 					<Table.Cell>{i + 1}</Table.Cell>
 					<Table.Cell>{team.teamName}</Table.Cell>
@@ -98,9 +87,16 @@
 					<Table.Cell>{team.leaderPhone}</Table.Cell>
 					<Table.Cell>{team.leaderEmail}</Table.Cell>
 					<Table.Cell>{team.memberCount}</Table.Cell>
-					<Table.Cell>{submitted}</Table.Cell>
-					<Table.Cell>{PID}</Table.Cell>
-					<Table.Cell>{pLink}</Table.Cell>
+					{#if team.submission}
+						<Table.Cell class="text-center">Yes</Table.Cell>
+						<Table.Cell>{team.PID}</Table.Cell>
+						<Table.Cell class="text-wrap max-w-[5rem]"><a href={team.submission.link} class="text-blue-600">Click Here</a></Table.Cell>
+					{:else}
+						<Table.Cell class="text-center">No</Table.Cell>
+						<Table.Cell></Table.Cell>
+						<Table.Cell></Table.Cell>
+					{/if}
+
 					<Table.Cell>{team.teamURL}</Table.Cell>
 					<Table.Cell>{team.teamSecret}</Table.Cell>
 				</Table.Row>
