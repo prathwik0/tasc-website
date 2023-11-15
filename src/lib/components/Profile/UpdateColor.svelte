@@ -8,7 +8,7 @@
 	let color_light: string = $userProfileData?.color_light ?? '';
 	let color_dark: string = $userProfileData?.color_dark ?? '';
 
-	async function updateColor(e: SubmitEvent) {
+	async function updateColor(e: Event) {
 		const userRef = doc(db, 'profile', $userID!.user);
 
 		await updateDoc(userRef, {
@@ -23,13 +23,12 @@
 	<br />
 	<Label>Current Darkmode Color: {$userProfileData?.color_dark}</Label>
 </div>
-<form on:submit|preventDefault={updateColor}>
-	<div class="grid gap-1.5">
-		<Label for="color_light">Pick Lightmode background-color</Label>
-		<Input type="color" name="color_light" bind:value={color_light} />
 
-		<Label for="color_dark">Pick Darkmode background-color</Label>
-		<Input type="color" name="color_dark" bind:value={color_dark} />
-	</div>
-	<Button class="mt-4">Update Color</Button>
-</form>
+<div class="grid gap-1.5">
+	<Label for="color_light">Pick Lightmode background-color</Label>
+	<Input type="color" name="color_light" bind:value={color_light} />
+
+	<Label for="color_dark">Pick Darkmode background-color</Label>
+	<Input type="color" name="color_dark" bind:value={color_dark} />
+</div>
+<Button class="mt-4" on:click={updateColor}>Update Color</Button>

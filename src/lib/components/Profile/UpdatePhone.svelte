@@ -11,7 +11,7 @@
 	$: isValidPhone = phone?.length === 10 && rePhone.test(phone);
 	$: isTouchedPhone = phone.length >= 1;
 
-	async function updateBio(e: SubmitEvent) {
+	async function updatePhone(e: Event) {
 		if (!isValidPhone) {
 			alert('Please enter a valid phone number!');
 			return;
@@ -28,10 +28,9 @@
 <div class="w-full py-2">
 	<Label>Current Phone Number: <span>{$userProfileData?.phone}</span></Label>
 </div>
-<form on:submit|preventDefault={updateBio}>
-	<div class="grid gap-1.5">
-		<Label for="phone">New phone number (WhatsApp)</Label>
-		<Input name="phone" placeholder="Enter your Whatsapp Phone Number here" bind:value={phone} />
-	</div>
-	<Button class="mt-4">Update Phone Number</Button>
-</form>
+
+<div class="grid gap-1.5">
+	<Label for="phone">New phone number (WhatsApp)</Label>
+	<Input name="phone" placeholder="Enter your Whatsapp Phone Number here" bind:value={phone} />
+</div>
+<Button class="mt-4" on:click={updatePhone}>Update Phone Number</Button>

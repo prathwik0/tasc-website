@@ -7,7 +7,7 @@
 
 	let bio: string = '';
 
-	async function updateBio(e: SubmitEvent) {
+	async function updateBio(e: Event) {
 		const userRef = doc(db, 'profile', $userID!.user);
 
 		await updateDoc(userRef, {
@@ -25,11 +25,10 @@
 <div class="w-full pb-6 pt-2">
 	<Label>Current Bio: <span>{$userProfileData?.bio}</span></Label>
 </div>
-<form on:submit|preventDefault={updateBio}>
-	<div class="grid gap-1.5">
-		<Label for="bio">New bio</Label>
-		<Textarea name="bio" placeholder="Type your new bio here!" bind:value={bio} class="resize-none" rows={5} maxlength={150} />
-		<p class="font-semibold text-red-600">{msg}</p>
-	</div>
-	<Button class="mt-4">Update Bio</Button>
-</form>
+
+<div class="grid gap-1.5">
+	<Label for="bio">New bio</Label>
+	<Textarea name="bio" placeholder="Type your new bio here!" bind:value={bio} class="resize-none" rows={5} maxlength={150} />
+	<p class="font-semibold text-red-600">{msg}</p>
+</div>
+<Button class="mt-4" on:click={updateBio}>Update Bio</Button>
