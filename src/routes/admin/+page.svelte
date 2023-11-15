@@ -4,7 +4,7 @@
 	import { getDoc, getDocs, collection } from 'firebase/firestore';
 	import { Button } from '$lib/components/ui/custom_button';
 	import { db } from '$lib/firebase/firebase';
-	import type { TeamData } from '../snh2023/team/[teamURL]/TeamData';
+	import type { TeamData } from '$lib/components/types/TeamData';
 
 	let data: TeamData[] = [];
 
@@ -16,14 +16,25 @@
 		console.log(data);
 	}
 
+	let submitted = 'No';
+	let PID = '';
+	let pLink = '';
 	const convertAndDownloadCSV = () => {
 		if (data && data.length > 0) {
 			// Create CSV headers
-			const headers = ['Team Name', 'Leader Name', 'Leader Phone', 'Leader Email', 'Member Count', 'Team ID', 'Team Secret'].join(',') + '\n';
-
+			const headers = ['Team Name', 'Leader Name', 'Leader Phone', 'Leader Email', 'Member Count', 'Submitted', 'PID', 'Link', 'Team ID', 'Team Secret'].join(',') + '\n';
 			// Convert data to CSV rows
 			const csvRows = data.map((team) => {
-				const row = [team.teamName, team.leaderName, team.leaderPhone, team.leaderEmail, team.memberCount, team.teamURL, team.teamSecret].join(',');
+				if (team.submission) {
+					submitted = 'Yes';
+					PID = team.submission.PID || '';
+					pLink = team.submission.link || '';
+				} else {
+					submitted = 'No';
+					PID = '';
+					pLink = '';
+				}
+				const row = [team.teamName, team.leaderName, team.leaderPhone, team.leaderEmail, team.memberCount, submitted, PID, pLink, team.teamURL, team.teamSecret].join(',');
 				return row;
 			});
 
@@ -60,6 +71,9 @@
 				<Table.Head>Leader Phone</Table.Head>
 				<Table.Head class="text-center">Leader Email</Table.Head>
 				<Table.Head class="text-center">Member Count</Table.Head>
+				<Table.Head class="text-center">Submitted</Table.Head>
+				<Table.Head class="text-center">PID</Table.Head>
+				<Table.Head class="max-w-[5rem] text-center">Link</Table.Head>
 				<Table.Head class="text-center">Team ID</Table.Head>
 				<Table.Head class="text-center">Team Secret</Table.Head>
 			</Table.Row>
@@ -73,6 +87,16 @@
 					<Table.Cell>{team.leaderPhone}</Table.Cell>
 					<Table.Cell>{team.leaderEmail}</Table.Cell>
 					<Table.Cell>{team.memberCount}</Table.Cell>
+					{#if team.submission}
+						<Table.Cell class="text-center">Yes</Table.Cell>
+						<Table.Cell>{team.PID}</Table.Cell>
+						<Table.Cell class="text-wrap max-w-[5rem]"><a href={team.submission.link} class="text-blue-600">Click Here</a></Table.Cell>
+					{:else}
+						<Table.Cell class="text-center">No</Table.Cell>
+						<Table.Cell></Table.Cell>
+						<Table.Cell></Table.Cell>
+					{/if}
+
 					<Table.Cell>{team.teamURL}</Table.Cell>
 					<Table.Cell>{team.teamSecret}</Table.Cell>
 				</Table.Row>
