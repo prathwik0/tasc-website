@@ -1,5 +1,6 @@
 export interface Submission {
 	PID?: string;
+	college?: string;
 	link?: string;
 	title?: string;
 }
