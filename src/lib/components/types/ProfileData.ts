@@ -10,6 +10,7 @@ export default interface ProfileData {
 	name?: string;
 	usn?: string;
 	phone?: string;
+	college?: string;
 	photoURL: string;
 	bio: string;
 	color_light: string;
