@@ -1,18 +1,20 @@
 <script>
-	import { NAVITEM } from '$lib/data/NavbarItems';
 	import AuthButton from '$lib/components/Auth/AuthButton.svelte';
 	import ThemeToggle from '$lib/components/HeaderFooter/ThemeToggle.svelte';
-
+	import { NAVITEM } from '$lib/data/NavbarItems';
+	let y = 0;
 	const closeMenu = () => {
 		// @ts-ignore
 		document.getElementById('menuToggle').querySelector('input').checked = false;
 	};
 </script>
 
-<div class="">
+<svelte:window bind:scrollY={y} />
+
+<div class="z-50">
 	<div class="fixed top-0 z-50 hidden w-full md:grid">
-		<div class="md: flex items-center justify-between px-6 py-2 md:px-10 md:py-6">
-			<a href="/">
+		<div class={`md: flex items-center justify-center px-6 py-2 md:px-10 md:py-6 ${y > 0 ? 'backdrop-blur-xl' : ''}`}>
+			<a href="/" class="absolute left-14">
 				<img src="/TASCLogo.png" class="w-20" alt="logo" />
 			</a>
 			<ul class="flex flex-wrap items-center space-x-8 tracking-wider md:text-lg">
@@ -20,7 +22,7 @@
 					<div class="transition duration-300 hover:drop-shadow-[0_0_0.3rem_#ffffff]"><a href={`${nav.href}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">{nav.title}</a></div>
 				{/each}
 			</ul>
-			<div class="flex w-28 justify-center space-x-5">
+			<div class="absolute right-10 flex w-28 justify-center">
 				<AuthButton />
 			</div>
 		</div>
@@ -28,7 +30,7 @@
 
 	<div class="fixed z-50 flex w-full px-10 py-6 md:hidden">
 		<a href="/">
-			<img src="/TASCLogo.png" class=" w-20" alt="logo" />
+			<img src="/TASCLogo.png" class="w-20" alt="logo" />
 		</a>
 		<nav>
 			<div id="menuToggle" class="py-6 pr-3">
@@ -39,9 +41,9 @@
 
 				<ul id="menu" class=" bg-white bg-opacity-5 pr-4 text-right drop-shadow-xl backdrop-blur-lg">
 					{#each NAVITEM as nav}
-						<a class="mb-10 mt-10 text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
+						<a class="mt-10 text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
 					{/each}
-					<div class="mb-10 flex justify-end font-jbBold text-2xl">
+					<div class="mt-10 flex justify-end font-jbBold text-2xl">
 						<AuthButton />
 					</div>
 				</ul>
@@ -141,7 +143,7 @@
 		display: flex;
 		flex-direction: column;
 		position: absolute;
-		width: 50vw;
+		width: 70vw;
 		padding-top: 5rem;
 		padding-right: 2rem;
 		z-index: 0;

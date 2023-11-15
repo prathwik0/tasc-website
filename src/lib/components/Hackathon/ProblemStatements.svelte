@@ -17,5 +17,5 @@
 		{/each}
 	</div>
 
-	<h3 class="py-5 text-center font-jbExtrabold text-xl md:py-10 md:text-2xl">More problem statements coming soon!</h3>
+	<!-- <h3 class="py-5 text-center font-jbExtrabold text-xl md:py-10 md:text-2xl">More problem statements coming soon!</h3> -->
 </div>
