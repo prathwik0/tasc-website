@@ -1,7 +1,7 @@
 <script>
-	import { NAVITEM } from '$lib/data/NavbarItems';
 	import AuthButton from '$lib/components/Auth/AuthButton.svelte';
 	import ThemeToggle from '$lib/components/HeaderFooter/ThemeToggle.svelte';
+	import { NAVITEM } from '$lib/data/NavbarItems';
 	let y = 0;
 	const closeMenu = () => {
 		// @ts-ignore
@@ -13,8 +13,8 @@
 
 <div class="z-50">
 	<div class="fixed top-0 z-50 hidden w-full md:grid">
-		<div class={`md: flex items-center justify-between px-6 py-2 md:px-10 md:py-6 ${y > 0 ? 'backdrop-blur-xl' : ''}`}>
-			<a href="/">
+		<div class={`md: flex items-center justify-center px-6 py-2 md:px-10 md:py-6 ${y > 0 ? 'backdrop-blur-xl' : ''}`}>
+			<a href="/" class="absolute left-14">
 				<img src="/TASCLogo.png" class="w-20" alt="logo" />
 			</a>
 			<ul class="flex flex-wrap items-center space-x-8 tracking-wider md:text-lg">
@@ -22,18 +22,16 @@
 					<div class="transition duration-300 hover:drop-shadow-[0_0_0.3rem_#ffffff]"><a href={`${nav.href}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">{nav.title}</a></div>
 				{/each}
 			</ul>
-			<div class="flex w-28 justify-center space-x-5">
+			<div class="absolute right-10 flex w-28 justify-center">
 				<AuthButton />
 			</div>
 		</div>
 	</div>
 
 	<div class="fixed z-50 flex w-full px-10 py-6 md:hidden">
-		<div>
-			<a href="/">
-				<img src="/TASCLogo.png" class="w-20" alt="logo" />
-			</a>
-		</div>
+		<a href="/">
+			<img src="/TASCLogo.png" class="w-20" alt="logo" />
+		</a>
 		<nav>
 			<div id="menuToggle" class="py-6 pr-3">
 				<input type="checkbox" />

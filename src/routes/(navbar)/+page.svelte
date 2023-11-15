@@ -393,13 +393,11 @@
 			<p class="text-xl">Welcome to the official website of TASC,<br /> Department of Artificial Intelligence and Machine Learning</p>
 		</div>
 
-		<div class="absolute bottom-20 flex w-full items-center justify-center">
+		<div class="absolute bottom-10 flex w-full animate-bounce items-center justify-center bg-transparent">
 			<a href="/#about">
-				<div class="absolute animate-bounce bg-transparent">
-					<svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M65.2726 18.5L69.375 22.1445L37 55.5L4.625 22.1445L8.72738 18.5L37 47.6283L65.2726 18.5Z" fill="white" />
-					</svg>
-				</div>
+				<svg width="50" height="50" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M65.2726 18.5L69.375 22.1445L37 55.5L4.625 22.1445L8.72738 18.5L37 47.6283L65.2726 18.5Z" fill="white" />
+				</svg>
 			</a>
 		</div>
 	</div>
@@ -746,7 +744,7 @@
 							<p class="text-transparent">Committee</p>
 						</div>
 						<div>
-							<p class=" pt-10 text-center text-lg">Register for our 24-hour intercollegiate hackathon today!</p>
+							<p class="pt-10 text-center text-lg">Register for our 24-hour intercollegiate hackathon today!</p>
 							<div class="flex w-full justify-center pt-4">
 								<a href="/snh2023">
 									<button class="rounded-full bg-orange-500 px-4 py-2 duration-300 hover:scale-110">Join Hackathon</button>
@@ -757,16 +755,17 @@
 				</div>
 			</div>
 
-			<div class="flex w-full justify-center text-center">
-				<p class="text-sm">Welcome to the official website of TASC,<br /> Department of Artificial Intelligence and Machine Learning</p>
+			<div class="flex w-full justify-center">
+				<p class="text-center text-sm">Welcome to the official website of TASC,<br /> Department of Artificial Intelligence and Machine Learning</p>
 			</div>
-			<a href="/#about">
-				<div class="absolute mt-6 flex w-full animate-bounce justify-center">
-					<svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+			<div class="mt-6 flex w-full animate-bounce justify-center">
+				<a href="/#about">
+					<svg width="40" height="40" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M37.9287 10.75L40.3125 12.8678L21.5 32.25L2.6875 12.8678L5.07131 10.75L21.5 27.6759L37.9287 10.75Z" fill="white" />
 					</svg>
-				</div>
-			</a>
+				</a>
+			</div>
 		</div>
 	</div>
 
