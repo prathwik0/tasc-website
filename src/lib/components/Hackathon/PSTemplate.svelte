@@ -22,7 +22,7 @@
 			<Dialog.Title>{PID}</Dialog.Title>
 		</Dialog.Header>
 		{#if startup == ''}
-			<h3 class="px-2 text-[15px] text-[#d2b863] md:text-xl">This problem statement qualifies only for cash price and NOT internship</h3>
+			<h3 class="px-2 text-[15px] text-[#d2b863] md:text-xl">This problem statement qualifies for all cash prizes <span class="font-bold">EXCEPT</span> Internships</h3>
 		{/if}
 		<Table.Root class="text-[13px] md:text-lg">
 			<Table.Body>
