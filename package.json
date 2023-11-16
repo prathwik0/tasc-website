@@ -44,9 +44,11 @@
 		"clsx": "^2.0.0",
 		"firebase": "^10.4.0",
 		"googleapis": "^128.0.0",
+		"html5-qrcode": "^2.3.8",
 		"iconify-icon": "^1.0.8",
 		"lucide-svelte": "^0.284.0",
 		"svelte-copy": "^1.4.1",
+		"svelte-qrcode-image": "^1.0.0-rc.2",
 		"tailwind-merge": "^1.14.0",
 		"tailwind-variants": "^0.1.14"
 	}
