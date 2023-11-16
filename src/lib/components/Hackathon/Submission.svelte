@@ -51,7 +51,8 @@
 				title: title,
 				PID: PID,
 				link: link
-			})
+			}),
+			certificate: True
 		});
 		await batch.commit();
 
