@@ -52,7 +52,7 @@
 				PID: PID,
 				link: link
 			}),
-			certificate: True
+			certificate: true
 		});
 		await batch.commit();
 
