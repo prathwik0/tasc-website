@@ -80,4 +80,5 @@
 		<Rewards />
 		<!-- <Sponsors /> -->
 	</section>
+
 </main>

@@ -1,8 +1,8 @@
-import { collection, doc, getDoc } from 'firebase/firestore';
-import type { PageLoad } from './$types';
+import type CertificateData from '$lib/components/types/CertificateData';
 import { db } from '$lib/firebase/firebase';
 import { error } from '@sveltejs/kit';
-import type CertificateData from '$lib/components/types/CertificateData';
+import { doc, getDoc } from 'firebase/firestore';
+import type { PageLoad } from './$types';
 
 export const load = (async ({ params }) => {
 	const certificateDocRef = doc(db, 'certificate', params.certificateID);
@@ -13,6 +13,7 @@ export const load = (async ({ params }) => {
 	}
 
 	const data = certificateSnap.data();
+	const date:Date = data.date.toDate();
 	const id = certificateSnap.id;
 
 	return {
@@ -21,7 +22,7 @@ export const load = (async ({ params }) => {
 		name: data.name,
 		role: data.role,
 		occasion: data.occasion,
-		date: data.Date,
+		date: date,
 		team: data?.team,
 		teamName: data?.teamName
 	} as CertificateData;

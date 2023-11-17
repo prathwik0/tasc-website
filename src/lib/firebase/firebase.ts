@@ -1,35 +1,35 @@
 // Import the functions you need from the SDKs you need
-import { deleteApp, getApp, getApps, initializeApp, type FirebaseApp } from 'firebase/app';
-import { getFirestore, doc, onSnapshot } from 'firebase/firestore';
-import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
-import { getStorage } from 'firebase/storage';
-import { get, writable, type Readable, derived, type Writable } from 'svelte/store';
 import type ProfileData from '$lib/components/types/ProfileData';
+import { deleteApp, getApp, getApps, initializeApp, type FirebaseApp } from 'firebase/app';
+import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
+import { doc, getFirestore, onSnapshot } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+import { derived, get, writable, type Readable, type Writable } from 'svelte/store';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-// 	apiKey: 'AIzaSyDfA0NuQYGMacEZvf2ym1rzAmqZU3GRXJw',
-// 	authDomain: 'login-62370.firebaseapp.com',
-// 	projectId: 'login-62370',
-// 	storageBucket: 'login-62370.appspot.com',
-// 	messagingSenderId: '954495946912',
-// 	appId: '1:954495946912:web:ce0eab04499e86a75039c5',
-// 	measurementId: 'G-X47HSPHZ51'
-// };
-
-// Production
 const firebaseConfig = {
-	apiKey: 'AIzaSyDkfk7CuVog5P79QgJ5kfONzGr3Rpfi2dU',
-	authDomain: 'tasc-8df79.firebaseapp.com',
-	projectId: 'tasc-8df79',
-	storageBucket: 'tasc-8df79.appspot.com',
-	messagingSenderId: '64049164136',
-	appId: '1:64049164136:web:b18434312a0fa3b5e2b0dd',
-	measurementId: 'G-Q5EYD8MDVW'
+	apiKey: 'AIzaSyDfA0NuQYGMacEZvf2ym1rzAmqZU3GRXJw',
+	authDomain: 'login-62370.firebaseapp.com',
+	projectId: 'login-62370',
+	storageBucket: 'login-62370.appspot.com',
+	messagingSenderId: '954495946912',
+	appId: '1:954495946912:web:ce0eab04499e86a75039c5',
+	measurementId: 'G-X47HSPHZ51'
 };
+
+// // Production
+// const firebaseConfig = {
+// 	apiKey: 'AIzaSyDkfk7CuVog5P79QgJ5kfONzGr3Rpfi2dU',
+// 	authDomain: 'tasc-8df79.firebaseapp.com',
+// 	projectId: 'tasc-8df79',
+// 	storageBucket: 'tasc-8df79.appspot.com',
+// 	messagingSenderId: '64049164136',
+// 	appId: '1:64049164136:web:b18434312a0fa3b5e2b0dd',
+// 	measurementId: 'G-Q5EYD8MDVW'
+// };
 
 // Initialize Firebase
 
@@ -180,7 +180,7 @@ userID.subscribe((value) => {
 	}
 });
 
-userData.subscribe((value) => {
+userData.subscribe(() => {
 	if (!get(called)) {
 		return;
 	}
