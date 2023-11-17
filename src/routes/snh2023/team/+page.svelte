@@ -32,8 +32,8 @@
 		</div>
 	{:else}
 		<div class="flex h-full min-h-screen w-full flex-col items-center justify-center">
-			<h2 class="pb-6 pt-4 font-jbExtrabold text-4xl">You need to be logged in to view/create/join a team!</h2>
-			<a href="/snh2023"><MainButton>Goto Home page, refresh the page and register</MainButton></a>
+			<h2 class="pb-6 pt-4 font-jbExtrabold text-4xl">You need to be logged in to view/join a team!</h2>
+			<a href="/snh2023"><MainButton>Goto Home page, refresh the page and Login</MainButton></a>
 		</div>
 	{/if}
 </main>
