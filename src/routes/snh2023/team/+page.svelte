@@ -13,7 +13,7 @@
 	}
 </script>
 
-<main class="flex h-screen w-full flex-col items-center justify-center space-y-12 pb-16 pt-32 md:flex-row md:space-y-0 md:px-10 md:pb-0 md:pt-0">
+<main class="pt-16 md:pt-0">
 	{#if !userLoaded}
 		<span></span>
 		<!-- {:else if $user && $userData && $userProfileData && $userProfileData.snh2023}
@@ -23,8 +23,13 @@
 			<a href="/snh2023/team/{$userProfileData.snh2023}"><MainButton>Goto Your Team Page</MainButton></a>
 		</div> -->
 	{:else if $user && $userData && $userProfileData && !$userProfileData.snh2023}
-		<CreateTeam />
-		<JoinTeam />
+		<div class="flex h-screen w-full flex-col items-center justify-center space-y-12">
+			<h3 class="text-md mx-[3vw] text-center font-jbBold text-[#d2b863] md:text-lg">Registrations Closed 🥲 We won't be accepting new teams but you can still join a team!</h3>
+			<div class="flex flex-col items-center justify-center space-y-12 pb-16 md:flex-row md:space-y-0 md:px-10 md:pb-0 md:pt-0">
+				<CreateTeam />
+				<JoinTeam />
+			</div>
+		</div>
 	{:else}
 		<div class="flex h-full min-h-screen w-full flex-col items-center justify-center">
 			<h2 class="pb-6 pt-4 font-jbExtrabold text-4xl">You need to be logged in to view/create/join a team!</h2>
