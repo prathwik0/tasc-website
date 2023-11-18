@@ -86,20 +86,12 @@
 	//$: $userID && checkTeam();
 </script>
 
-<div class="mx-10 h-[16rem] w-[18rem] flex-col items-center justify-center rounded-2xl border-[1px] border-gray-500 p-10 md:h-[22rem] md:w-[25rem]">
+<div class="mx-10 h-[16rem] w-[18rem] flex-col items-center justify-center rounded-2xl border-[1px] border-[#d2b863] p-10 md:h-[22rem] md:w-[25rem]">
 	<div class="flex h-full w-full flex-col items-center justify-center space-y-6">
 		<h2 class="font-jbExtrabold text-2xl md:text-4xl">Create a Team</h2>
-		<Input type="text" placeholder="Enter your team name!" bind:value={teamName} class="h-12 w-60  rounded-2xl bg-gray-600 p-4 font-jbMedium text-white md:h-14 md:w-80" disabled />
-		<button on:click={createTeam} disabled class="cursor-not-allowed"
-			><div class="flex flex-col items-center justify-center duration-300">
-				<div class="rounded-[15px] border border-gray-500 p-[1px] font-jbMedium transition duration-300">
-					<div class="rounded-[14px] bg-[#0f0913] py-3 underline-offset-8 transition duration-300">
-						<div class=" transition duration-300">
-							<div class="px-3 py-1 text-sm underline-offset-8 transition duration-300 md:text-xl">Create Team</div>
-						</div>
-					</div>
-				</div>
-			</div></button
-		>
+		<Input type="text" placeholder="Enter your team name!" bind:value={teamName} class="h-12 w-60  rounded-2xl bg-gray-600 p-4 font-jbMedium text-white md:h-14 md:w-80" />
+		<button on:click={createTeam}>
+			<MainButton>Create Team</MainButton>
+		</button>
 	</div>
 </div>

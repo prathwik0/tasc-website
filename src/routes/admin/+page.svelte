@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { user } from '$lib/firebase/firebase';
+	import { user, userID, userProfileData } from '$lib/firebase/firebase';
 	import * as Table from '$lib/components/ui/table';
 	import { getDoc, getDocs, collection } from 'firebase/firestore';
 	import { Button } from '$lib/components/ui/custom_button';
@@ -57,7 +57,7 @@
 		}
 	};
 
-	$: if ($user) {
+	$: if ($user && $userID && $userProfileData) {
 		getData();
 	}
 </script>
