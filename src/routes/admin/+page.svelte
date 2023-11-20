@@ -16,10 +16,10 @@
 		console.log(data);
 	}
 
+	let college = ',';
 	let submitted = 'No';
-	let PID = '';
-	let pLink = '';
-	let college = '';
+	let PID = ',';
+	let pLink = ',';
 	const convertAndDownloadCSV = () => {
 		if (data && data.length > 0) {
 			// Create CSV headers
@@ -32,10 +32,10 @@
 					pLink = team.submission.link || '';
 					college = team.submission.college || '';
 				} else {
+					college = ',';
 					submitted = 'No';
-					PID = '';
-					pLink = '';
-					college = '';
+					PID = ',';
+					pLink = ',';
 				}
 				const row = [team.teamName, college, team.leaderName, team.leaderPhone, team.leaderEmail, team.memberCount, submitted, PID, pLink, team.teamURL, team.teamSecret].join(',');
 				return row;
@@ -63,7 +63,7 @@
 </script>
 
 <div class="flex flex-col items-center justify-center text-center">
-	<Button class="mt-4" on:click={convertAndDownloadCSV}>Download Report</Button>
+	<Button on:click={convertAndDownloadCSV} class="my-2">Download Report</Button>
 
 	<Table.Root>
 		<Table.Header>
@@ -77,6 +77,11 @@
 				<Table.Head>Leader Name</Table.Head>
 				<Table.Head>Leader Phone</Table.Head>
 				<Table.Head class="text-center">Leader Email</Table.Head>
+				<Table.Head class="text-center">Member Count</Table.Head>
+				<Table.Head class="text-center">College</Table.Head>
+				<Table.Head class="text-center">Submitted</Table.Head>
+				<Table.Head class="text-center">PID</Table.Head>
+				<Table.Head class="max-w-[5rem] text-center">Link</Table.Head>
 				<Table.Head class="text-center">Team ID</Table.Head>
 				<Table.Head class="text-center">Team Secret</Table.Head>
 			</Table.Row>
@@ -89,11 +94,13 @@
 
 					<Table.Cell>{team.memberCount}</Table.Cell>
 					{#if team.submission}
-						<Table.Cell>{team.college}</Table.Cell>
+						<Table.Cell class="text-center">{team.college}</Table.Cell>
+						<Table.Cell class="text-center">Yes</Table.Cell>
 						<Table.Cell>{team.PID}</Table.Cell>
 						<Table.Cell class="text-wrap max-w-[5rem]"><a href={team.submission.link} class="text-blue-600" target="_blank">Click Here</a></Table.Cell>
 					{:else}
-						<Table.Cell></Table.Cell>
+						<Table.Cell class="text-center"></Table.Cell>
+						<Table.Cell class="text-center">No</Table.Cell>
 						<Table.Cell></Table.Cell>
 						<Table.Cell></Table.Cell>
 					{/if}
