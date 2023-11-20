@@ -72,16 +72,12 @@
 				<Table.Head>Team Name</Table.Head>
 				<Table.Head class="text-center">Member Count</Table.Head>
 				<Table.Head class="text-center">College</Table.Head>
+				<Table.Head class="text-center">Submitted</Table.Head>
 				<Table.Head class="text-center">PID</Table.Head>
 				<Table.Head class="max-w-[5rem] text-center">Link</Table.Head>
 				<Table.Head>Leader Name</Table.Head>
 				<Table.Head>Leader Phone</Table.Head>
 				<Table.Head class="text-center">Leader Email</Table.Head>
-				<Table.Head class="text-center">Member Count</Table.Head>
-				<Table.Head class="text-center">College</Table.Head>
-				<Table.Head class="text-center">Submitted</Table.Head>
-				<Table.Head class="text-center">PID</Table.Head>
-				<Table.Head class="max-w-[5rem] text-center">Link</Table.Head>
 				<Table.Head class="text-center">Team ID</Table.Head>
 				<Table.Head class="text-center">Team Secret</Table.Head>
 			</Table.Row>
