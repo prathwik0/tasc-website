@@ -35,8 +35,8 @@
 		</div>
 	</div>
 
-	<div class="fixed z-50 flex w-full px-10 py-6 md:hidden">
-		<div class="flex items-center gap-x-2">
+	<div class="fixed z-50 flex w-full pt-4 md:hidden">
+		<div class="flex">
 			<div>
 				<a href="/">
 					<img src="/NMAMITLogo.png" class=" w-60" alt="logo" />
