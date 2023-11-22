@@ -20,6 +20,8 @@ export interface TeamData {
 	createdAt: string;
 	submission?: Submission;
 	submissionHistory?: Submission[];
+	proofURL?: string;
 	PID?: string;
+	qualified?: boolean;
 	college?: string;
 }

@@ -8,6 +8,15 @@
 	import { page } from '$app/stores';
 	import type { TeamData } from '$lib/components/types/TeamData';
 	import { onMount } from 'svelte';
+	import { qualified } from '$lib/data/Qualified';
+	import { storage } from '$lib/firebase/firebase';
+	import { Progress } from '$lib/components/ui/progress';
+	import { Input } from '$lib/components/ui/input';
+	import { updateDoc } from 'firebase/firestore';
+	import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+	import { RefreshCcw } from 'lucide-svelte';
+	export let teamID: string;
+	let uploading = false;
 
 	let teamURL = $page.params.teamURL;
 	let data: TeamData;
@@ -18,10 +27,34 @@
 
 		if (docSnap.exists()) {
 			data = docSnap.data() as TeamData;
-			console.log(data);
 		} else {
 			alert('Team error! Register again and then come back to this page');
 		}
+	}
+
+	async function upload(e: any) {
+		uploading = true;
+		const file = e.target.files[0];
+		const maxSize = 1024 * 512;
+		if (file.size > maxSize) {
+			alert('The file is too large. Please upload a file smaller than 512kB.');
+			uploading = false;
+			return;
+		} else {
+			const storageRef = ref(storage, `snh2023/${data.teamURL}/proof.png`);
+			const result = await uploadBytes(storageRef, file);
+
+			const url = await getDownloadURL(result.ref);
+
+			await updateDoc(doc(db, 'snh2023', data.teamURL), { proofURL: url });
+			alert('Your profile photo has been updated!');
+			uploading = false;
+			refresh();
+		}
+	}
+
+	async function refresh() {
+		await getData();
 	}
 
 	onMount(async () => {
@@ -33,8 +66,8 @@
 	<div class="flex h-full min-h-screen w-full flex-col items-center justify-center space-y-6 pt-[8dvh]">
 		<h2 class="pt-4 font-jbExtrabold text-3xl md:text-4xl">Your Team</h2>
 
-		<div class="text-md mx-5 w-[23rem] cursor-default rounded-2xl border-[1px] border-[#d2b863] bg-gray-400 bg-opacity-5 px-5 py-2 backdrop-blur-sm transition duration-300 md:w-[35rem] md:p-10 md:text-2xl">
-			<ul class="mt-5 space-y-2">
+		<div class="text-md w-[20rem] cursor-default rounded-2xl border border-[#d2b863] bg-gray-400 bg-opacity-5 p-6 backdrop-blur-sm transition duration-300 md:w-[35rem] md:p-10 md:text-2xl">
+			<ul class="space-y-2">
 				<p class="font-jbRegular">Team Name: <span class="text-[#fffba4]">{data.teamName}</span></p>
 				<p class="flex items-center space-x-2 font-jbRegular">
 					Team ID:
@@ -77,19 +110,32 @@
 						{/if}
 					{/each}
 				</div>
-
-				<!-- {#if data.memberCount == 3}
-					<p class="font-semibold text-[#fffba4]">Team is full!</p>
-				{:else}
-					<p>You need to add {3 - data.memberCount} more {data.memberCount == 2 ? 'member' : 'members'}</p>
-				{/if} -->
 			</ul>
 		</div>
 
-		<!-- <LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} /> -->
-		<div class="flex flex-col items-center justify-center py-8">
-			<Submission teamID={data.teamURL} PID={data.submission?.PID} title={data.submission?.title} college={data.submission?.college} link={data.submission?.link}></Submission>
-		</div>
-		<!-- <MainButton>Solution Submission (soon...)</MainButton> -->
+		{#if data?.qualified}
+			{#if data?.proofURL == null}
+				<h1 class="mx-4 text-center font-jbExtrabold text-xl md:text-3xl">Congratulations!! You have been qualified for the next round</h1>
+				<h3 class="mx-4 text-center font-jbMedium text-lg md:text-xl">Please pay ₹300 to confirm your registeration for the final showdown</h3>
+			{/if}
+			<div class="pb-8">
+				<div class="mx-5 flex w-[20rem] flex-col items-center rounded-2xl border border-[#d2b863] bg-gray-400 bg-opacity-5 p-6 backdrop-blur-sm transition duration-300 md:w-[35rem] md:p-10">
+					{#if data?.proofURL == null}
+						<img src="/upi.png" alt="UPI" class="h-[20rem] w-[20rem]" />
+						<h3 class="py-4 font-jbBold text-xl md:text-2xl">Upload Payment Proof</h3>
+						<Input on:change={upload} name="photoURL" type="file" accept="image/png, image/jpeg, image/gif, image/webp" />
+						<p class="text-red-600">Max file size limit 500kB</p>
+						{#if uploading}
+							<p>Uploading...</p>
+							<Progress value={33} />
+						{/if}
+					{:else}
+						<h3 class="font-jbMedium text-lg md:text-xl">Thankyou for Registering!</h3>
+					{/if}
+				</div>
+			</div>
+		{:else}
+			<h3 class="mx-4 text-center font-jbExtrabold text-lg md:text-3xl">Thank you for participating. Unfortunately, you didn't qualify this time. Keep up the effort!</h3>
+		{/if}
 	</div>
 {/if}
