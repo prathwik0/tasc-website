@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { user, userID, userProfileData } from '$lib/firebase/firebase';
 	import * as Table from '$lib/components/ui/table';
-	import { getDoc, getDocs, collection } from 'firebase/firestore';
+	import { getDoc, getDocs, collection, writeBatch, doc } from 'firebase/firestore';
 	import { Button } from '$lib/components/ui/custom_button';
 	import { db } from '$lib/firebase/firebase';
 	import type { TeamData } from '$lib/components/types/TeamData';
@@ -57,6 +57,30 @@
 		}
 	};
 
+	async function qualify(teamID: string) {
+		const batch = writeBatch(db);
+
+		const teamRef = doc(db, 'snh2023', teamID);
+		batch.update(teamRef, {
+			qualified: true
+		});
+		await batch.commit();
+
+		alert('Team has been qualified)');
+	}
+
+	async function disQualify(teamID: string) {
+		const batch = writeBatch(db);
+
+		const teamRef = doc(db, 'snh2023', teamID);
+		batch.update(teamRef, {
+			qualified: false
+		});
+		await batch.commit();
+
+		alert('Team has been disqualified)');
+	}
+
 	$: if ($user && $userID && $userProfileData) {
 		getData();
 	}
@@ -80,6 +104,9 @@
 				<Table.Head class="text-center">Leader Email</Table.Head>
 				<Table.Head class="text-center">Team ID</Table.Head>
 				<Table.Head class="text-center">Team Secret</Table.Head>
+				<Table.Head class="text-center">Qualified</Table.Head>
+				<Table.Head class="text-center">Qualify Button</Table.Head>
+				<Table.Head class="text-center">Disqualify Button</Table.Head>
 			</Table.Row>
 		</Table.Header>
 		<Table.Body>
@@ -105,6 +132,25 @@
 					<Table.Cell>{team.leaderEmail}</Table.Cell>
 					<Table.Cell>{team.teamURL}</Table.Cell>
 					<Table.Cell>{team.teamSecret}</Table.Cell>
+					<Table.Cell>{team?.qualified}</Table.Cell>
+					<Table.Cell>
+						<button
+							on:click={() => {
+								qualify(team.teamURL);
+							}}
+						>
+							Qualify
+						</button>
+					</Table.Cell>
+					<Table.Cell>
+						<button
+							on:click={() => {
+								disQualify(team.teamURL);
+							}}
+						>
+							DisQualify
+						</button>
+					</Table.Cell>
 				</Table.Row>
 			{/each}
 		</Table.Body>
