@@ -5,7 +5,7 @@ export const qualified = [
 	},
 	{
 		PID: 'SNH02-I',
-		teams: ['Void', 'Brainstorm Buddies', 'Code Crusaders', 'Asthra', 'Byte Sync', 'Yenigma', 'Error 404', 'Haeckelite', 'Innovision', 'Infinity']
+		teams: ['Void', 'Brainstormers', 'Code Crusaders', 'Asthra', 'Byte Sync', 'Yenigma', 'Error 404', 'Haeckelite', 'Innovision', 'Infinity']
 	},
 	{
 		PID: 'SNH02-II',

@@ -78,7 +78,7 @@
 		});
 		await batch.commit();
 
-		alert('Team has been qualified)');
+		alert('Team has been disqualified)');
 	}
 
 	$: if ($user && $userID && $userProfileData) {
