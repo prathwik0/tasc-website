@@ -90,14 +90,8 @@
 	<div class="flex h-full w-full flex-col items-center justify-center space-y-6">
 		<h2 class="font-jbExtrabold text-2xl md:text-4xl">Create a Team</h2>
 		<Input type="text" placeholder="Enter your team name!" bind:value={teamName} class="h-12 w-60  rounded-2xl bg-gray-600 p-4 font-jbMedium text-white md:h-14 md:w-80" />
-		<button on:click={createTeam}><MainButton>Create Team</MainButton></button>
+		<button on:click={createTeam}>
+			<MainButton>Create Team</MainButton>
+		</button>
 	</div>
-
-	<!-- Already in a team -->
-	<!-- <div class="flex h-full w-full flex-col items-center justify-center p-4 text-center">
-		<h2 class="pb-6 pt-4 font-jbExtrabold text-4xl text-[#fffba4]">
-			You are already in a team!
-			<p class="pt-4 font-jbMedium text-2xl text-white">Team ID/ Team Secret</p>
-		</h2>
-	</div> -->
 </div>

@@ -390,7 +390,7 @@
 		</div>
 
 		<div class="absolute bottom-36 flex w-full justify-center text-center">
-			<p class="text-xl">Welcome to the official website of TASC,<br /> Department of Artificial Intelligence and Machine Learning</p>
+			<p class="text-xl">Welcome to the official website of TASC,<br /><span class="font-bold text-brand">Department of Artificial Intelligence and Machine Learning</span></p>
 		</div>
 
 		<div class="absolute bottom-10 flex w-full animate-bounce items-center justify-center bg-transparent">
@@ -756,7 +756,7 @@
 			</div>
 
 			<div class="flex w-full justify-center">
-				<p class="text-center text-sm">Welcome to the official website of TASC,<br /> Department of Artificial Intelligence and Machine Learning</p>
+				<p class="text-center text-sm">Welcome to the official website of TASC,<br /> <span class="font-bold text-brand">Department of Artificial Intelligence and Machine Learning</span></p>
 			</div>
 
 			<div class="mt-6 flex w-full animate-bounce justify-center">

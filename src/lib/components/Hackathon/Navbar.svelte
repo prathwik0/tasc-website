@@ -25,11 +25,11 @@
 
 <div>
 	<div class="fixed top-0 z-50 hidden w-full backdrop-blur-md md:grid">
-		<div class="flex items-center justify-between py-2 md:px-20 lg:px-32">
+		<div class="flex items-center justify-between px-6 py-2">
 			<a href="/">
-				<img src="/TASCLogo.png" class="w-20" alt="logo" />
+				<img src="/NMAMITLogo.png" class="w-48 lg:w-60" alt="logo" />
 			</a>
-			<ul class="flex flex-wrap items-center justify-between space-x-8 py-3 pb-5 font-jbBold tracking-wider md:text-lg">
+			<ul class="md:text-md flex flex-wrap items-center justify-between space-x-8 py-3 pb-5 font-jbBold tracking-wider">
 				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#home" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Home</a></div>
 				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#date" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">About</a></div>
 				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#timeline" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Timeline</a></div>
@@ -45,8 +45,8 @@
 		</div>
 	</div>
 	<div class="fixed z-50 grid w-full backdrop-blur-md md:hidden">
-		<a href="/" class="px-10 pb-4 pt-6">
-			<img src="/TASCLogo.png" class="w-20" alt="logo" />
+		<a href="/" class=" px-4 pt-4">
+			<img src="/NMAMITLogo.png" class="w-60" alt="logo" />
 		</a>
 		<nav>
 			<div id="menuToggle" class="px-10 pb-4 pt-6">
