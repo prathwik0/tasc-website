@@ -216,7 +216,7 @@
 					<Table.Cell>{team.memberCount}</Table.Cell>
 					<Table.Cell class="text-center">{team.college}</Table.Cell>
 					<Table.Cell>{team.PID}</Table.Cell>
-					<Table.Cell class="text-wrap max-w-[5rem]"><a href={team.submission.link} class="text-blue-600" target="_blank">Click Here</a></Table.Cell>
+					<Table.Cell class="text-wrap max-w-[5rem]"><a href={team.submission.link} class="text-blue-600" target="_blank">{team.submission.title}</a></Table.Cell>
 
 					<Table.Cell>{team.leaderName}</Table.Cell>
 					<Table.Cell>{team.leaderEmail}</Table.Cell>
