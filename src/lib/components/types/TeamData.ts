@@ -37,6 +37,7 @@ interface TeamDataSNH2023Basic {
 	teamID: string;
 	teamSecret: string;
 	college: string;
+	arrived: boolean;
 	PID: string;
 	leader: string;
 	leaderName: string;
