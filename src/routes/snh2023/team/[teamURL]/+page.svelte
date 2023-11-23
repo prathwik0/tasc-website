@@ -113,6 +113,8 @@
 			</ul>
 		</div>
 
+		<LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} />
+
 		{#if data?.qualified}
 			{#if data?.proofURL == null}
 				<h1 class="mx-4 text-center font-jbExtrabold text-xl md:text-3xl">Congratulations!! You have been qualified for the next round</h1>
