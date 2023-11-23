@@ -2,17 +2,21 @@
 	// import { Button } from '$lib/components/ui/button';
 	import { Button } from '$lib/components/ui/custom_button';
 	import { Input } from '$lib/components/ui/input';
-	import { user, userID, userProfileData } from '$lib/firebase/firebase';
 	import * as Table from '$lib/components/ui/table';
-	import { getDocs, collection, writeBatch, doc, Timestamp, query, where } from 'firebase/firestore';
+	import { user, userID, userProfileData } from '$lib/firebase/firebase';
+	import { Timestamp, collection, doc, getDocs, query, where, writeBatch } from 'firebase/firestore';
 
-	import { db } from '$lib/firebase/firebase';
 	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
+	import { db } from '$lib/firebase/firebase';
+
+	let floorList: string[] = ['1', '2', '3'];
+	let roomList: string[] = ['1', '2', '3'];
+	let arrivedList: boolean[] = [true, false];
 
 	let data: TeamDataSNH2023[] = [];
-	let floor: number | null = 1;
-	let room: number | null = 1;
-	let arrived: boolean | null = false;
+	let floor: string | null = '1';
+	let room: string | null = '1';
+	let arrived: boolean | null = null;
 
 	function getDate(timestamp: { seconds: number }) {
 		if (!timestamp) return '';
@@ -142,13 +146,39 @@
 </script>
 
 <div class="flex flex-col items-center justify-center text-center">
-	<div class="flex w-full max-w-sm items-center space-x-2">
-		<Input bind:value={floor} type="number" placeholder="Enter Floor Number" />
-		<Input bind:value={room} type="number" placeholder="Enter Room Number" />
-		<Button on:click={getDataWrapper}>Query the Database</Button>
-	</div>
+	<div class="mt-5 flex w-full max-w-sm flex-col items-center justify-evenly gap-2 md:flex-row">
+		<!-- <Input bind:value={floor} type="number" placeholder="Enter Floor Number" /> -->
+		<select bind:value={floor} class="rounded-md bg-slate-500">
+			<option value={null} selected>All Floors</option>
+			{#each floorList as floor}
+				<option value={floor}>
+					{floor}
+				</option>
+			{/each}
+		</select>
 
-	<Button on:click={convertAndDownloadCSV}>Download Report</Button>
+		<!-- <Input bind:value={room} type="number" placeholder="Enter Room Number" /> -->
+		<select bind:value={room} class="rounded-md bg-slate-500">
+			<option value={null} selected>All rooms</option>
+			{#each roomList as room}
+				<option value={room}>
+					{room}
+				</option>
+			{/each}
+		</select>
+
+		<select bind:value={arrived} class="rounded-md bg-slate-500">
+			<option value={null} selected>All teams</option>
+			{#each arrivedList as arrived}
+				<option value={arrived}>
+					{arrived ? 'Arrived' : 'Not Arrived'}
+				</option>
+			{/each}
+		</select>
+
+		<Button on:click={getDataWrapper}>Query the Database</Button>
+		<Button on:click={convertAndDownloadCSV}>Download Report</Button>
+	</div>
 
 	<Table.Root>
 		<Table.Header>
@@ -193,23 +223,23 @@
 					<Table.Cell>{team.teamID}</Table.Cell>
 					<Table.Cell>{team.teamSecret}</Table.Cell>
 
-					<Table.Cell class="text-center"><input type="text" bind:value={data[i].floor} /></Table.Cell>
+					<Table.Cell class="text-center"><Input type="text" bind:value={data[i].floor} /></Table.Cell>
 					<Table.Cell class="text-center">
-						<button
+						<Button
 							on:click={() => {
 								updateFloor(i);
 							}}
-							>Floor
-						</button>
+							>Change Floor
+						</Button>
 					</Table.Cell>
-					<Table.Cell class="text-center"><input type="text" bind:value={data[i].room} /></Table.Cell>
+					<Table.Cell class="text-center"><Input type="text" bind:value={data[i].room} /></Table.Cell>
 					<Table.Cell class="text-center">
-						<button
+						<Button
 							on:click={() => {
 								updateRoom(i);
 							}}
-							>Room
-						</button>
+							>Change Room
+						</Button>
 					</Table.Cell>
 
 					{#each { length: 3 } as _, i}
