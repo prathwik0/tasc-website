@@ -42,6 +42,8 @@ interface TeamDataSNH2023Basic {
 	leaderName: string;
 	leaderPhone: string;
 	leaderEmail: string;
+	floor: string;
+	room: string;
 
 	members: string[];
 
