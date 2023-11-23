@@ -35,14 +35,14 @@
 	}
 
 	async function onScanSuccess(decodedText: string, decodedResult: any) {
-		// alert(`Scanned Value = ${decodedText}`);
+		alert(`Scanned Value = ${decodedText}`);
 		// console.log(decodedResult);
 		await updateStatus(decodedText);
 	}
 
 	async function updateStatus(decodedText: string) {
 		const data = JSON.parse(decodedText);
-		console.log(data);
+		// console.log(data);
 
 		const team: string = data.team;
 		const user: string = data.user;
