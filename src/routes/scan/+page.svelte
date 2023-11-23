@@ -71,6 +71,7 @@
 
 <div>
 	<div class="scanner">
+		<reader id="reader" />
 		<div class="mt-4 flex gap-4">
 			{#if scanning}
 				<button on:click={stop}><MainButton><div class="w-20 p-0">Stop</div></MainButton></button>
@@ -94,7 +95,6 @@
 				</button>
 			{/if}
 		</div>
-		<reader id="reader" />
 	</div>
 </div>
 
