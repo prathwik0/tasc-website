@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>QR Code Generator</title>
+	<title>QR Code Scanning</title>
 </svelte:head>
 
 {#if data}

@@ -34,12 +34,12 @@
 			</div>
 
 			<!-- {#if data.memberCount == 3} -->
-			<p class="pt-2 font-semibold">Count : 3</p>
+			<p class="pt-2 font-semibold">Count : {data.members.length}</p>
 			<!-- {:else}
 					<p>You need to add {3 - data.memberCount} more {data.memberCount == 2 ? 'member' : 'members'}</p>
 				{/if} -->
 		</ul>
 	</div>
-	<h2 class="pt-4 text-center font-jbExtrabold text-3xl md:text-4xl px-2">Congrats For qualifying!🎉</h2>
-	<p class="text-center font-jbRegular text-lg text-slate-400 pb-10">See you soon at Nitte!</p>
+	<h2 class="px-2 pt-4 text-center font-jbExtrabold text-3xl md:text-4xl">Congrats For qualifying!🎉</h2>
+	<p class="pb-10 text-center font-jbRegular text-lg text-slate-400">See you soon at Nitte!</p>
 </div>
