@@ -1,9 +1,9 @@
 <script lang="ts">
-	import TeamId from '$lib/components/Hackathon/TeamIDRound2.svelte';
 	import MemberID from '$lib/components/Hackathon/MemberIDRound2.svelte';
-	import { doc, getDoc } from 'firebase/firestore';
-	import { db, userData, userID, userProfileData } from '$lib/firebase/firebase';
+	import TeamId from '$lib/components/Hackathon/TeamIDRound2.svelte';
 	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
+	import { db, userData, userID, userProfileData } from '$lib/firebase/firebase';
+	import { doc, getDoc } from 'firebase/firestore';
 
 	let teamID = $userProfileData?.snh2023final ?? '';
 	let data: TeamDataSNH2023 | undefined = undefined;
@@ -37,8 +37,10 @@
 </svelte:head>
 
 {#if data}
-	<MemberID {data} userID={$userID?.user ?? ''}></MemberID>
-	<TeamId {data}></TeamId>
+	<div class="min-h-screen">
+		<MemberID {data} userID={$userID?.user ?? ''}></MemberID>
+		<TeamId {data}></TeamId>
+	</div>
 {/if}
 
-{JSON.stringify(data)}
+<!-- {JSON.stringify(data)} -->

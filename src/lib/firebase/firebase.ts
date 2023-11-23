@@ -1,10 +1,10 @@
 // Import the functions you need from the SDKs you need
-import { deleteApp, getApp, getApps, initializeApp, type FirebaseApp } from 'firebase/app';
-import { getFirestore, doc, onSnapshot } from 'firebase/firestore';
-import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
-import { getStorage } from 'firebase/storage';
-import { get, writable, type Readable, derived, type Writable } from 'svelte/store';
 import type ProfileData from '$lib/components/types/ProfileData';
+import { deleteApp, getApp, getApps, initializeApp, type FirebaseApp } from 'firebase/app';
+import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
+import { doc, getFirestore, onSnapshot } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+import { derived, get, writable, type Readable, type Writable } from 'svelte/store';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -168,7 +168,7 @@ userID.subscribe((value) => {
 	}
 });
 
-userData.subscribe((value) => {
+userData.subscribe(() => {
 	if (!get(called)) {
 		return;
 	}
