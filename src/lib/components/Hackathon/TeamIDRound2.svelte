@@ -1,3 +1,8 @@
+<script lang="ts">
+	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
+	export let data: TeamDataSNH2023;
+</script>
+
 <div class="flex h-full min-h-screen w-full flex-col items-center justify-center space-y-6 pt-[8dvh]">
 	<h2 class="pt-4 font-jbExtrabold text-3xl md:text-4xl">Your Team</h2>
 

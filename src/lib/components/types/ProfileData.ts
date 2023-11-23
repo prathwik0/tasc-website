@@ -17,4 +17,5 @@ export default interface ProfileData {
 	color_dark: string;
 	links: Link[];
 	snh2023: string;
+	snh2023final: string;
 }
