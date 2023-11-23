@@ -27,13 +27,19 @@
 					<li class="py-1"><span class="text-slate-500">Floor Number : </span>{data.floor}</li>
 					<li class="py-1"><span class="text-slate-500">Room Number : </span>{data.room}</li>
 					<li class="py-1"><span class="text-slate-500">College Name : </span>{data.college}</li>
-					<li class="py-1"><span class="text-slate-500">Status : You are </span>{data[userID].status}</li>
+					{#if data[userID].status == 'pending'}
+						<li class="py-1"><span class="text-slate-500">Verification </span>{data[userID].status}</li>
+					{:else}
+						<li class="py-1"><span class="text-slate-500">Status : You are </span>{data[userID].status}</li>
+					{/if}
 				</ul>
 				<Separator />
 				<!-- 
 				<p class="text-xs">{QRCode}</p> -->
 				<div class="mb-4 mt-8 h-64 w-64 rounded-md bg-white"><QRCodeImage text={QRCode} errorCorrectionLevel="H" height="256" width="256" /></div>
-				<!-- <p class="bottom-10 text-base text-slate-500">
+				<!-- 
+					If scanner doesnt work this shows their team and user id
+					<p class="bottom-10 text-base text-slate-500">
 					team : <span class="text-white">{JSON.parse(QRCode).team}</span><button class="rounded-x rounded-lg bg-gray-600 p-1 ml-2" use:copy={JSON.parse(QRCode).team} on:svelte-copy={() => alert('Team ID copied to clipboard!')}>
 						<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
 							><path
