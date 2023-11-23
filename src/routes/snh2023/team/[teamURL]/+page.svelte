@@ -78,15 +78,15 @@
 					{/each}
 				</div>
 
-				{#if data.memberCount == 3}
+				<!-- {#if data.memberCount == 3}
 					<p class="font-semibold text-[#fffba4]">Team is full!</p>
 				{:else}
 					<p>You need to add {3 - data.memberCount} more {data.memberCount == 2 ? 'member' : 'members'}</p>
-				{/if}
+				{/if} -->
 			</ul>
 		</div>
 
-		<LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} />
+		<!-- <LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} /> -->
 		<div class="flex flex-col items-center justify-center py-8">
 			<Submission teamID={data.teamURL} PID={data.submission?.PID} title={data.submission?.title} college={data.submission?.college} link={data.submission?.link}></Submission>
 		</div>

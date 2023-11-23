@@ -14,9 +14,16 @@
 <div class="z-50">
 	<div class="fixed top-0 z-50 hidden w-full md:grid">
 		<div class={`md: flex items-center justify-center px-6 py-2 md:px-10 md:py-6 ${y > 0 ? 'backdrop-blur-xl' : ''}`}>
-			<a href="/" class="absolute left-14">
-				<img src="/TASCLogo.png" class="w-20" alt="logo" />
-			</a>
+			<div class="absolute left-6 flex items-center gap-x-2">
+				<div>
+					<a href="/">
+						<img src="/NMAMITLogo.png" class="md:w-56 lg:w-72" alt="logo" />
+					</a>
+				</div>
+				<!-- <a href="/">
+					<img src="/TASCLogo.png" class="w-16 lg:w-20" alt="logo" />
+				</a> -->
+			</div>
 			<ul class="flex flex-wrap items-center space-x-8 tracking-wider md:text-lg">
 				{#each NAVITEM as nav}
 					<div class="transition duration-300 hover:drop-shadow-[0_0_0.3rem_#ffffff]"><a href={`${nav.href}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">{nav.title}</a></div>
@@ -28,10 +35,17 @@
 		</div>
 	</div>
 
-	<div class="fixed z-50 flex w-full px-10 py-6 md:hidden">
-		<a href="/">
-			<img src="/TASCLogo.png" class="w-20" alt="logo" />
-		</a>
+	<div class="fixed z-50 flex w-full pt-4 md:hidden">
+		<div class="flex">
+			<div>
+				<a href="/">
+					<img src="/NMAMITLogo.png" class=" w-60" alt="logo" />
+				</a>
+			</div>
+			<!-- <a href="/">
+				<img src="/TASCLogo.png" class="w-16" alt="logo" />
+			</a> -->
+		</div>
 		<nav>
 			<div id="menuToggle" class="py-6 pr-3">
 				<input type="checkbox" />

@@ -1,13 +1,15 @@
-<script>
+<script lang="ts">
 	import { Html5Qrcode } from 'html5-qrcode';
 	import { onMount } from 'svelte';
+	import { writeBatch, doc, arrayUnion, Timestamp } from 'firebase/firestore';
+	import { db } from '$lib/firebase/firebase';
 
 	let scanning = false;
+	let html5Qrcode: Html5Qrcode;
 
-	let html5Qrcode;
+	let status: 'inside' | 'outside' = 'outside';
 
 	onMount(init);
-
 	function init() {
 		html5Qrcode = new Html5Qrcode('reader');
 	}
@@ -30,18 +32,66 @@
 		scanning = false;
 	}
 
-	function onScanSuccess(decodedText, decodedResult) {
-		alert(`Code matched = ${decodedText}`);
+	async function onScanSuccess(decodedText: string, decodedResult: any) {
+		alert(`Scanned Value = ${decodedText}`);
 		console.log(decodedResult);
+
+		await updateStatus(decodedText);
 	}
 
-	function onScanFailure(error) {
+	async function updateStatus(decodedText: string) {
+		const data = JSON.parse(decodedText);
+		console.log(data);
+
+		const team: string = data.team;
+		const user: string = data.user;
+
+		const batch = writeBatch(db);
+		const teamRef = doc(db, 'snh2023final', team);
+
+		batch.update(teamRef, {
+			[user + '.status']: status,
+			[user + '.timestamp']: Timestamp.now(),
+			[user + '.scanned']: true,
+			[user + '_history']: arrayUnion({
+				status: status,
+				timestamp: Timestamp.now()
+			})
+		});
+
+		await batch.commit();
+		alert('Status updated');
+	}
+
+	function onScanFailure(error: any) {
 		console.warn(`Code scan error = ${error}`);
 	}
 </script>
 
 <div>
 	<div class="scanner">
+		{#if scanning}
+			<button on:click={stop}>stop</button>
+		{:else}
+			<button on:click={start}>start</button>
+		{/if}
+		{#if status === 'inside'}
+			<button
+				on:click={() => {
+					status = 'outside';
+				}}
+			>
+				Going Out
+			</button>
+		{:else}
+			<button
+				on:click={() => {
+					status = 'inside';
+				}}
+			>
+				Coming In
+			</button>
+		{/if}
 		<reader id="reader" />
 		{#if scanning}
 			<button on:click={stop}>stop</button>

@@ -51,7 +51,8 @@
 				title: title,
 				PID: PID,
 				link: link
-			})
+			}),
+			certificate: true
 		});
 		await batch.commit();
 
@@ -59,7 +60,8 @@
 	}
 </script>
 
-<h1 class="pb-4 text-center font-jbExtrabold text-2xl md:text-4xl">Submit solution for your problem statement</h1>
+<h1 class="pb-4 text-center font-jbExtrabold text-2xl md:text-4xl">Submissions are closed. We are sorry if you missed it.</h1>
+<!-- <h1 class="pb-4 text-center font-jbExtrabold text-2xl md:text-4xl">Submit solution for your problem statement</h1>
 <h2 class="text-md pb-4 text-center font-jbRegular md:text-lg">You can change your submissions until 19 Nov 2023</h2>
 <div class="flex w-full flex-grow px-2 md:px-6">
 	<div class="flex w-full flex-shrink flex-col items-center justify-center rounded-2xl border-[1px] border-[#d2b863] p-6 md:p-10">
@@ -73,7 +75,7 @@
 		</select>
 
 		<select bind:value={college} class="mb-4 h-12 w-full rounded-2xl bg-gray-600 text-center font-jbMedium">
-			<!-- <option value="" disabled selected>College</option> -->
+			<option value="" disabled selected>College</option>
 			{#each collegeList as college}
 				<option value={college}>
 					{college}
@@ -90,4 +92,4 @@
 		<Input type="text" bind:value={link} placeholder="Link to presentation" class="h-12 rounded-2xl bg-gray-600 p-4 text-center font-jbMedium text-white md:h-14 " />
 		<button on:click={joinTeam} class="px-6 pt-6"><MainButton>Submit</MainButton></button>
 	</div>
-</div>
+</div> -->

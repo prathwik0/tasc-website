@@ -22,7 +22,7 @@
 	<div class="timeline__block">
 		<div class="timeline__midpoint"></div>
 		<div class="timeline__content timeline__content--right">
-			<h3 class="timeline__year font-jbBold">11 - 18 November 2023</h3>
+			<h3 class="timeline__year font-jbBold">11 - 19 November 2023</h3>
 			<div class="gradient_border mr-10 w-auto cursor-default bg-[#d1f2f9] bg-opacity-5 p-10 backdrop-blur-sm transition duration-300 md:hover:scale-[102%]">
 				<h3 class="font-jbExtrabold text-xl text-[#fffba4] md:text-[24px]">Idea Submission</h3>
 				<ul class="mt-5 space-y-2">
