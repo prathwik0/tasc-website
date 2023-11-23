@@ -10,6 +10,7 @@ import { derived, get, writable, type Readable, type Writable } from 'svelte/sto
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
 	apiKey: 'AIzaSyDfA0NuQYGMacEZvf2ym1rzAmqZU3GRXJw',
 	authDomain: 'login-62370.firebaseapp.com',
@@ -20,21 +21,8 @@ const firebaseConfig = {
 	measurementId: 'G-X47HSPHZ51'
 };
 
-// // Production
-// const firebaseConfig = {
-// 	apiKey: 'AIzaSyDkfk7CuVog5P79QgJ5kfONzGr3Rpfi2dU',
-// 	authDomain: 'tasc-8df79.firebaseapp.com',
-// 	projectId: 'tasc-8df79',
-// 	storageBucket: 'tasc-8df79.appspot.com',
-// 	messagingSenderId: '64049164136',
-// 	appId: '1:64049164136:web:b18434312a0fa3b5e2b0dd',
-// 	measurementId: 'G-Q5EYD8MDVW'
-// };
-
 // Initialize Firebase
-
 // const app = initializeApp(firebaseConfig);
-
 let app: FirebaseApp;
 if (!getApps().length) {
 	app = initializeApp(firebaseConfig);
