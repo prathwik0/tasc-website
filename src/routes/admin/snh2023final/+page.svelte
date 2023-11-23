@@ -35,6 +35,30 @@
 	const convertAndDownloadCSV = () => {
 		console.log('lol');
 	};
+
+	async function updateFloor(i: number) {
+		const batch = writeBatch(db);
+
+		const teamRef = doc(db, 'snh2023final', data[i].teamID);
+		batch.update(teamRef, {
+			floor: data[i].floor
+		});
+		await batch.commit();
+
+		alert('Floor Updated');
+	}
+
+	async function updateRoom(i: number) {
+		const batch = writeBatch(db);
+
+		const teamRef = doc(db, 'snh2023final', data[i].teamID);
+		batch.update(teamRef, {
+			room: data[i].room
+		});
+		await batch.commit();
+
+		alert('Room Updated');
+	}
 </script>
 
 <div class="flex flex-col items-center justify-center text-center">
@@ -59,6 +83,18 @@
 				<Table.Head class="text-center">Leader Email</Table.Head>
 				<Table.Head class="text-center">Team ID</Table.Head>
 				<Table.Head class="text-center">Team Secret</Table.Head>
+
+				<Table.Head class="text-center">Floor</Table.Head>
+				<Table.Head class="text-center">Button</Table.Head>
+				<Table.Head class="text-center">Room</Table.Head>
+				<Table.Head class="text-center">Button</Table.Head>
+
+				{#each { length: 3 } as _, i}
+					<Table.Head>Member {i + 1}</Table.Head>
+					<Table.Head>Status</Table.Head>
+					<Table.Head>Timestamp</Table.Head>
+					<Table.Head>Phone Number</Table.Head>
+				{/each}
 			</Table.Row>
 		</Table.Header>
 
@@ -77,6 +113,39 @@
 					<Table.Cell>{team.leaderEmail}</Table.Cell>
 					<Table.Cell>{team.teamURL}</Table.Cell>
 					<Table.Cell>{team.teamSecret}</Table.Cell>
+
+					<Table.Cell class="text-center"><input type="text" bind:value={data[i].floor} /></Table.Cell>
+					<Table.Cell class="text-center">
+						<button
+							on:click={() => {
+								updateFloor(i);
+							}}
+							>Floor
+						</button>
+					</Table.Cell>
+					<Table.Cell class="text-center"><input type="text" bind:value={data[i].room} /></Table.Cell>
+					<Table.Cell class="text-center">
+						<button
+							on:click={() => {
+								updateRoom(i);
+							}}
+							>Room
+						</button>
+					</Table.Cell>
+
+					{#each { length: 3 } as _, i}
+						{#if team.members[i]}
+							<Table.Cell>{team[team.members[i]].name}</Table.Cell>
+							<Table.Cell>{team[team.members[i]].status}</Table.Cell>
+							<Table.Cell>{team[team.members[i]].timestamp}</Table.Cell>
+							<Table.Cell>{team[team.members[i]].phone}</Table.Cell>
+						{:else}
+							<Table.Cell>Na</Table.Cell>
+							<Table.Cell>Na</Table.Cell>
+							<Table.Cell>Na</Table.Cell>
+							<Table.Cell>Na</Table.Cell>
+						{/if}
+					{/each}
 				</Table.Row>
 			{/each}
 		</Table.Body>
