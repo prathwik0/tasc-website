@@ -111,6 +111,7 @@
 			teamName: team.teamName,
 			teamID: team.teamURL,
 			teamSecret: team.teamSecret,
+			arrived: false,
 			college: team.college,
 
 			leader: team.leader,

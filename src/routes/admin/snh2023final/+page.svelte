@@ -4,14 +4,15 @@
 	import { Input } from '$lib/components/ui/input';
 	import { user, userID, userProfileData } from '$lib/firebase/firebase';
 	import * as Table from '$lib/components/ui/table';
-	import { getDoc, getDocs, collection, writeBatch, doc, arrayUnion, increment, Timestamp, query, where } from 'firebase/firestore';
+	import { getDocs, collection, writeBatch, doc, Timestamp, query, where } from 'firebase/firestore';
 
 	import { db } from '$lib/firebase/firebase';
 	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
 
 	let data: TeamDataSNH2023[] = [];
-	let floor: number;
-	let room: number;
+	let floor: number | null = 1;
+	let room: number | null = 1;
+	let arrived: boolean | null = false;
 
 	function getDate(timestamp: { seconds: number }) {
 		if (!timestamp) return '';
@@ -24,13 +25,33 @@
 	async function getData() {
 		const teamsRef = collection(db, 'snh2023final');
 		let q;
-		if (floor && room) {
-			q = query(teamsRef, where('floor', '==', floor), where('room', '==', room));
-		} else if (floor) {
-			q = query(teamsRef, where('floor', '==', floor));
+
+		if (arrived == true) {
+			if (floor && room) {
+				q = query(teamsRef, where('floor', '==', floor), where('room', '==', room), where('arrived', '==', true));
+			} else if (floor) {
+				q = query(teamsRef, where('floor', '==', floor), where('arrived', '==', true));
+			} else {
+				q = query(teamsRef, where('arrived', '==', true));
+			}
+		} else if (arrived == false) {
+			if (floor && room) {
+				q = query(teamsRef, where('floor', '==', floor), where('room', '==', room), where('arrived', '==', false));
+			} else if (floor) {
+				q = query(teamsRef, where('floor', '==', floor), where('arrived', '==', false));
+			} else {
+				q = query(teamsRef, where('arrived', '==', false));
+			}
 		} else {
-			q = query(teamsRef);
+			if (floor && room) {
+				q = query(teamsRef, where('floor', '==', floor), where('room', '==', room));
+			} else if (floor) {
+				q = query(teamsRef, where('floor', '==', floor));
+			} else {
+				q = query(teamsRef);
+			}
 		}
+
 		const docSnapshot = await getDocs(q);
 		const docs = docSnapshot.docs;
 		data = docs.flatMap((doc) => doc.data()) as TeamDataSNH2023[];
