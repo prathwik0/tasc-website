@@ -10,8 +10,16 @@
 	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
 
 	let data: TeamDataSNH2023[] = [];
-	let floor: number = 1;
-	let room: number = 1;
+	let floor: number;
+	let room: number;
+
+	function getDate(timestamp: { seconds: number }) {
+		if (!timestamp) return '';
+
+		return Timestamp.fromMillis(timestamp.seconds * 1000)
+			.toDate()
+			.toLocaleString();
+	}
 
 	async function getData() {
 		const teamsRef = collection(db, 'snh2023final');
@@ -36,7 +44,55 @@
 	}
 
 	const convertAndDownloadCSV = () => {
-		console.log('lol');
+		const headers = ['Team Name', 'College', 'Floor', 'Room', 'Team ID', 'Team Secret', 'PID', 'Link', 'Title', 'Leader Name', 'Member Count', 'Member 1 Name', 'USN', 'Email', 'Phone', 'Status', 'Timestamp', 'Member 2 Name', 'USN', 'Email', 'Phone', 'Status', 'Timestamp', 'Member 3 Name', 'USN', 'Email', 'Phone', 'Status', 'Timestamp'].join(',') + '\n';
+
+		const csvRows = data.map((team) => {
+			const row = [
+				JSON.stringify(team.teamName),
+				JSON.stringify(team.college),
+				team.floor,
+				team.room,
+				team.teamID,
+				team.teamSecret,
+				team.PID,
+				team.submission.link,
+				JSON.stringify(team.submission.title),
+				team.leaderName,
+				team.memberCount,
+				team[team.members[0] ?? '']?.name ?? '',
+				team[team.members[0] ?? '']?.usn ?? '',
+				team[team.members[0] ?? '']?.email ?? '',
+				team[team.members[0] ?? '']?.phone ?? '',
+				team[team.members[0] ?? '']?.status ?? '',
+				JSON.stringify(getDate(team[team.members[0] ?? '']?.timestamp) ?? ''),
+				team[team.members[1] ?? '']?.name ?? '',
+				team[team.members[1] ?? '']?.usn ?? '',
+				team[team.members[1] ?? '']?.email ?? '',
+				team[team.members[1] ?? '']?.phone ?? '',
+				team[team.members[1] ?? '']?.status ?? '',
+				JSON.stringify(getDate(team[team.members[1] ?? '']?.timestamp) ?? ''),
+				team[team.members[2] ?? '']?.name ?? '',
+				team[team.members[2] ?? '']?.usn ?? '',
+				team[team.members[2] ?? '']?.email ?? '',
+				team[team.members[2] ?? '']?.phone ?? '',
+				team[team.members[2] ?? '']?.status ?? '',
+				JSON.stringify(getDate(team[team.members[2] ?? '']?.timestamp) ?? '')
+			].join(',');
+			return row;
+		});
+
+		const csvContent = headers + csvRows.join('\n');
+
+		// CSV download
+		const blob = new Blob([csvContent], { type: 'text/csv' });
+		const url = window.URL.createObjectURL(blob);
+		const a = document.createElement('a');
+		a.style.display = 'none';
+		a.href = url;
+		a.download = `SNH2023Final_Teams.csv`;
+		document.body.appendChild(a);
+		a.click();
+		window.URL.revokeObjectURL(url);
 	};
 
 	async function updateFloor(i: number) {
@@ -61,12 +117,6 @@
 		await batch.commit();
 
 		alert('Room Updated');
-	}
-
-	function getDate(timestamp: { seconds: number }) {
-		return Timestamp.fromMillis(timestamp.seconds * 1000)
-			.toDate()
-			.toLocaleString();
 	}
 </script>
 
