@@ -1,33 +1,44 @@
 <script lang="ts">
-	import { QRCodeImage } from 'svelte-qrcode-image';
-	import { onMount } from 'svelte';
-	import TeamIdRound2 from '$lib/components/Hackathon/TeamIDRound2.svelte';
+	import TeamId from '$lib/components/Hackathon/TeamIDRound2.svelte';
 	import MemberID from '$lib/components/Hackathon/MemberIDRound2.svelte';
+	import { doc, getDoc } from 'firebase/firestore';
+	import { db, userData, userID, userProfileData } from '$lib/firebase/firebase';
+	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
 
-	let inputText: string = ' ';
+	let teamID = $userProfileData?.snh2023final ?? '';
+	let data: TeamDataSNH2023 | undefined = undefined;
 
-	onMount(async () => {
-		inputText = '';
-	});
+	async function getData() {
+		const teamRef = doc(db, 'snh2023final', teamID);
+		const docSnap = await getDoc(teamRef);
+
+		if (docSnap.exists()) {
+			data = docSnap.data() as TeamDataSNH2023;
+			console.log(data);
+		} else {
+			alert('Team error! Register again and then come back to this page');
+		}
+	}
+
+	async function getDataWrapper() {
+		await getData();
+	}
+
+	$: if ($userProfileData) {
+		teamID = $userProfileData?.snh2023final ?? '';
+		if (teamID) {
+			getDataWrapper();
+		}
+	}
 </script>
 
 <svelte:head>
 	<title>QR Code Generator</title>
 </svelte:head>
 
-<a href="/">back</a>
+{#if data}
+	<MemberID {data} userID={$userID?.user ?? ''}></MemberID>
+	<TeamId {data}></TeamId>
+{/if}
 
-<section>
-	<QRCodeImage displayType="canvas" text={inputText} />
-
-	<input type="text" bind:value={inputText} placeholder="type your text here" />
-</section>
-
-<QRCodeImage text="https://github.com/prathwik0" errorCorrectionLevel="H" />
-<!-- <QRCodeImage text="hi" width="233" />
-<QRCodeImage text="hi" width="233" height="233" />
-<QRCodeImage text="hi" scale="10" displayType="canvas" />
-<QRCodeImage displayType="canvas" displayStyle="border-style: dotted;" width="500" displayWidth="400" /> -->
-
-<MemberID></MemberID>
-<TeamIdRound2></TeamIdRound2>
+{JSON.stringify(data)}
