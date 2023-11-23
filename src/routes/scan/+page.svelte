@@ -1,8 +1,10 @@
 <script lang="ts">
+	import MainButton from '$lib/components/Hackathon/MainButton.svelte';
+	import Button from '$lib/components/ui/buttonHackathon/button.svelte';
+	import { db } from '$lib/firebase/firebase';
+	import { Timestamp, arrayUnion, doc, writeBatch } from 'firebase/firestore';
 	import { Html5Qrcode } from 'html5-qrcode';
 	import { onMount } from 'svelte';
-	import { writeBatch, doc, arrayUnion, Timestamp } from 'firebase/firestore';
-	import { db } from '$lib/firebase/firebase';
 
 	let scanning = false;
 	let html5Qrcode: Html5Qrcode;
@@ -33,9 +35,8 @@
 	}
 
 	async function onScanSuccess(decodedText: string, decodedResult: any) {
-		alert(`Scanned Value = ${decodedText}`);
-		console.log(decodedResult);
-
+		// alert(`Scanned Value = ${decodedText}`);
+		// console.log(decodedResult);
 		await updateStatus(decodedText);
 	}
 
@@ -70,34 +71,30 @@
 
 <div>
 	<div class="scanner">
-		{#if scanning}
-			<button on:click={stop}>stop</button>
-		{:else}
-			<button on:click={start}>start</button>
-		{/if}
-		{#if status === 'inside'}
-			<button
-				on:click={() => {
-					status = 'outside';
-				}}
-			>
-				Going Out
-			</button>
-		{:else}
-			<button
-				on:click={() => {
-					status = 'inside';
-				}}
-			>
-				Coming In
-			</button>
-		{/if}
+		<div class="mt-4 flex gap-4">
+			{#if scanning}
+				<button on:click={stop}><MainButton><div class="w-20 p-0">Stop</div></MainButton></button>
+			{:else}
+				<button on:click={start}><MainButton><div class="w-20 p-0">Start</div></MainButton></button>
+			{/if}
+			{#if status === 'inside'}
+				<button
+					on:click={() => {
+						status = 'outside';
+					}}
+					><MainButton><div class="w-20 p-0">Going Out</div></MainButton>
+				</button>
+			{:else}
+				<button
+					on:click={() => {
+						status = 'inside';
+					}}
+				>
+					<MainButton><div class="w-20 p-0">Coming In</div></MainButton>
+				</button>
+			{/if}
+		</div>
 		<reader id="reader" />
-		{#if scanning}
-			<button on:click={stop}>stop</button>
-		{:else}
-			<button on:click={start}>start</button>
-		{/if}
 	</div>
 </div>
 
@@ -111,7 +108,7 @@
 	}
 	reader {
 		width: 100%;
-		min-height: 500px;
+		min-height: 250px;
 		background-color: black;
 	}
 </style>
