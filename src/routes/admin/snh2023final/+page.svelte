@@ -15,7 +15,7 @@
 
 	let data: TeamDataSNH2023[] = [];
 	let floor: string | null = '4';
-	let room: string | null = '1';
+	let room: string | null = 'A';
 	let arrived: boolean | null = null;
 
 	function getDate(timestamp: { seconds: number }) {
