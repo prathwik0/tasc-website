@@ -51,6 +51,7 @@
 		const teamRef = doc(db, 'snh2023final', team);
 
 		batch.update(teamRef, {
+			arrived: true,
 			[user + '.status']: status,
 			[user + '.timestamp']: Timestamp.now(),
 			[user + '.scanned']: true,
