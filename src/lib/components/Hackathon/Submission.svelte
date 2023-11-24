@@ -60,7 +60,7 @@
 	}
 </script>
 
-<h1 class="pb-4 text-center font-jbExtrabold text-2xl md:text-4xl">Submit solution for your problem statement</h1>
+<h1 class="pb-4 text-center font-jbExtrabold text-2xl md:text-4xl">Nov 10: Submit solution for your problem statement</h1>
 <h2 class="text-md pb-4 text-center font-jbRegular md:text-lg">You can change your submissions until 19 Nov 2023</h2>
 <div class="flex w-full flex-grow px-2 md:px-6">
 	<div class="flex w-full flex-shrink flex-col items-center justify-center rounded-2xl border-[1px] border-[#d2b863] p-6 md:p-10">

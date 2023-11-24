@@ -116,13 +116,6 @@
 
 		<LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} />
 
-		<!-- <div class="flex flex-col items-center justify-center py-8">
-			<h1 class="text-center font-jbExtrabold text-2xl md:text-4xl">Submissions are closed. We are sorry if you missed it.</h1>
-			<Separator class="my-16"></Separator>
-			<Submission teamID={data.teamURL} PID={data.submission?.PID} title={data.submission?.title} college={data.submission?.college} link={data.submission?.link}></Submission>
-		</div> -->
-		<!-- <MainButton>Solution Submission (soon...)</MainButton> -->
-
 		{#if data?.qualified}
 			{#if data?.proofURL == null}
 				<h1 class="mx-4 text-center font-jbExtrabold text-xl md:text-3xl">Congratulations!! You have been qualified for the next round</h1>
@@ -145,7 +138,16 @@
 				</div>
 			</div>
 		{:else}
-			<h3 class="mx-4 text-center font-jbExtrabold text-lg md:text-3xl">Thank you for participating. Unfortunately, you didn't qualify this time. Keep up the effort!</h3>
+			<h3 class="px-2 text-center font-jbExtrabold text-2xl md:px-12 md:text-4xl lg:px-48">Nov 22: Thank you for participating. Unfortunately, you didn't qualify this time. Keep up the effort!</h3>
+			<Separator class="my-16"></Separator>
 		{/if}
+
+		<div class="flex flex-col items-center justify-center pt-8">
+			<h1 class="px-2 text-center font-jbExtrabold text-2xl md:px-12 md:text-4xl lg:px-48">Nov 20: Submissions are closed. We are sorry if you missed it.</h1>
+			<Separator class="my-12"></Separator>
+			<Submission teamID={data.teamURL} PID={data.submission?.PID} title={data.submission?.title} college={data.submission?.college} link={data.submission?.link}></Submission>
+		</div>
+
+		<!-- <MainButton>Solution Submission (soon...)</MainButton> -->
 	</div>
 {/if}
