@@ -1,6 +1,6 @@
 <script>
-	let startDate = new Date('2023-11-24T11:36:00').getTime();
-	let endDate = new Date('2023-11-24T11:37:00').getTime();
+	let startDate = new Date('2023-11-25T11:00:00').getTime();
+	let endDate = new Date('2023-11-26T11:00:00').getTime();
 	let started = false;
 	let finished = false;
 	let timeLeft = calculateTimeToStart();
