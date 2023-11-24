@@ -16,7 +16,7 @@
 </script>
 
 <div class="flex items-center justify-center pt-24">
-	<div class="mt-5 rounded-2xl bg-[#d2b863] p-0.5 font-jbMedium transition duration-300 md:w-[35rem] lg:w-[50rem]">
+	<div class="mt-5 w-5/6 rounded-2xl bg-[#d2b863] p-0.5 font-jbMedium transition duration-300 md:w-2/3 lg:w-1/3">
 		<div class="rounded-2xl bg-slate-950 underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.1rem_#460a07]">
 			<div class="flex flex-col items-center justify-center rounded-2xl bg-[#d1f2f9] bg-opacity-5 px-5 py-16 font-jbBold text-4xl backdrop-blur-sm sm:px-20">
 				<div class="flex flex-col items-center justify-center md:flex-row">
@@ -36,7 +36,7 @@
 				<Separator />
 				<!-- 
 				<p class="text-xs">{QRCode}</p> -->
-				<div class="mb-4 mt-8 h-64 w-64 rounded-md bg-white"><QRCodeImage text={QRCode} errorCorrectionLevel="H" height="256" width="256" /></div>
+				<div class="mb-4 mt-8 h-60 w-60 rounded-md bg-white"><QRCodeImage text={QRCode} errorCorrectionLevel="H" width={240} /></div>
 				<!-- 
 					If scanner doesnt work this shows their team and user id
 					<p class="bottom-10 text-base text-slate-500">
