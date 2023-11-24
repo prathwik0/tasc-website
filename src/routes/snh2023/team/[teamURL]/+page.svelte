@@ -116,27 +116,31 @@
 
 		<LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} />
 
+		<Separator class="my-16"></Separator>
+
 		{#if data?.qualified}
-			{#if data?.proofURL == null}
-				<h1 class="mx-4 text-center font-jbExtrabold text-xl md:text-3xl">Congratulations!! You have been qualified for the next round</h1>
+			<h3 class="px-2 text-center font-jbExtrabold text-2xl md:px-12 md:text-4xl lg:px-48">Nov 24: You will be issued Team and Member ID soon</h3>
+			<Separator></Separator>
+			<h1 class="mx-4 text-center font-jbExtrabold text-xl md:text-3xl">Nov 22: Congratulations!! You have been qualified for the next round</h1>
+			{#if !data?.proofURL}
 				<h3 class="mx-4 text-center font-jbMedium text-lg md:text-xl">Please pay ₹300 to confirm your registeration for the final showdown</h3>
 			{/if}
 			<div class="pb-8">
 				<div class="mx-5 flex w-[20rem] flex-col items-center rounded-2xl border border-[#d2b863] bg-gray-400 bg-opacity-5 p-6 backdrop-blur-sm transition duration-300 md:w-[35rem] md:p-10">
-					{#if data?.proofURL == null}
-						<img src="/upi.png" alt="UPI" class="h-[20rem] w-[20rem]" />
-						<h3 class="py-4 font-jbBold text-xl md:text-2xl">Upload Payment Proof</h3>
-						<Input on:change={upload} name="photoURL" type="file" accept="image/png, image/jpeg, image/gif, image/webp" />
-						<p class="text-red-600">Max file size limit 500kB</p>
-						{#if uploading}
-							<p>Uploading...</p>
-							<Progress value={33} />
-						{/if}
-					{:else}
-						<h3 class="font-jbMedium text-lg md:text-xl">Thankyou for Registering!</h3>
+					<img src="/upi.png" alt="UPI" class="h-[20rem] w-[20rem]" />
+					<h3 class="py-4 font-jbBold text-xl md:text-2xl">Upload Payment Proof</h3>
+					<Input on:change={upload} name="photoURL" type="file" accept="image/png, image/jpeg, image/gif, image/webp" />
+					<p class="text-red-600">Max file size limit 500kB</p>
+					{#if uploading}
+						<p>Uploading...</p>
+						<Progress value={33} />
 					{/if}
 				</div>
 			</div>
+			{#if data?.proofURL}
+				<h3 class="font-jbMedium text-lg md:text-xl">Thank you for Registering! Your Payment Proof has been noted.</h3>
+			{/if}
+			<Separator class="my-16"></Separator>
 		{:else}
 			<h3 class="px-2 text-center font-jbExtrabold text-2xl md:px-12 md:text-4xl lg:px-48">Nov 22: Thank you for participating. Unfortunately, you didn't qualify this time. Keep up the effort!</h3>
 			<Separator class="my-16"></Separator>
@@ -148,6 +152,13 @@
 			<Submission teamID={data.teamURL} PID={data.submission?.PID} title={data.submission?.title} college={data.submission?.college} link={data.submission?.link}></Submission>
 		</div>
 
-		<!-- <MainButton>Solution Submission (soon...)</MainButton> -->
+		<Separator></Separator>
+
+		<div class="flex flex-col items-center justify-center p-6 align-middle md:flex-row">
+			<h1 class="px-2 text-center font-jbExtrabold text-2xl md:text-4xl">Nov 6:</h1>
+			<MainButton>Solution Submission (soon...)</MainButton>
+		</div>
+
+		<Separator></Separator>
 	</div>
 {/if}
