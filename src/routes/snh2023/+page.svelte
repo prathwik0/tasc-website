@@ -43,12 +43,12 @@
 </script>
 
 <main class="min-h-screen text-white">
-	<div class="-z-20">
-		<!-- Floating Items -->
+	<!-- <div class="-z-20">
+		
 		{#each images as image}
 			<img src={image.src} alt={image.alt} class={image.className} />
 		{/each}
-	</div>
+	</div> -->
 
 	<section id="home">
 		<Hero />
@@ -64,7 +64,12 @@
 	</div>
 
 	<section id="timeline">
-		<TimelineBetter />
+		<!-- <TimelineBetter /> -->
+		<h1 class="my-10 py-5 text-center font-jbExtrabold text-4xl md:py-10 md:text-5xl">Timeline</h1>
+		<div class="flex w-full flex-col items-center justify-center gap-x-10 gap-y-10 md:flex-row">
+			<img src="/InauguralWithTime.png" alt="Inaugral" class="h-2/3 w-2/3 rounded-2xl md:h-1/3 md:w-1/3" />
+			<img src="/ValedictoryWithTime.png" alt="Valedictory" class="h-2/3 w-2/3 rounded-2xl md:h-1/3 md:w-1/3" />
+		</div>
 	</section>
 	<!-- 
 	<section id="themes">
@@ -80,5 +85,4 @@
 		<Rewards />
 		<!-- <Sponsors /> -->
 	</section>
-
 </main>
