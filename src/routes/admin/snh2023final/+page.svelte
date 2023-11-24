@@ -187,6 +187,7 @@
 				<Table.Head>Team Name</Table.Head>
 				<Table.Head class="text-center">Member Count</Table.Head>
 				<Table.Head class="text-center">College</Table.Head>
+				<Table.Head class="text-center">Arrived</Table.Head>
 				<Table.Head class="text-center">PID</Table.Head>
 				<Table.Head class="max-w-[5rem] text-center">Link</Table.Head>
 				<Table.Head>Leader Name</Table.Head>
@@ -215,6 +216,7 @@
 					<Table.Cell>{team.teamName}</Table.Cell>
 					<Table.Cell>{team.memberCount}</Table.Cell>
 					<Table.Cell class="text-center">{team.college}</Table.Cell>
+					<Table.Cell class="text-center">{team.arrived ? 'Yes' : 'No'}</Table.Cell>
 					<Table.Cell>{team.PID}</Table.Cell>
 					<Table.Cell class="text-wrap max-w-[5rem]"><a href={team.submission.link} class="text-blue-600" target="_blank">{team.submission.title}</a></Table.Cell>
 

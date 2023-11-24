@@ -134,6 +134,7 @@
 				[userID]: {
 					status: 'pending',
 					timestamp: Timestamp.now(),
+					scanned: false,
 					name: team.memberInfo[i].name,
 					usn: team.memberInfo[i].usn,
 					phone: team.memberInfo[i].phone,
@@ -219,56 +220,56 @@
 
 					<Table.Cell>{team?.qualified}</Table.Cell>
 					<Table.Cell>
-						<button
+						<Button
 							on:click={() => {
 								qualify(team.teamURL);
 							}}
 						>
 							Qualify
-						</button>
+						</Button>
 					</Table.Cell>
 					<Table.Cell>
-						<button
+						<Button
 							on:click={() => {
 								disQualify(team.teamURL);
 							}}
 						>
 							DisQualify
-						</button>
+						</Button>
 					</Table.Cell>
 
 					<!-- Paid or Not Paid -->
 
 					<Table.Cell>{team?.payment}</Table.Cell>
 					<Table.Cell>
-						<button
+						<Button
 							on:click={() => {
 								paid(team.teamURL);
 							}}
 						>
 							Paid
-						</button>
+						</Button>
 					</Table.Cell>
 					<Table.Cell>
-						<button
+						<Button
 							on:click={() => {
 								notPaid(team.teamURL);
 							}}
 						>
 							NotPaid
-						</button>
+						</Button>
 					</Table.Cell>
 
 					<!-- Add to Second Round -->
 
 					<Table.Cell>
-						<button
+						<Button
 							on:click={() => {
 								secondRound(team);
 							}}
 						>
 							SecondRound
-						</button>
+						</Button>
 					</Table.Cell>
 				</Table.Row>
 			{/each}

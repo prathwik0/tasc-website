@@ -38,16 +38,13 @@ interface TeamDataSNH2023Basic {
 	teamSecret: string;
 	college: string;
 	arrived: boolean;
-	PID: string;
+
 	leader: string;
 	leaderName: string;
 	leaderPhone: string;
 	leaderEmail: string;
-	floor: string;
-	room: string;
 
-	members: string[];
-
+	PID: string;
 	submission: {
 		link: string;
 		PID: string;
@@ -55,7 +52,13 @@ interface TeamDataSNH2023Basic {
 		college: string;
 	};
 
+	floor?: string;
+	room?: string;
+	certificate?: boolean;
+
+	members: string[];
 	memberCount: number;
+
 	createdAt: {
 		seconds: number;
 		nanoseconds: number;
@@ -81,8 +84,8 @@ interface HistoryItem {
 }
 
 interface UserItem {
-	email: string;
 	name: string;
+	email: string;
 	phone: string;
 	usn: string;
 	scanned: boolean;
