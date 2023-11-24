@@ -10,7 +10,7 @@
 	import { db } from '$lib/firebase/firebase';
 
 	let floorList: string[] = ['4', '5', '6'];
-	let roomList: string[] = ['1', '2', '3'];
+	let roomList: string[] = ['A', 'B', 'C'];
 	let arrivedList: boolean[] = [true, false];
 
 	let data: TeamDataSNH2023[] = [];
