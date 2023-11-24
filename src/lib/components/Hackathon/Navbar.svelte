@@ -36,10 +36,8 @@
 				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#ps" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Problems</a></div>
 				<!-- <div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#themes" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Themes</a></div> -->
 				<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023#goodies" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Rewards</a></div>
-				{#if ($user && $userData && $userProfileData && !$userProfileData.snh2023) || !$user || !$userData || !$userProfileData}
-					<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023/team" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Team</a></div>
-				{:else}
-					<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href={`/snh2023/team/${$userProfileData?.snh2023}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">Team</a></div>
+				{#if $user && $userData && $userProfileData && $userProfileData.snh2023final}
+					<div class="transition duration-300 hover:drop-shadow-[0_0_0.2rem_#d2b863]"><a href="/snh2023/id" class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">ID</a></div>
 				{/if}
 			</ul>
 		</div>
@@ -62,10 +60,8 @@
 					<a class="mb-10 font-jbBold text-2xl" href="/snh2023#ps" on:click={closeMenu}> Problems </a>
 					<!-- <a class="font-jbBold mb-10 text-2xl" href="/snh2023#themes" on:click={closeMenu}> Themes </a> -->
 					<a class="mb-10 font-jbBold text-2xl" href="/snh2023#goodies" on:click={closeMenu}> Rewards </a>
-					{#if $user && $userData && $userProfileData && !$userProfileData.snh2023}
-						<a class="mb-10 font-jbBold text-2xl" href="/snh2023/team" on:click={closeMenu}> Team </a>
-					{:else}
-						<a class="mb-10 font-jbBold text-2xl" href={`/snh2023/team/${$userProfileData?.snh2023}`} on:click={closeMenu}> Team </a>
+					{#if $user && $userData && $userProfileData && $userProfileData.snh2023final}
+						<a class="mb-10 font-jbBold text-2xl" href="/snh2023/id" on:click={closeMenu}>ID</a>
 					{/if}
 				</ul>
 			</div>

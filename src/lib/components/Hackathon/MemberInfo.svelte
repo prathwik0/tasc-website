@@ -12,6 +12,7 @@
 	<div class="scale-110 pt-6">
 		<a href="/snh2023/qualified"><MainButton>Check out the Qualified teams</MainButton></a>
 	</div>
+
 	<!-- <div class="flex flex-col gap-2 sm:flex-row">
 		<a href="/snh2023/team"><MainButton><span class="sm:px-12">Join Team</span></MainButton></a>
 	</div> -->
@@ -26,5 +27,5 @@
 	<div class="scale-110 pt-6">
 		<a href="/snh2023/qualified"><MainButton>Check out the Qualified teams</MainButton></a>
 	</div>
-	<!-- <RegisterButton /> -->
+	<RegisterButton />
 {/if}

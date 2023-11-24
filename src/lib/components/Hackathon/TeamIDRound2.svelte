@@ -17,14 +17,14 @@
 			<div class="flex flex-col space-y-2">
 				<div>
 					<p class="mt-2 font-jbRegular text-[#fffba4]">👑 {data.leaderName}</p>
-					<p class="font-jbRegular text-[#fffba4]">☎️ {data.leaderPhone}</p>
+					<p class="font-jbRegular text-[#fffba4]">📱 {data.leaderPhone}</p>
 				</div>
 
 				{#each data.members as member}
 					{#if data.leader != member}
 						<div>
 							<p class="font-jbRegular text-[#fffba4]">♟️ {data[member].name}</p>
-							<p class="font-jbRegular text-[#fffba4]">☎️ {data[member].phone}</p>
+							<p class="font-jbRegular text-[#fffba4]">📱 {data[member].phone}</p>
 						</div>
 					{/if}
 				{/each}
@@ -34,7 +34,7 @@
 			</div>
 
 			<!-- {#if data.memberCount == 3} -->
-			<p class="pt-2 font-semibold">Count : {data.members.length}</p>
+			<!-- <p class="pt-2 font-semibold">Count : {data.members.length}</p> -->
 			<!-- {:else}
 					<p>You need to add {3 - data.memberCount} more {data.memberCount == 2 ? 'member' : 'members'}</p>
 				{/if} -->

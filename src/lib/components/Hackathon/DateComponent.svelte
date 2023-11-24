@@ -38,7 +38,7 @@
 			{#if !isRevealed}
 				CountDown - <span class="text-[#fffba4]">{timeRemaining}</span>
 			{:else}
-				<div class="text-[#fffba4]">The hackathon is now ongoing!</div>
+				<div class="text-[#fffba4]">The hackathon is now going on!</div>
 			{/if}
 		</div>
 	</div>

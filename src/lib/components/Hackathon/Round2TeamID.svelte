@@ -1,3 +1,8 @@
+<script lang="ts">
+	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
+	export let data: TeamDataSNH2023;
+</script>
+
 <div class="flex h-full min-h-screen w-full flex-col items-center justify-center space-y-6 pt-[8dvh]">
 	<h2 class="pt-4 font-jbExtrabold text-3xl md:text-4xl">Your Team</h2>
 
@@ -33,12 +38,12 @@
 			</div>
 
 			<!-- {#if data.memberCount == 3} -->
-					<p class="font-semibold pt-2">Count : 3</p>
-				<!-- {:else}
+			<p class="pt-2 font-semibold">Count : 3</p>
+			<!-- {:else}
 					<p>You need to add {3 - data.memberCount} more {data.memberCount == 2 ? 'member' : 'members'}</p>
 				{/if} -->
 		</ul>
 	</div>
-	<h2 class="pt-4 font-jbExtrabold text-3xl md:text-4xl text-center">Congrats For qualifying!🎉</h2>
-	<p class="font-jbRegular text-lg text-slate-400 text-center">Will be contacting you soon!</p>
+	<h2 class="pt-4 text-center font-jbExtrabold text-3xl md:text-4xl">Congrats For qualifying!🎉</h2>
+	<p class="text-center font-jbRegular text-lg text-slate-400">Will be contacting you soon!</p>
 </div>

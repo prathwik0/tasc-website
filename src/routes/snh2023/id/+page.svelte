@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>QR Code Scanning</title>
+	<title>SNH2023 | ID</title>
 </svelte:head>
 
 {#if data}
