@@ -9,12 +9,12 @@
 	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
 	import { db } from '$lib/firebase/firebase';
 
-	let floorList: string[] = ['1', '2', '3'];
+	let floorList: string[] = ['4', '5', '6'];
 	let roomList: string[] = ['1', '2', '3'];
 	let arrivedList: boolean[] = [true, false];
 
 	let data: TeamDataSNH2023[] = [];
-	let floor: string | null = '1';
+	let floor: string | null = '4';
 	let room: string | null = '1';
 	let arrived: boolean | null = null;
 
