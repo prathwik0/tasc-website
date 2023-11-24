@@ -8,6 +8,7 @@
 	import { page } from '$app/stores';
 	import type { TeamData } from '$lib/components/types/TeamData';
 	import { onMount } from 'svelte';
+	import Separator from '$lib/components/ui/separator/separator.svelte';
 
 	let teamURL = $page.params.teamURL;
 	let data: TeamData;
@@ -86,8 +87,11 @@
 			</ul>
 		</div>
 
-		<!-- <LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} /> -->
+		<LeaveTeam teamID={data.teamURL} memberInfo={data.memberInfo} leader={data.leader} />
+
 		<div class="flex flex-col items-center justify-center py-8">
+			<h1 class="text-center font-jbExtrabold text-2xl md:text-4xl">Submissions are closed. We are sorry if you missed it.</h1>
+			<Separator class="my-16"></Separator>
 			<Submission teamID={data.teamURL} PID={data.submission?.PID} title={data.submission?.title} college={data.submission?.college} link={data.submission?.link}></Submission>
 		</div>
 		<!-- <MainButton>Solution Submission (soon...)</MainButton> -->

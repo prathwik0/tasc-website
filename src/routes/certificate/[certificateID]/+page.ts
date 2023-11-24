@@ -13,17 +13,32 @@ export const load = (async ({ params }) => {
 	}
 
 	const data = certificateSnap.data();
-	const date:Date = data.date.toDate();
+	const date: Date = data.date.toDate();
 	const id = certificateSnap.id;
 
 	return {
 		certificateID: id,
-		user: data.user,
-		name: data.name,
-		role: data.role,
+		certificateTitle: data.certificateTitle,
+		version: data.version,
+		issueDate: date,
+		startDate: data.startDate?.toDate(),
+		endDate: data.endDate?.toDate(),
+		validity: data.validity,
 		occasion: data.occasion,
-		date: date,
-		team: data?.team,
-		teamName: data?.teamName
+		role: data.role,
+		organization: data.organization,
+		organizationLogo: data.organizationLogo,
+		issuerNames: data.issuerNames,
+		issuerSignatures: data.issuerSignatures,
+		userID: data.userID,
+		name: data.name,
+		email: data.email,
+		college: data.college,
+		usn: data.usn,
+		branch: data.branch,
+		event: data.event,
+		teamID: data.teamID,
+		teamName: data.teamName,
+		hash: data.hash
 	} as CertificateData;
 }) satisfies PageLoad;
