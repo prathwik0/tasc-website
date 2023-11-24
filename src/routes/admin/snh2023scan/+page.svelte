@@ -84,7 +84,7 @@
 					on:click={() => {
 						status = 'outside';
 					}}
-					><MainButton><div class="w-20 p-0">Going Out</div></MainButton>
+					><MainButton><div class="w-20 p-0">Coming In</div></MainButton>
 				</button>
 			{:else}
 				<button
@@ -92,7 +92,7 @@
 						status = 'inside';
 					}}
 				>
-					<MainButton><div class="w-20 p-0">Coming In</div></MainButton>
+					<MainButton><div class="w-20 p-0">Going Out</div></MainButton>
 				</button>
 			{/if}
 		</div>
