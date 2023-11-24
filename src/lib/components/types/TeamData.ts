@@ -27,9 +27,9 @@ export interface TeamData {
 	PID?: string;
 	submission?: Submission;
 	submissionHistory?: Submission[];
-
 	qualified?: boolean;
 	payment?: boolean;
+	proofURL?: string;
 }
 
 interface TeamDataSNH2023Basic {

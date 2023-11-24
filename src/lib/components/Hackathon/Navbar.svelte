@@ -43,8 +43,8 @@
 		</div>
 	</div>
 	<div class="fixed z-50 grid w-full backdrop-blur-md md:hidden">
-		<a href="/" class=" px-4 pt-4">
-			<img src="/NMAMITLogo.png" class="w-60" alt="logo" />
+		<a href="/" class=" px-4 pt-5">
+			<img src="/NMAMITLogo.png" class="w-40" alt="logo" />
 		</a>
 		<nav>
 			<div id="menuToggle" class="px-10 pb-4 pt-6">

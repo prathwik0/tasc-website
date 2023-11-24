@@ -5,6 +5,9 @@
 	import RegisterButton from './RegisterButton.svelte';
 </script>
 
+<div class="scale-110 pt-6">
+	<a href="/snh2023/qualified"><MainButton>Check out the Qualified teams</MainButton></a>
+</div>
 {#if !$userLoaded}
 	<span><img src={LoadingSVG} alt="spin" class=" w-24" /></span>
 {:else if $user && $userData && $userProfileData && !$userProfileData.snh2023final}
