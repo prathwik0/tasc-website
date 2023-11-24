@@ -54,17 +54,17 @@
 	<div class="flex h-screen flex-col items-center justify-center">
 		<div class="z-40 pt-5 text-center font-jbExtrabold text-2xl md:text-4xl">
 			{#if started && !finished}
-				<p class="flex flex-col space-y-6">
-					<span class="text-5xl">Hackathon will end in</span>
-					<span class="text-9xl text-[#fffba4]">{timeRemaining}</span>
+				<p class="flex flex-col space-y-16">
+					<span class="text-7xl">Hackathon will end in</span>
+					<span class="text-[10rem] text-[#fffba4]">{timeRemaining}</span>
 				</p>
 			{:else if !started && !finished}
-				<p class="flex flex-col space-y-6">
-					<span class="text-5xl">Hackathon will start in</span>
-					<span class="text-9xl text-[#fffba4]">{timeLeft}</span>
+				<p class="flex flex-col space-y-16">
+					<span class="text-7xl">Hackathon will start in</span>
+					<span class="text-[10rem] text-[#fffba4]">{timeLeft}</span>
 				</p>
 			{:else if finished}
-				<span class="text-9xl text-[#fffba4]">Time's up</span>
+				<span class="text-[10rem] text-[#fffba4]">⌛Time's up</span>
 			{/if}
 		</div>
 	</div>
