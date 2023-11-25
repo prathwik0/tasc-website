@@ -1,22 +1,28 @@
-export default interface CertificateData {
+export interface CertificateStaticData {
 	// Certificate details
-	certificateID: string;
 	certificateTitle: string;
 	version?: string;
 	issueDate: Date;
-	startDate?: Date;
-	endDate?: Date;
+	startDate: Date;
+	endDate: Date;
 
 	// Certificate validity (in years from issueDate)
 	validity?: number;
 
 	// Issuer details
 	occasion: string;
+	description: string;
 	role: string;
+	event: string;
 	organization: string;
 	organizationLogo: string;
 	issuerNames: string[];
+	issuerDesignations: string[];
 	issuerSignatures: string[];
+}
+
+export interface CertificateData extends CertificateStaticData {
+	certificateID: string;
 
 	// Recipient details
 	userID: string;
@@ -27,7 +33,6 @@ export default interface CertificateData {
 	branch?: string;
 
 	// Team details
-	event?: string;
 	teamID?: string;
 	teamName?: string;
 
