@@ -2,7 +2,7 @@ import { collection, doc, getDoc, getDocs, limit, query, where } from 'firebase/
 import type { PageLoad } from './$types';
 import { db } from '$lib/firebase/firebase';
 import { error } from '@sveltejs/kit';
-import type ProfileData from '$lib/components/types/ProfileData';
+import type { ProfileData } from '$lib/components/types/ProfileData';
 
 export const load = (async ({ params }) => {
 	// update the datamodel to include username in the profile collection
@@ -33,13 +33,7 @@ export const load = (async ({ params }) => {
 	// }
 
 	return {
-		name: userData.name,
-		usn: userData.usn,
-		username: userData.username,
-		photoURL: profileData?.photoURL,
-		bio: profileData?.bio,
-		links: profileData?.links ?? [],
-		color_dark: profileData?.color_dark,
-		color_light: profileData?.color_light
+		...userData,
+		...profileData
 	} as ProfileData;
 }) satisfies PageLoad;
