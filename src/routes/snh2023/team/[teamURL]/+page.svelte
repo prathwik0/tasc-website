@@ -6,7 +6,7 @@
 	import { doc, getDoc } from 'firebase/firestore';
 	import { db } from '$lib/firebase/firebase';
 	import { page } from '$app/stores';
-	import type { TeamData } from '$lib/components/types/TeamData';
+	import type { TeamData } from '$lib/types/TeamData';
 	import { onMount } from 'svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import { qualified } from '$lib/data/Qualified';

@@ -1,7 +1,7 @@
 import { db } from '$lib/firebase/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import type { PageLoad } from './$types';
-import type EventData from '$lib/components/types/EventData';
+import type EventData from '$lib/types/EventData';
 
 // @ts-ignore
 export const load = (async ({ params }) => {

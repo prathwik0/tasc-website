@@ -1,7 +1,7 @@
 import { db } from '$lib/firebase/firebase';
 import { collection, getDocs, type DocumentData } from 'firebase/firestore';
 import type { PageLoad } from './$types';
-import type MemberData from '$lib/components/types/MemberData';
+import type MemberData from '$lib/types/MemberData';
 
 export const load = (async ({ params }) => {
 	const memberSnapshot = await getDocs(collection(db, 'members', params.year, 'post'));

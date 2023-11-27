@@ -1,7 +1,7 @@
 <script lang="ts">
 	import MemberID from '$lib/components/Hackathon/MemberIDRound2.svelte';
 	import TeamId from '$lib/components/Hackathon/TeamIDRound2.svelte';
-	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
+	import type { TeamDataSNH2023 } from '$lib/types/TeamData';
 	import { db, userData, userID, userProfileData } from '$lib/firebase/firebase';
 	import { doc, getDoc } from 'firebase/firestore';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
+	import type { TeamDataSNH2023 } from '$lib/types/TeamData';
 	export let data: TeamDataSNH2023;
 </script>
 
