@@ -4,6 +4,7 @@ interface Link {
 	title: string;
 }
 
+// Immutable Data will be present in user collection
 interface ImmutableData {
 	username: string;
 	name: string;
@@ -12,6 +13,7 @@ interface ImmutableData {
 	[dynamicField: string]: unknown;
 }
 
+// Mutable Data will be present in profile collection
 interface Achievement {
 	name: string;
 	description: string;
@@ -21,8 +23,9 @@ interface Achievement {
 
 	issueDate: string;
 	organization: string;
+	validity: string;
 
-	occassion: string;
+	occasion: string;
 	role: string;
 
 	event?: string;
