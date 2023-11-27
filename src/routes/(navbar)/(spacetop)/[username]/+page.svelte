@@ -5,6 +5,7 @@
 	import type { PageData } from './$types';
 	import { backgroundColor } from '$lib/actions/style';
 	import { darkTheme } from '$lib/stores/theme';
+	import Separator from '$lib/components/ui/separator/separator.svelte';
 
 	export let data: PageData;
 </script>
@@ -31,18 +32,52 @@
 			<p>{data.bio ?? 'No bio yet'}</p>
 		</div>
 
-		<div class="mt-6 w-72 sm:w-[420px]">
-			<h1 class="text-2xl">My Social Media</h1>
+		{#if data.links && data.links.length > 0}
+			<div class="mt-6 w-72 sm:w-[420px]">
+				<h1 class="text-2xl">My Social Media</h1>
 
-			<ul class="flex list-none flex-col">
-				{#each data.links as item}
+				<ul class="flex list-none flex-col">
+					{#each data.links as item}
+						<li class="w-full py-2">
+							<UserLink {...item} />
+						</li>
+					{/each}
+				</ul>
+			</div>
+		{:else}
+			<div class="mt-6 w-72 sm:w-[420px]">
+				<h1 class="text-2xl">My Social Media</h1>
+				<ul class="flex list-none flex-col">
 					<li class="w-full py-2">
-						<UserLink {...item} />
+						<UserLink url="https://tascnmamit.in" platform="custom" title="Add your social media profiles" />
 					</li>
-				{/each}
-			</ul>
-		</div>
+					<li class="w-full py-2">
+						<UserLink url="https://tascnmamit.in" platform="custom" title="Add your social media profiles" />
+					</li>
+					<li class="w-full py-2">
+						<UserLink url="https://tascnmamit.in" platform="custom" title="Add your social media profiles" />
+					</li>
+				</ul>
+			</div>
+		{/if}
 	</div>
-
-	<div class="m-24"></div>
 </div>
+
+<div class="my-4">
+	<Separator></Separator>
+</div>
+
+{#if data.achievements && data.achievements.length > 0}
+	<h1 class="text-center text-4xl">Achievements</h1>
+	<div>
+		{#each data.achievements as achievement}
+			<a href={data[achievement].certificateURL}><h1 class="text-2xl">{data[achievement].certificateTitle}</h1> </a>
+			<p>
+				{JSON.stringify(data[achievement])}
+			</p>
+			<div class="my-4">
+				<Separator></Separator>
+			</div>
+		{/each}
+	</div>
+{/if}
