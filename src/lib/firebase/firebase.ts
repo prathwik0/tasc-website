@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import type ProfileData from '$lib/components/types/ProfileData';
+import type { ProfileData } from '$lib/components/types/ProfileData';
 import { deleteApp, getApp, getApps, initializeApp, type FirebaseApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
 import { doc, getFirestore, onSnapshot } from 'firebase/firestore';
