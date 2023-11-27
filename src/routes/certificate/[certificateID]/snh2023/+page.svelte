@@ -1,28 +1,19 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import { Separator } from '$lib/components/ui/separator';
-	import { onMount } from 'svelte';
-	import type { PageData } from './$types';
+	import type { PageData } from '../$types';
 	export let data: PageData;
+	let months = ['Jan', 'Febr', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 	console.log(data.certificateID);
-
-	const specialOccasions = ['snh2023'];
-
-	onMount(() => {
-		if (specialOccasions.includes(data.occasion)) {
-			goto(`${data.certificateID}/${data.occasion}`);
-		}
-	});
 </script>
 
 <svelte:head>
-	<title>Certificate | TASC</title>
+	<title>Certificate SNH2023 | TASC</title>
 	<meta name="description" content={data.occasion} />
 </svelte:head>
 
 <div class="flex h-screen items-center justify-center">
 	<div class="flex h-3/4 w-2/3 flex-col items-center rounded-md border border-white bg-white p-20 text-black">
-		<h2 class="text-6xl font-medium text-slate-600">Certificate of Achievement</h2>
+		<h2 class="text-6xl font-medium text-slate-600">Certificate of SNH2023</h2>
 		<p class="mt-6 text-lg text-slate-800">This certificate is presented to</p>
 		<div class="mt-8 text-4xl font-medium text-green-500">
 			{data.name}
