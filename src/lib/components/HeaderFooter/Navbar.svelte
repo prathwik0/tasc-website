@@ -30,6 +30,7 @@
 				{/each}
 			</ul>
 			<div class="absolute right-10 flex w-28 justify-center">
+				<ThemeToggle />
 				<AuthButton />
 			</div>
 		</div>
@@ -58,6 +59,7 @@
 						<a class="mt-10 text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
 					{/each}
 					<div class="mt-10 flex justify-end font-jbBold text-2xl">
+						<ThemeToggle />
 						<AuthButton />
 					</div>
 				</ul>
