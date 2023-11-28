@@ -1,4 +1,4 @@
-import type CertificateData from '$lib/components/types/CertificateData';
+import type { CertificateData } from '$lib/components/types/CertificateData';
 import { db } from '$lib/firebase/firebase';
 import { error } from '@sveltejs/kit';
 import { doc, getDoc } from 'firebase/firestore';
@@ -13,18 +13,20 @@ export const load = (async ({ params }) => {
 	}
 
 	const data = certificateSnap.data();
-	const date: Date = data.date.toDate();
 	const id = certificateSnap.id;
+
+	console.log(data);
 
 	return {
 		certificateID: id,
 		certificateTitle: data.certificateTitle,
 		version: data.version,
-		issueDate: date,
-		startDate: data.startDate?.toDate(),
-		endDate: data.endDate?.toDate(),
+		issueDate: data.issueDate,
+		startDate: data.startDate,
+		endDate: data.endDate,
 		validity: data.validity,
 		occasion: data.occasion,
+		description: data.description,
 		role: data.role,
 		organization: data.organization,
 		organizationLogo: data.organizationLogo,
