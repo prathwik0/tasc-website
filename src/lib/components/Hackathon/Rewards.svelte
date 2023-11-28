@@ -36,7 +36,13 @@
 				<div class="rounded-2xl bg-[#0f0913] underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">
 					<div class="flex flex-col items-center justify-center rounded-2xl bg-[#d1f2f9] bg-opacity-5 px-5 py-16 font-jbBold text-4xl backdrop-blur-sm sm:px-20">
 						<div class="flex flex-col items-center justify-center md:flex-row">
-							<div class="text-2xl text-[#fffba4] transition duration-300 lg:text-3xl">Total Prize Pool of</div>
+							<div class="text-2xl text-[#fffba4] transition duration-300 lg:text-3xl">Total Expenses & Rewards</div>
+						</div>
+						<ul class="mt-5 w-fit text-3xl lg:text-4xl">₹ 2,00,000 +</ul>
+					</div>
+					<div class="flex flex-col items-center justify-center rounded-2xl bg-[#d1f2f9] bg-opacity-5 px-5 pb-16 font-jbBold text-4xl backdrop-blur-sm sm:px-20">
+						<div class="flex flex-col items-center justify-center md:flex-row">
+							<div class="text-2xl text-[#fffba4] transition duration-300 lg:text-3xl">Total Cash Prize Pool of</div>
 						</div>
 						<ul class="mt-5 w-fit text-3xl lg:text-4xl">₹ 30,000</ul>
 					</div>

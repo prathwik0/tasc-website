@@ -6,7 +6,7 @@
 <div class="mt-10 flex h-full w-full flex-col items-center justify-center space-y-6">
 	<h2 class="font-jbExtrabold text-3xl md:text-4xl">Your Team</h2>
 
-	<div class="text-md w-5/6 cursor-default rounded-2xl border-[1px] border-[#d2b863] bg-gray-400 bg-opacity-5 px-5 py-2 backdrop-blur-sm transition duration-300 md:w-2/3 md:p-10 md:text-2xl lg:w-1/3">
+	<div class="text-md w-5/6 cursor-default rounded-2xl border-[1px] border-[#d2b863] bg-gray-400 bg-opacity-5 px-5 py-2 backdrop-blur-sm transition duration-300 md:w-2/3 md:p-10 md:text-2xl xl:w-1/2">
 		<ul class="mt-5 space-y-2">
 			<p class="font-jbRegular">Team Name: <span class="text-[#fffba4]">{data.teamName}</span></p>
 			<p class="flex items-center space-x-2 font-jbRegular">

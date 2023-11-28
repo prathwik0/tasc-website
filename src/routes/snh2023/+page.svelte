@@ -7,6 +7,8 @@
 	import Themes from '$lib/components/Hackathon/Themes.svelte';
 	import TimelineBetter from '$lib/components/Hackathon/TimelineBetter.svelte';
 	import ProblemStatements from '$lib/components/Hackathon/ProblemStatements.svelte';
+	import MainButton from '$lib/components/Hackathon/MainButton.svelte';
+
 	const images = [
 		{
 			src: '/assets/icons/13@1x.png',
@@ -54,34 +56,37 @@
 		<Hero />
 	</section>
 
-	<section id="date">
+	<section class="my-20 py-20" id="date">
 		<DateComponent />
+		<!-- <p class="pb-4 pt-6 text-center text-2xl">Hello {$userData.name}!</p> -->
+		<div class="flex justify-center gap-4 pt-6">
+			<a href="/snh2023/qualified"><MainButton>Qualified teams</MainButton></a>
+			<a href="/snh2023/team"><MainButton><span>Join/Create Team</span></MainButton></a>
+		</div>
 	</section>
 
-	<!-- <TextSlide /> -->
 	<div id="about">
 		<AboutSection />
 	</div>
 
-	<section id="timeline">
-		<!-- <TimelineBetter /> -->
-		<h1 class="my-10 py-5 text-center font-jbExtrabold text-4xl md:py-10 md:text-5xl">Timeline</h1>
+	<section id="ps" class="flex w-full justify-center pt-6">
+		<ProblemStatements />
+	</section>
+
+	<section id="timeline" class="pt-6">
+		<TimelineBetter />
+		<h1 class="my-10 py-5 text-center font-jbExtrabold text-4xl md:py-10 md:text-5xl">Final 24 Hour Hackathon</h1>
 		<div class="flex w-full flex-col items-center justify-center gap-x-10 gap-y-10 md:flex-row">
 			<img src="/InauguralWithTime.png" alt="Inaugral" class="h-2/3 w-2/3 rounded-2xl md:h-1/3 md:w-1/3" />
 			<img src="/ValedictoryWithTime.png" alt="Valedictory" class="h-2/3 w-2/3 rounded-2xl md:h-1/3 md:w-1/3" />
 		</div>
 	</section>
-	<!-- 
-	<section id="themes">
+
+	<!-- <section id="themes">
 		<Themes />
-	</section> 
--->
+	</section> -->
 
-	<section id="ps" class="flex w-full justify-center">
-		<ProblemStatements />
-	</section>
-
-	<section id="goodies">
+	<section id="goodies" class="pt-6">
 		<Rewards />
 		<!-- <Sponsors /> -->
 	</section>
