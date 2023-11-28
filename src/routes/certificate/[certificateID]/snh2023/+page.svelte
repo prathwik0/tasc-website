@@ -1,15 +1,8 @@
 <script lang="ts">
 	import { Separator } from '$lib/components/ui/separator';
-	import type { PageData } from '../$types';
-	export let data: PageData;
-	let months = ['Jan', 'Febr', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-	console.log(data.certificateID);
+	import type { LayoutData } from '../$types';
+	export let data: LayoutData;
 </script>
-
-<svelte:head>
-	<title>Certificate SNH2023 | TASC</title>
-	<meta name="description" content={data.occasion} />
-</svelte:head>
 
 <div class="flex h-screen items-center justify-center">
 	<div class="flex h-3/4 w-2/3 flex-col items-center rounded-md border border-white bg-white p-20 text-black">
