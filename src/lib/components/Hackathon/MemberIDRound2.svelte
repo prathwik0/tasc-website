@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
+	import type { TeamDataSNH2023 } from '$lib/types/TeamData';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import { copy } from 'svelte-copy';
 	import { QRCodeImage } from 'svelte-qrcode-image';

@@ -1,4 +1,5 @@
 import type { Timestamp } from 'firebase/firestore';
+
 export interface CertificateStaticData {
 	// Certificate details
 	certificateTitle: string;
@@ -11,10 +12,16 @@ export interface CertificateStaticData {
 	validity?: number;
 
 	// Issuer details
-	occasion: string;
+	occasion: string; // occasion uniquely identifies a type of certificate
 	description: string;
-	role: string;
-	event: string;
+
+	role: string; // eg. participant, winner, runners up, organizer, volunteer
+
+	eventName: string;
+	eventID: string;
+	eventDescription: string;
+
+	// We have organization field because we plan to allow multiple organizations to issue certificates in the future
 	organization: string;
 	organizationLogo: string;
 	issuerNames: string[];

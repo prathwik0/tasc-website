@@ -6,7 +6,7 @@
 	import { user, userID, userProfileData } from '$lib/firebase/firebase';
 	import { Timestamp, collection, doc, getDocs, query, where, writeBatch } from 'firebase/firestore';
 
-	import type { TeamDataSNH2023 } from '$lib/components/types/TeamData';
+	import type { TeamDataSNH2023 } from '$lib/types/TeamData';
 	import { db } from '$lib/firebase/firebase';
 
 	let floorList: string[] = ['4', '5', '6'];

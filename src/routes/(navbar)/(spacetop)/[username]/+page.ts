@@ -2,7 +2,7 @@ import { collection, doc, getDoc, getDocs, limit, query, where } from 'firebase/
 import type { PageLoad } from './$types';
 import { db } from '$lib/firebase/firebase';
 import { error } from '@sveltejs/kit';
-import type { ProfileData } from '$lib/components/types/ProfileData';
+import type { ProfileData } from '$lib/types/ProfileData';
 
 export const load = (async ({ params }) => {
 	// update the datamodel to include username in the profile collection
