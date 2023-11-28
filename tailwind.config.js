@@ -13,6 +13,9 @@ const config = {
 			}
 		},
 		extend: {
+			// backgroundImage: {
+			// 	'certificate-bg': "url('/backgroundCertificate.png')"
+			// },
 			keyframes: {
 				'accordion-down': {
 					from: { height: '0' },
