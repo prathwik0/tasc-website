@@ -28,7 +28,8 @@ interface Achievement {
 	occasion: string;
 	role: string;
 
-	event?: string;
+	eventID?: string;
+	eventName?: string;
 	teamID?: string;
 	teamName?: string;
 }
