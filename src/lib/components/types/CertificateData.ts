@@ -1,10 +1,11 @@
+import type { Timestamp } from 'firebase/firestore';
 export interface CertificateStaticData {
 	// Certificate details
 	certificateTitle: string;
 	version?: string;
-	issueDate: Date;
-	startDate: Date;
-	endDate: Date;
+	issueDate: Timestamp;
+	startDate: Timestamp;
+	endDate: Timestamp;
 
 	// Certificate validity (in years from issueDate)
 	validity?: number;
