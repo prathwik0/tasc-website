@@ -4,7 +4,7 @@
 	import { getDoc, getDocs, collection, writeBatch, doc, arrayUnion, increment, Timestamp } from 'firebase/firestore';
 	import { Button } from '$lib/components/ui/custom_button';
 	import { db } from '$lib/firebase/firebase';
-	import type { TeamData } from '$lib/components/types/TeamData';
+	import type { TeamData } from '$lib/types/TeamData';
 
 	let data: TeamData[] = [];
 

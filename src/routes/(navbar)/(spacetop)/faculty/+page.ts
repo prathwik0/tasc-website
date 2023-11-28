@@ -1,7 +1,7 @@
 import { db } from '$lib/firebase/firebase';
 import { collection, getDocs, type DocumentData } from 'firebase/firestore';
 import type { PageLoad } from './$types';
-import type FacultyData from '$lib/components/types/FacultyData';
+import type FacultyData from '$lib/types/FacultyData';
 
 export const load = (async () => {
 	const facultySnapshot = await getDocs(collection(db, 'Faculty'));
