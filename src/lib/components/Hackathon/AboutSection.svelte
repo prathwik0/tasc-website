@@ -18,5 +18,6 @@
 			<div class="pt-10 font-jbRegular leading-8 md:text-lg">Participants can immerse themselves in problem statements that align with their interests and aspirations. From envisioning futuristic smart cities to devising eco-friendly solutions, these statements encompass a wide spectrum of challenges, inviting diverse perspectives.</div>
 			<div class="pt-10 font-jbRegular leading-8 md:text-lg">SNH-2023 is open to all college students in India!</div>
 		</div>
+		<img class="mt-8" src="/snh2023/groupPhoto.png" alt="After the end of SNH2023" />
 	</div>
 </div>
