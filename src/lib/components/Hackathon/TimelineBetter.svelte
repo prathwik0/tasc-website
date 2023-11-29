@@ -239,9 +239,9 @@
 
 		.timeline__content--left {
 			margin-left: -6%;
-			// .timeline__year {
-			// 	left: 128%;
-			// }
+			.timeline__year {
+				left: 128%;
+			}
 		}
 
 		.timeline__year {
