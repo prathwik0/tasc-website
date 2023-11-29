@@ -38,7 +38,7 @@
 </script>
 
 <div class="mx-10 flex h-full flex-col items-center justify-center">
-	<h1 class="z-40 text-center font-jbExtrabold text-2xl md:text-4xl">November 25th and 26th, 2023</h1>
+	<h1 class="z-40 text-center font-jbExtrabold text-2xl md:text-4xl">Conducted on November 25th and 26th, 2023</h1>
 	<div class="z-40 pt-5 text-center font-jbExtrabold text-2xl md:text-4xl">
 		{#if !revealed}
 			CountDown - <span class="text-[#fffba4]">{timeRemaining}</span>

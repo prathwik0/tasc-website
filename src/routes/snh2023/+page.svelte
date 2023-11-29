@@ -63,6 +63,12 @@
 			<a href="/snh2023/qualified"><MainButton>Qualified teams</MainButton></a>
 			<a href="/snh2023/team"><MainButton><span>Join/Create Team</span></MainButton></a>
 		</div>
+		<div class="flex justify-center gap-4 pt-6">
+			<a href="snh2023/brochure.pdf" target="_blank"><MainButton>Hackathon Brochure</MainButton></a>
+		</div>
+		<div class="flex justify-center gap-4 pt-6">
+			<a href="snh2023/winners"><MainButton>Check out the winners of SNH2023</MainButton></a>
+		</div>
 	</section>
 
 	<div id="about">
@@ -77,8 +83,8 @@
 		<TimelineBetter />
 		<h1 class="my-10 py-5 text-center font-jbExtrabold text-4xl md:py-10 md:text-5xl">Final 24 Hour Hackathon</h1>
 		<div class="flex w-full flex-col items-center justify-center gap-x-10 gap-y-10 md:flex-row">
-			<img src="/InauguralWithTime.png" alt="Inaugral" class="h-2/3 w-2/3 rounded-2xl md:h-1/3 md:w-1/3" />
-			<img src="/ValedictoryWithTime.png" alt="Valedictory" class="h-2/3 w-2/3 rounded-2xl md:h-1/3 md:w-1/3" />
+			<img src="/snh2023/InauguralWithTime.png" alt="Inaugral" class="h-2/3 w-2/3 rounded-2xl md:h-1/3 md:w-1/3" />
+			<img src="/snh2023/ValedictoryWithTime.png" alt="Valedictory" class="h-2/3 w-2/3 rounded-2xl md:h-1/3 md:w-1/3" />
 		</div>
 	</section>
 
