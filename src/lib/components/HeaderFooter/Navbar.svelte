@@ -13,13 +13,11 @@
 
 <div class="z-50">
 	<div class="fixed top-0 z-50 hidden w-full md:grid">
-		<div class={`md: flex items-center justify-center px-6 py-2 md:px-10 md:py-6 ${y > 0 ? 'backdrop-blur-xl' : ''}`}>
+		<div class={`md: flex items-center justify-center px-6 py-2 md:px-10 md:py-6 ${y > 0 ? 'backdrop-blur-xl' : ''} transition-all duration-150 ease-out`}>
 			<div class="absolute left-6 flex items-center gap-x-2">
-				<div>
-					<a href="/">
-						<img src="/NMAMITLogo.png" class="md:w-56 lg:w-72" alt="logo" />
-					</a>
-				</div>
+				<a href="/">
+					<img src="/NMAMITLogo.png" class="w-28 md:w-56 lg:w-72" alt="logo" />
+				</a>
 				<!-- <a href="/">
 					<img src="/TASCLogo.png" class="w-16 lg:w-20" alt="logo" />
 				</a> -->
@@ -30,7 +28,7 @@
 				{/each}
 			</ul>
 			<div class="absolute right-10 flex w-28 justify-center">
-				<ThemeToggle />
+				<!-- <ThemeToggle /> -->
 				<AuthButton />
 			</div>
 		</div>
