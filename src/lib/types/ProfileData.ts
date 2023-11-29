@@ -1,3 +1,4 @@
+import type { Timestamp } from 'firebase/firestore';
 interface Link {
 	url: string;
 	platform: string;
@@ -21,7 +22,7 @@ interface Achievement {
 	certificateURL: string;
 	certificateID: string;
 
-	issueDate: string;
+	issueDate: Timestamp;
 	organization: string;
 	validity: string;
 
