@@ -50,6 +50,7 @@
 		<h1 class="my-4 text-center text-3xl sm:text-4xl">Achievements</h1>
 		{#each data.achievements as achievement}
 			<a href={data[achievement].certificateURL} target="_blank"><h2 class="w-full text-center text-2xl text-slate-400 transition-all duration-300 hover:text-white hover:drop-shadow-[0_0_0.3rem_#ffffff]">{data[achievement].certificateTitle}</h2> </a>
+			<!-- Todo make animations pop up like on hover it shows! On Phone screen let this be default -->
 			<div class="text-center text-slate-400">
 				<p>Issue Date : {data[achievement].issueDate.toDate().toLocaleDateString()}</p>
 				<p>Occasion : {data[achievement].occasion.toUpperCase()}</p>
