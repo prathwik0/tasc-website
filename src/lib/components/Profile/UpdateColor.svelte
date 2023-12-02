@@ -1,14 +1,20 @@
 <script lang="ts">
-	import { doc, updateDoc } from 'firebase/firestore';
-	import { db, userID, userProfileData } from '$lib/firebase/firebase';
 	import Button from '$lib/components/ui/custom_button/button.svelte';
-	import Label from '$lib/components/ui/label/label.svelte';
 	import Input from '$lib/components/ui/input/input.svelte';
+	import Label from '$lib/components/ui/label/label.svelte';
+	import { db, userID, userProfileData } from '$lib/firebase/firebase';
+	import { doc, updateDoc } from 'firebase/firestore';
 
 	let color_light: string = $userProfileData?.color_light ?? '';
 	let color_dark: string = $userProfileData?.color_dark ?? '';
 
-	async function updateColor(e: Event) {
+	function resetColor() {
+		color_light = '';
+		color_dark = '';
+		updateColor(null);
+	}
+
+	async function updateColor(e: Event | null) {
 		const userRef = doc(db, 'profile', $userID!.user);
 
 		await updateDoc(userRef, {
@@ -18,17 +24,22 @@
 	}
 </script>
 
-<div class="w-full pb-6 pt-2">
-	<Label>Current Lightmode Color: {$userProfileData?.color_light}</Label>
-	<br />
-	<Label>Current Darkmode Color: {$userProfileData?.color_dark}</Label>
-</div>
+<div class="h-[428px]">
+	<h1 class="text-2xl font-medium">Custom background color</h1>
+	<div class="flex w-full flex-col gap-y-4 pb-4 pt-2">
+		<Label class="flex flex-col gap-y-1 text-slate-500"><span>Lightmode Color:</span> <span class="text-primary">{$userProfileData?.color_light}</span></Label>
+		<Label class="flex flex-col gap-y-1 text-slate-500"><span>Darkmode Color:</span><span class="text-primary">{$userProfileData?.color_dark}</span></Label>
+	</div>
 
-<div class="grid gap-1.5">
-	<Label for="color_light">Pick Lightmode background-color</Label>
-	<Input type="color" name="color_light" bind:value={color_light} />
+	<div class="grid gap-1">
+		<Label for="color_light">Light mode color</Label>
+		<Input type="color" name="color_light" bind:value={color_light} class="my-2 cursor-pointer" />
 
-	<Label for="color_dark">Pick Darkmode background-color</Label>
-	<Input type="color" name="color_dark" bind:value={color_dark} />
+		<Label for="color_dark">Dark mode color</Label>
+		<Input type="color" name="color_dark" bind:value={color_dark} class="my-2 cursor-pointer" />
+	</div>
+	<Button class="mt-2 w-1/3 min-w-fit self-center border transition-all duration-300 ease-in-out hover:bg-[#020817]" variant="ghost" on:click={updateColor}>Update Color</Button>
+	<Button class="mt-2 w-1/3 min-w-fit self-center border transition-all duration-300 ease-in-out hover:bg-[#020817]" variant="ghost" on:click={resetColor}>Reset Color</Button>
+
+	<p class="mt-4 text-slate-500">Note that changing these color will reflect only on profile page and anyone viewing your profile will have that color reflected</p>
 </div>
-<Button class="mt-4" on:click={updateColor}>Update Color</Button>
