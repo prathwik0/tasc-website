@@ -4,6 +4,7 @@
 	import UserLink from '$lib/components/Profile/UserLink.svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import { darkTheme } from '$lib/stores/theme';
+	import { json } from '@sveltejs/kit';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -25,7 +26,7 @@
 	<!-- <h1 class="mt-2 text-center text-3xl sm:text-4xl">Profile</h1> -->
 	<div class="flex h-auto w-full flex-col items-center gap-y-5 rounded-md border border-white bg-white bg-opacity-5 p-10 shadow-[0_0_.9rem_#ffffff] sm:w-3/4 md:w-[550px]">
 		{#if data.photoURL}
-			<img src={data.photoURL} alt="photoURL" class="w-32 rounded-full aspect-square object-cover md:w-52" />
+			<img src={data.photoURL} alt="photoURL" class="w-32 rounded-full aspect-square object-cover sm:w-52" />
 		{:else}
 			<img src={'/fallback-image.jpg'} alt="photoURL" class="w-32 rounded-full aspect-square object-cover md:w-52" />
 		{/if}
@@ -37,7 +38,7 @@
 	<h1 class="mt-4 text-center text-3xl sm:text-4xl">My Links</h1>
 	<div class="w-ful flex justify-center sm:w-3/4 md:w-[550px]">
 		{#if data.links && data.links.length > 0}
-			<ul class="my-6 flex list-none flex-wrap justify-center gap-4">
+			<ul class="sm:my-6 flex list-none flex-wrap justify-center gap-4">
 				{#each data.links as item}
 					<UserLink {...item} />
 				{/each}
