@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { doc, updateDoc } from 'firebase/firestore';
 	import { db, userID, userProfileData } from '$lib/firebase/firebase';
-	import Textarea from '../ui/textarea/textarea.svelte';
+	import { doc, updateDoc } from 'firebase/firestore';
 	import Button from '../ui/custom_button/button.svelte';
 	import Label from '../ui/label/label.svelte';
+	import Textarea from '../ui/textarea/textarea.svelte';
 
 	let bio: string = '';
 
@@ -22,13 +22,15 @@
 	}
 </script>
 
-<div class="w-full pb-6 pt-2">
-	<Label>Current Bio: <span>{$userProfileData?.bio}</span></Label>
-</div>
+	<h1 class="text-2xl font-medium md:mt-4 lg:mt-0">Update your bio</h1>
 
-<div class="grid gap-1.5">
-	<Label for="bio">New bio</Label>
-	<Textarea name="bio" placeholder="Type your new bio here!" bind:value={bio} class="resize-none" rows={5} maxlength={150} />
-	<p class="font-semibold text-red-600">{msg}</p>
-</div>
-<Button class="mt-4" on:click={updateBio}>Update Bio</Button>
+	<div class="mt-1 w-full pb-4">
+		<Label class="text-base font-normal text-slate-500">{$userProfileData?.bio}</Label>
+	</div>
+
+	<div class="grid gap-1.5">
+		<Textarea name="bio" placeholder="Type your new bio here!" bind:value={bio} class="resize-none border-slate-500 focus:border-white" rows={5} maxlength={150} />
+		<p class="font-medium text-red-600">{msg}</p>
+	</div>
+	<Button class="mt-2 border w-1/3 min-w-fit self-center transition-all duration-300 ease-in-out hover:bg-[#020817]" variant="ghost" on:click={updateBio}>Update Bio</Button>
+
