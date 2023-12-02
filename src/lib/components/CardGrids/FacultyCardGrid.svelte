@@ -1,6 +1,6 @@
 <script lang="ts">
+	import type FacultyData from '$lib/types/FacultyData';
 	import FacultyCard from '../Card/FacultyCard.svelte';
-	import type FacultyData from '../types/FacultyData';
 	export let faculties: FacultyData[];
 </script>
 
@@ -13,7 +13,8 @@
 <style>
 	.grid-container {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+		gap: 3rem 0;
+		grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 		justify-items: center;
 		justify-content: end;
 		align-content: end;

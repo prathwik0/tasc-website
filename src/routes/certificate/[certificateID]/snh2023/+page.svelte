@@ -4,7 +4,7 @@
 	//@ts-ignore
 	import download from 'downloadjs';
 	import * as htmlToImage from 'html-to-image';
-	import type { LayoutData } from './$types';
+	import type { LayoutData } from '../$types';
 	export let data: LayoutData;
 
 	let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];

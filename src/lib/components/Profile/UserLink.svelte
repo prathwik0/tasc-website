@@ -1,7 +1,4 @@
 <script>
-	import { GithubIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from 'lucide-svelte';
-	import Github from '../docs/icons/github.svelte';
-
 	export let platform = 'none';
 	export let url = '/';
 	export let title = 'A cool title';
@@ -18,19 +15,20 @@
 {:else}
 	<a href={url} class="flex h-10 max-w-sm items-center justify-center gap-x-2 rounded-lg border border-white border-opacity-0 text-center transition-all duration-300 hover:scale-105 sm:w-36 sm:border-opacity-100">
 		{#if title === 'Instagram'}
-			<InstagramIcon class="w-5" />
+			<iconify-icon icon="mdi:instagram" height="20" />
 			<span class="hidden sm:block">{title}</span>
 		{:else if title === 'Twitter'}
-			<TwitterIcon class="w-5" />
+			<iconify-icon icon="simple-icons:x" height="16" />
 			<span class="hidden sm:block">{title}</span>
 		{:else if title === 'LinkedIn'}
-			<LinkedinIcon class="w-5" />
+			<iconify-icon icon="mdi:linkedin" height="20" />
 			<span class="hidden sm:block">{title}</span>
 		{:else if title === 'GitHub'}
-			<GithubIcon class="w-5" />
+			<iconify-icon icon="mdi:github" height="20" />
 			<span class="hidden sm:block">{title}</span>
 		{:else}
-			<img src={'/custom.svg'} alt={platform} width="10" height="10" />
+			<iconify-icon icon="mdi:github" height="5rem" width="5rem" />
+			<!-- <img src={'/custom.svg'} alt={platform} width="10" height="10" /> -->
 			<span class="hidden sm:block">{title}</span>
 		{/if}
 	</a>
