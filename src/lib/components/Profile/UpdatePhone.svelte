@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { doc, updateDoc } from 'firebase/firestore';
 	import { db, userID, userProfileData } from '$lib/firebase/firebase';
+	import { doc, updateDoc } from 'firebase/firestore';
 	import Button from '../ui/custom_button/button.svelte';
-	import Label from '../ui/label/label.svelte';
 	import Input from '../ui/input/input.svelte';
+	import Label from '../ui/label/label.svelte';
 
 	let phone = '';
 
@@ -25,12 +25,14 @@
 	}
 </script>
 
-<div class="w-full py-2">
-	<Label>Current Phone Number: <span>{$userProfileData?.phone}</span></Label>
-</div>
+<div>
+	<h1 class="text-2xl font-medium">Update your Phone Number</h1>
+	<div class="w-full py-1">
+		<Label class="text-slate-500 text-base font-medium"><span>{$userProfileData?.phone}</span></Label>
+	</div>
 
-<div class="grid gap-1.5">
-	<Label for="phone">New phone number (WhatsApp)</Label>
-	<Input name="phone" placeholder="Enter your Whatsapp Phone Number here" bind:value={phone} />
+	<div class="grid gap-1.5">
+		<Input class="border-slate-500 focus:border-white" name="phone" placeholder="Enter your Whatsapp Phone Number here" bind:value={phone} />
+	</div>
+	<Button class="mt-4 border w-1/3 min-w-fit self-center transition-all duration-300 ease-in-out hover:bg-[#020817]" variant="ghost" on:click={updatePhone}>Update Phone</Button>
 </div>
-<Button class="mt-4" on:click={updatePhone}>Update Phone Number</Button>
