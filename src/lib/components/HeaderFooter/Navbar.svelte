@@ -15,20 +15,23 @@
 	<div class="fixed top-0 z-50 hidden w-full md:grid">
 		<div class={`md: flex items-center justify-center px-6 py-2 md:px-10 md:py-6 ${y > 0 ? 'backdrop-blur-xl' : ''} transition-all duration-150 ease-out`}>
 			<div class="absolute left-6 flex items-center gap-x-2">
-				<a href="/">
-					<img src="/NMAMITLogo.png" class="w-28 md:w-56 lg:w-72" alt="logo" />
+				<a href="/" class="block dark:hidden">
+					<img src="/nitte-nmamit-logo.png" class="w-28 md:w-56 lg:w-80" alt="logo" />
+				</a>
+				<a href="/" class="hidden dark:block">
+					<img src="/NMAMITLogo.png" class="w-28 md:w-56 lg:w-80" alt="logo" />
 				</a>
 				<!-- <a href="/">
 					<img src="/TASCLogo.png" class="w-16 lg:w-20" alt="logo" />
 				</a> -->
 			</div>
-			<ul class="flex flex-wrap items-center space-x-8 tracking-wider md:text-lg">
+			<ul class="flex flex-wrap items-center space-x-8 md:text-lg">
 				{#each NAVITEM as nav}
-					<div class="transition duration-300 hover:drop-shadow-[0_0_0.3rem_#ffffff]"><a href={`${nav.href}`} class="scroll-smooth underline-offset-8 transition duration-300 hover:drop-shadow-[0_0_0.2rem_#460a07]">{nav.title}</a></div>
+					<div class="hover:dark:custom-drop-shadow-white hover:scale-105"><a href={`${nav.href}`} class="scroll-smooth">{nav.title}</a></div>
 				{/each}
 			</ul>
-			<div class="absolute right-10 flex w-28 justify-center">
-				<!-- <ThemeToggle /> -->
+			<div class="absolute right-10 flex w-28 justify-center gap-2">
+				<ThemeToggle />
 				<AuthButton />
 			</div>
 		</div>
@@ -37,8 +40,11 @@
 	<div class="fixed z-50 flex w-full pt-4 md:hidden">
 		<div class="flex">
 			<div>
-				<a href="/">
-					<img src="/NMAMITLogo.png" class=" w-60" alt="logo" />
+				<a href="/" class="block dark:hidden">
+					<img src="/nitte-nmamit-logo.png" class="w-60" alt="logo" />
+				</a>
+				<a href="/" class="hidden dark:block">
+					<img src="/NMAMITLogo.png" class="w-60" alt="logo" />
 				</a>
 			</div>
 			<!-- <a href="/">
@@ -56,9 +62,9 @@
 					{#each NAVITEM as nav}
 						<a class="mt-10 text-2xl" href={`${nav.href}`} on:click={closeMenu}> {nav.title} </a>
 					{/each}
-					<div class="mt-10 flex justify-end font-jbBold text-2xl">
-						<ThemeToggle />
+					<div class="mt-6 flex flex-col items-end gap-y-4 text-2xl">
 						<AuthButton />
+						<div class="max-w-sm"><ThemeToggle /></div>
 					</div>
 				</ul>
 			</div>
