@@ -6,7 +6,7 @@
 	import { writable } from 'svelte/store';
 
 	import { Button, buttonVariants } from '$lib/components/ui/custom_button';
-	import * as Dialog from '$lib/components/ui/dialog-nandanfucker';
+	import * as Dialog from '$lib/components/ui/dialog';
 	import { Input } from '$lib/components/ui/input';
 
 	import Label from '$lib/components/ui/label/label.svelte';
@@ -81,10 +81,10 @@
 
 <div class="grid-item flex flex-col border">
 	<h1 class="text-2xl font-medium">Update your social links</h1>
-	<p class="text-base text-gray-500">Drag and drop to reorder your links</p>
+	<p class="text-base text-muted mt-1">Drag and drop to reorder your links</p>
 	<Dialog.Root>
 		{#if $userProfileData?.links?.length !== 8}
-			<Dialog.Trigger class="{buttonVariants({ variant: 'secondary' })} m-2 w-1/3 min-w-fit self-center rounded-3xl border border-white bg-transparent">Add Links</Dialog.Trigger>
+			<Dialog.Trigger class="{buttonVariants({ variant: 'secondary' })} m-2 w-1/3 min-w-fit self-center rounded-full border border-primary bg-transparent">Add Links</Dialog.Trigger>
 		{:else}
 			<p>You have reached max link limit!</p>
 		{/if}
@@ -151,7 +151,7 @@
 		<div class="group relative">
 			<UserLink {...item} disabled={true} />
 			<!-- <Button on:click={() => deleteLink(item)} class="absolute -right-4 bottom-6 bg-transparent hover:bg-transparent duration-300 transition-all"><iconify-icon icon="mdi:instagram" height="20" /></Button> -->
-			<button on:click={() => deleteLink(item)} class="absolute -right-5 bottom-5 cursor-pointer rounded-md px-4 py-1 text-white opacity-0 transition-all group-hover:opacity-100"><iconify-icon icon="maki:cross" height="20"></iconify-icon></button>
+			<button on:click={() => deleteLink(item)} class="absolute -right-5 bottom-5 cursor-pointer rounded-md px-4 py-1 text-primary opacity-0 transition-all group-hover:opacity-100"><iconify-icon icon="maki:cross" height="20"></iconify-icon></button>
 		</div>
 	</SortableList>
 </div>
