@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { db, userID, userProfileData } from '$lib/firebase/firebase';
 	import { doc, updateDoc } from 'firebase/firestore';
+	import { exclaim, success } from '../Toast/toast';
 	import Button from '../ui/custom_button/button.svelte';
 	import Input from '../ui/input/input.svelte';
 	import Label from '../ui/label/label.svelte';
@@ -13,7 +14,7 @@
 
 	async function updatePhone(e: Event) {
 		if (!isValidPhone) {
-			alert('Please enter a valid phone number!');
+			exclaim('Please enter a valid phone number!');
 			return;
 		}
 
@@ -22,17 +23,18 @@
 		await updateDoc(userRef, {
 			phone
 		});
+		success('Updated Phone successfully');
 	}
 </script>
 
 <div>
 	<h1 class="text-2xl font-medium">Update your Phone Number</h1>
 	<div class="w-full py-1">
-		<Label class="text-slate-500 text-base font-medium"><span>{$userProfileData?.phone}</span></Label>
+		<Label class="text-base font-medium text-muted"><span>{$userProfileData?.phone}</span></Label>
 	</div>
 
 	<div class="grid gap-1.5">
-		<Input class="border-slate-500 focus:border-white" name="phone" placeholder="Enter your Whatsapp Phone Number here" bind:value={phone} />
+		<Input class="border-muted focus:border-primary" name="phone" placeholder="Enter your Whatsapp Phone Number here" bind:value={phone} />
 	</div>
-	<Button class="mt-4 border w-1/3 min-w-fit self-center transition-all duration-300 ease-in-out hover:bg-[#020817]" variant="ghost" on:click={updatePhone}>Update Phone</Button>
+	<Button class="mt-4 w-1/3 min-w-fit self-center border hover:bg-background" variant="ghost" on:click={updatePhone}>Update Phone</Button>
 </div>
