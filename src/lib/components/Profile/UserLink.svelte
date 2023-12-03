@@ -7,14 +7,15 @@
 </script>
 
 {#if disabled}
-	<div class="flex rounded-md bg-slate-800 bg-opacity-60 hover:bg-slate-500 duration-150 border border-slate-500 text-center w-[140px]">
+	<div class="flex w-[140px] rounded-md border border-muted bg-slate-100 text-center duration-150 dark:bg-slate-800">
+	
 		<div class="flex max-w-sm items-center px-4">
 			<iconify-icon icon={icon !== 'custom' ? `mdi:${icon}` : 'mdi:earth'} height="20" />
-			<span class="m-2 text-center text-base font-bold">{title}</span>
+			<span class="m-2 text-center text-base font-medium">{title}</span>
 		</div>
 	</div>
 {:else}
-	<a href={url} class="flex h-10 max-w-sm items-center justify-center gap-x-2 rounded-lg border border-gray-600 border-opacity-0 transition-all duration-300 hover:scale-105 sm:w-36 sm:border-opacity-100">
+	<a href={url} class="flex h-10 max-w-sm items-center justify-center gap-x-2 rounded-lg border border-muted border-hidden transition-all duration-300 hover:scale-105 sm:w-36 sm:border-solid">
 		{#if icon === 'instagram'}
 			<iconify-icon icon="mdi:instagram" height="20" />
 			<span class="hidden sm:block">{title}</span>
