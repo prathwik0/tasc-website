@@ -3,7 +3,9 @@
 	import Input from '$lib/components/ui/input/input.svelte';
 	import Label from '$lib/components/ui/label/label.svelte';
 	import { db, userID, userProfileData } from '$lib/firebase/firebase';
+	import { toast } from '@zerodevx/svelte-toast';
 	import { doc, updateDoc } from 'firebase/firestore';
+	import { information, success } from '../Toast/toast';
 
 	let color_light: string = $userProfileData?.color_light ?? '';
 	let color_dark: string = $userProfileData?.color_dark ?? '';
@@ -12,6 +14,8 @@
 		color_light = '';
 		color_dark = '';
 		updateColor(null);
+
+		information('Color has been reset!');
 	}
 
 	async function updateColor(e: Event | null) {
@@ -21,25 +25,26 @@
 			color_light,
 			color_dark
 		});
+		success('Color Updated Successfully!');
 	}
 </script>
 
 <div class="h-[428px]">
 	<h1 class="text-2xl font-medium">Custom background color</h1>
 	<div class="flex w-full flex-col gap-y-4 pb-4 pt-2">
-		<Label class="flex flex-col gap-y-1 text-slate-500"><span>Lightmode Color:</span> <span class="text-primary">{$userProfileData?.color_light}</span></Label>
-		<Label class="flex flex-col gap-y-1 text-slate-500"><span>Darkmode Color:</span><span class="text-primary">{$userProfileData?.color_dark}</span></Label>
+		<Label class="flex flex-col gap-y-1 text-muted"><span>Lightmode Color:</span> <span class="text-primary">{$userProfileData?.color_light ? $userProfileData?.color_light : 'Default'}</span></Label>
+		<Label class="flex flex-col gap-y-1 text-muted"><span>Darkmode Color:</span><span class="text-primary">{$userProfileData?.color_dark ? $userProfileData?.color_dark : 'Default'}</span></Label>
 	</div>
 
 	<div class="grid gap-1">
 		<Label for="color_light">Light mode color</Label>
-		<Input type="color" name="color_light" bind:value={color_light} class="my-2 cursor-pointer" />
+		<Input type="color" name="color_light" bind:value={color_light} class="cursor-pointer border-none" />
 
 		<Label for="color_dark">Dark mode color</Label>
-		<Input type="color" name="color_dark" bind:value={color_dark} class="my-2 cursor-pointer" />
+		<Input type="color" name="color_dark" bind:value={color_dark} class="cursor-pointer border-none" />
 	</div>
-	<Button class="mt-2 w-1/3 min-w-fit self-center border transition-all duration-300 ease-in-out hover:bg-[#020817]" variant="ghost" on:click={updateColor}>Update Color</Button>
-	<Button class="mt-2 w-1/3 min-w-fit self-center border transition-all duration-300 ease-in-out hover:bg-[#020817]" variant="ghost" on:click={resetColor}>Reset Color</Button>
+	<Button class="mt-2 w-1/3 min-w-fit self-center border hover:bg-background" variant="ghost" on:click={updateColor}>Update Color</Button>
+	<Button class="mt-2 w-1/3 min-w-fit self-center border hover:bg-background" variant="ghost" on:click={resetColor}>Reset Color</Button>
 
-	<p class="mt-4 text-slate-500">Note that changing these color will reflect only on profile page and anyone viewing your profile will have that color reflected</p>
+	<p class="mt-4 text-muted">Note that changing these color will reflect only on profile page and anyone viewing your profile will have that color reflected</p>
 </div>
