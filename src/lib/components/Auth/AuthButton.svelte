@@ -27,15 +27,15 @@
 {:else if $user && $userData}
 	<Popover.Root>
 		<Popover.Trigger>
-			<Button class="border text-base font-bold transition-all duration-300 ease-in-out hover:bg-[#020817]" variant="ghost">You</Button>
+			<Button class="border bg-transparent text-base font-bold text-primary" variant={'secondary'}>You</Button>
 		</Popover.Trigger>
 		<Popover.Content>
 			<div class="flex max-w-xs flex-col gap-2">
-				<div class="px-2 text-lg">
-					Hello {$userData.name},
+				<div class="px-2 text-lg text-center">
+					Hello <span class="font-semibold">{$userData.name}</span>
 				</div>
-				<a href="/{$userData.username}" class="contents"><Button variant="outline">Your Public Profile</Button></a>
-				<a href="/{$userData.username}/edit" class="contents"><Button variant="outline">Edit your Profile</Button></a>
+				<a href="/{$userData.username}" class="contents"> <Button class="border bg-transparent text-primary" variant={'secondary'}>Your Public Profile</Button> </a>
+				<a href="/{$userData.username}/edit" class="contents"><Button class="border bg-transparent text-primary" variant={'secondary'}>Edit Profile</Button></a>
 				<Button on:click={signOutSSR}>Sign out</Button>
 			</div>
 		</Popover.Content>
@@ -62,7 +62,7 @@
 {:else}
 	<Popover.Root>
 		<Popover.Trigger>
-			<Button class="text-lg font-bold duration-200 hover:scale-110" variant="outline">Login</Button>
+			<Button class="border bg-transparent text-primary font-bold text-base" variant={'secondary'}>Login</Button>
 		</Popover.Trigger>
 		<Popover.Content>
 			<div class="flex max-w-xs flex-col gap-2">

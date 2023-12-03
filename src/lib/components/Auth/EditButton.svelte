@@ -7,5 +7,5 @@
 {#if !$userLoaded}
 	<span></span>
 {:else if $user && $userData && $userData.username === currentUsername}
-	<a href="/{$userData.username}/edit" class="text-center"><Button variant="outline">Edit Profile</Button></a>
+	<a href="/{$userData.username}/edit" class="text-center"><Button class="border bg-transparent text-primary" variant={'secondary'}>Edit Profile</Button></a>
 {/if}

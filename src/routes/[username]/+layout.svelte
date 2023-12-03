@@ -5,12 +5,14 @@
 </script>
 
 <Vectorall />
-<nav class="block h-20 w-full z-50">
+
+<nav class="z-50 block h-20 w-full">
 	<div class="flex h-full items-center justify-between px-10">
-		<a href="/"><img src="/TASCLogo.png" alt="TASC logo" class="w-20 contrast-125 brightness-125" /></a>
-		<AuthButton />
-		<ThemeToggle/>
+		<a href="/"><img src="/TASCLogo.png" alt="TASC logo" class="w-20 brightness-125 contrast-125" /></a>
+		<!-- <AuthButton /> -->
+		<ThemeToggle />
 	</div>
 </nav>
 
 <slot />
+
