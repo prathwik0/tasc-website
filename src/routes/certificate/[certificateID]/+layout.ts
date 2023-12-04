@@ -13,11 +13,8 @@ export const load = (async ({ params }) => {
 	}
 
 	const data = certificateSnap.data();
-	const date: Date = data.date;
-	const id = certificateSnap.id;
 
 	return {
-		...data,
-		certificateID: id
+		...data
 	} as CertificateData;
 }) satisfies LayoutLoad;

@@ -4,8 +4,9 @@
 </script>
 
 <div>
-	<div class="mb-20 px-10 md:px-20 lg:px-32">
-		<h1 use:concurrent={{ interval: 100 }} class="my-10 py-5 text-center font-jbExtrabold text-4xl md:py-10 md:text-5xl">About Smart Nitte Hackathon</h1>
+	<div class="mb-8 px-10 md:px-20 lg:px-32">
+		<h1 use:concurrent={{ interval: 100 }} class="my-8 py-5 text-center font-jbExtrabold text-4xl md:py-10 md:text-5xl">About Smart Nitte Hackathon</h1>
+		<img class="mb-8" src="/snh2023/sponsors.png" alt="SNH2023 banner with all sponsors" />
 		<div>
 			<div class="font-jbRegular leading-8 md:text-lg">
 				In an era driven by innovation, fostering creative thinking and problem-solving skills among the youth is paramount. Smart Nitte Hackathon (SNH) 2023 is an exciting event organized by
@@ -17,5 +18,6 @@
 			<div class="pt-10 font-jbRegular leading-8 md:text-lg">Participants can immerse themselves in problem statements that align with their interests and aspirations. From envisioning futuristic smart cities to devising eco-friendly solutions, these statements encompass a wide spectrum of challenges, inviting diverse perspectives.</div>
 			<div class="pt-10 font-jbRegular leading-8 md:text-lg">SNH-2023 is open to all college students in India!</div>
 		</div>
+		<img class="mt-8" src="/snh2023/groupPhoto.png" alt="After the end of SNH2023" />
 	</div>
 </div>

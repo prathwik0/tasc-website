@@ -1,19 +1,25 @@
 <script>
 	let revealDate = new Date('2023-11-25T11:00:00').getTime();
-	let isRevealed = false;
+	let endDate = new Date('2023-11-26T11:00:00').getTime();
+	let revealed = true;
+	let completed = true;
 	let timeRemaining = calculateTimeRemaining();
 
 	function calculateTimeRemaining() {
 		const currentTime = Date.now();
-		const remaining = Math.max(0, revealDate - currentTime);
+		let remaining = Math.max(0, revealDate - currentTime);
 
-		const seconds = Math.floor(remaining / 1000);
-		const days = Math.floor(seconds / 86400);
-		const hours = Math.floor((seconds % 86400) / 3600);
-		const minutes = Math.floor((seconds % 3600) / 60);
-		const remainingSeconds = seconds % 60;
+		if (remaining == 0) {
+			remaining = endDate - currentTime;
+		}
 
-		return `${days < 10 ? '0' : ''}${days}:${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+		const seconds = Math.abs(Math.floor(remaining / 1000));
+		const days = Math.abs(Math.floor(seconds / 86400));
+		const hours = Math.abs(Math.floor((seconds % 86400) / 3600));
+		const minutes = Math.abs(Math.floor((seconds % 3600) / 60));
+		const remainingSeconds = Math.abs(seconds % 60);
+
+		return `${days}:${hours}:${minutes}:${remainingSeconds}`;
 	}
 
 	import { onMount } from 'svelte';
@@ -23,7 +29,7 @@
 
 			if (timeRemaining === '00:00:00:00') {
 				clearInterval(timer);
-				isRevealed = true;
+				revealed = true;
 			}
 		}, 1000);
 
@@ -31,15 +37,15 @@
 	});
 </script>
 
-<div>
-	<div class="mx-10 my-20 flex h-full flex-col items-center justify-center py-20">
-		<h1 class="z-40 text-center font-jbExtrabold text-2xl md:text-4xl">November 25th and 26th, 2023</h1>
-		<div class="z-40 pt-5 text-center font-jbExtrabold text-2xl md:text-4xl">
-			{#if !isRevealed}
-				CountDown - <span class="text-[#fffba4]">{timeRemaining}</span>
-			{:else}
-				<div class="text-[#fffba4]">The hackathon is now going on!</div>
-			{/if}
-		</div>
+<div class="mx-10 flex h-full flex-col items-center justify-center">
+	<h1 class="z-40 text-center font-jbExtrabold text-2xl md:text-4xl">Conducted on November 25th and 26th, 2023</h1>
+	<div class="z-40 pt-5 text-center font-jbExtrabold text-2xl md:text-4xl">
+		{#if !revealed}
+			CountDown - <span class="text-[#fffba4]">{timeRemaining}</span>
+		{:else if !completed}
+			<div class="text-[#fffba4]">The hackathon is now going on!</div>
+		{:else}
+			Days since the hackathon - <span class="text-[#fffba4]">{timeRemaining}</span>
+		{/if}
 	</div>
 </div>
