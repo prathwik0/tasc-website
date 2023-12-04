@@ -16,21 +16,19 @@ interface ImmutableData {
 
 // Mutable Data will be present in profile collection
 interface Achievement {
-	name: string;
-	description: string;
 	certificateTitle: string;
-	certificateURL: string;
 	certificateID: string;
 
 	issueDate: Timestamp;
 	organization: string;
 	validity: string;
 
-	occasion: string;
-	role: string;
+	occasionType: string;
+	occasionID: string;
+	occasionName: string;
+	class: string;
+	position?: string;
 
-	eventID?: string;
-	eventName?: string;
 	teamID?: string;
 	teamName?: string;
 }
