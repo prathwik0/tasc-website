@@ -17,7 +17,7 @@
 					<p class=" text-xl">Browse for glimpses of our 24 hour hackathon!</p>
 					<div class="pt-4">
 						<a href="/snh2023">
-							<button class="rounded-full bg-accent px-4 py-2 duration-300 hover:scale-105 font-semibold">Hackathon</button>
+							<button class="rounded-full bg-accent px-4 py-2 font-semibold duration-300 hover:scale-105">Hackathon</button>
 						</a>
 					</div>
 				</div>
@@ -62,7 +62,7 @@
 			</div>
 
 			<div class="flex w-full justify-center px-2">
-				<p class="text-center text-sm">Welcome to the official website of TASC,<br /> <span class="font-bold ">Department of Artificial Intelligence and Machine Learning</span></p>
+				<p class="text-center text-sm">Welcome to the official website of TASC,<br /> <span class="font-bold">Department of Artificial Intelligence and Machine Learning</span></p>
 			</div>
 
 			<div class="mt-6 flex w-full animate-bounce justify-center">
