@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 	import { Timeline, TimelineItem } from 'flowbite-svelte';
 	import { CalendarCheckIcon } from 'lucide-svelte';
 	// @ts-ignore
@@ -13,7 +13,7 @@
 		<div class="flex flex-col md:my-20">
 			<TimelineItem date="23-09-2003">
 				<svelte:fragment slot="icon">
-					<span class="flex h-6 w-6 items-center justify-center rounded-full ring-whit">
+					<span class="ring-whit flex h-6 w-6 items-center justify-center rounded-full">
 						<CalendarCheckIcon class="text-primary-600 dark:text-primary-400 h-3 w-3" />
 					</span>
 				</svelte:fragment>
@@ -39,4 +39,4 @@
 			</TimelineItem>
 		</div>
 	</Timeline>
-</div> -->
+</div>

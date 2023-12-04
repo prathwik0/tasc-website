@@ -1,11 +1,11 @@
 <script>
-	import Footer from '$lib/components/HeaderFooter/Footer.svelte';
 	import AuthButton from '$lib/components/Auth/AuthButton.svelte';
+	import Footer from '$lib/components/HeaderFooter/Footer.svelte';
 	import Navbar from '$lib/components/HeaderFooter/Navbar.svelte';
+	import Vectorall from '$lib/components/VectorBackground/vectorall.svelte';
 </script>
 
-<div class="bg-[#020817]">
-	<Navbar />
-	<slot />
-	<Footer />
-</div>
+<Navbar />
+<Vectorall />
+<slot />
+<Footer />

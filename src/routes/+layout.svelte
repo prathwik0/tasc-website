@@ -1,13 +1,12 @@
 <script lang="ts">
 	import { navigating } from '$app/stores';
 	import { called, user, userData, userLoaded, userProfileData } from '$lib/firebase/firebase';
-	import Navbar from '$lib/components/HeaderFooter/Navbar.svelte';
-	import Footer from '$lib/components/HeaderFooter/Footer.svelte';
-	import LoadingSVG from '$lib/loader/spinnerDark.svg';
+	import DarkLoader from '$lib/loader/DarkLoader.svelte';
+	import LightLoader from '$lib/loader/LightLoader.svelte';
 	import { loading } from '$lib/stores/loading';
 	import { darkTheme } from '$lib/stores/theme';
+	import { SvelteToast } from '@zerodevx/svelte-toast';
 	import '../app.css';
-
 	/* Subscribe to stores in root layout */
 	$darkTheme;
 	$user;
@@ -22,7 +21,29 @@
 </script>
 
 {#if $loading}
-	<div class="flex h-[100vh] items-center justify-center"><img src={LoadingSVG} alt="spin" class=" w-24" /></div>
+	{#if $darkTheme}
+		<DarkLoader />
+	{:else}
+		<LightLoader />
+	{/if}
 {:else}
 	<slot />
 {/if}
+<div class="wrapper text-center font-medium leading-5"><SvelteToast options={{ intro: { y: -120 }, duration: 2500 }} /></div>
+
+<style>
+	:root {
+		--toastWidth: 300px;
+		--toastHeight: auto;
+		--toastPadding: 0 0 0 0.5rem;
+	}
+	.wrapper {
+		/* --toastWidth: 250px;
+		--toastContainerTop: -33%;
+		--toastContainerLeft: calc(25vw); */
+		--toastContainerTop: 1rem;
+		--toastContainerRight: auto;
+		--toastContainerBottom: auto;
+		--toastContainerLeft: calc(50vw - 8rem);
+	}
+</style>

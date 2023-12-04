@@ -4,12 +4,10 @@
 
 @layer base {
 	:root {
-		--navbar: 0, 0%, 95%, 0.96;
-
 		--background: 0 0% 100%;
 		--foreground: 222.2 84% 4.9%;
 
-		--muted: 210 40% 96.1%;
+		--muted: 210 16% 40%;
 		--muted-foreground: 215.4 16.3% 46.9%;
 
 		--popover: 0 0% 100%;
@@ -27,10 +25,10 @@
 		--secondary: 210 40% 96.1%;
 		--secondary-foreground: 222.2 47.4% 11.2%;
 
-		--accent: 210 40% 96.1%;
+		--accent: 206 90% 47%;
 		--accent-foreground: 222.2 47.4% 11.2%;
 
-		--destructive: 0 84.2% 60.2%;
+		--destructive: 0 72.2% 50.6%;
 		--destructive-foreground: 210 40% 98%;
 
 		--ring: 222.2 84% 4.9%;
@@ -39,12 +37,11 @@
 	}
 
 	.dark {
-		--navbar: 222.2, 84%, 3%, 0.96;
-
 		--background: 222.2 84% 4.9%;
 		--foreground: 210 40% 98%;
 
-		--muted: 217.2 32.6% 17.5%;
+		/* --muted: 217.2 32.6% 17.5%; */
+		--muted: 215, 16%, 47%;
 		--muted-foreground: 215 20.2% 65.1%;
 
 		--popover: 222.2 84% 4.9%;
@@ -62,7 +59,7 @@
 		--secondary: 217.2 32.6% 17.5%;
 		--secondary-foreground: 210 40% 98%;
 
-		--accent: 217.2 32.6% 17.5%;
+		--accent: 206 90% 47%;
 		--accent-foreground: 210 40% 98%;
 
 		--destructive: 0 62.8% 30.6%;
@@ -79,26 +76,6 @@
 	body {
 		@apply bg-background text-foreground;
 	}
-	@font-face {
-		font-family: 'JetBrainsMono-ExtraBoldItalic';
-		src: url('/fonts/JetBrainsMono-ExtraBoldItalic.ttf');
-	}
-	@font-face {
-		font-family: 'JetBrainsMono-ExtraBold';
-		src: url('/fonts/JetBrainsMono-ExtraBold.ttf');
-	}
-	@font-face {
-		font-family: 'JetBrainsMono-Bold';
-		src: url('/fonts/JetBrainsMono-Bold.ttf');
-	}
-	@font-face {
-		font-family: 'JetBrainsMono-Medium';
-		src: url('/fonts/JetBrainsMono-Medium.ttf');
-	}
-	@font-face {
-		font-family: 'JetBrainsMono-Regular';
-		src: url('/fonts/JetBrainsMono-Regular.ttf');
-	}
 }
 
 @layer utilities {
@@ -107,8 +84,20 @@
 			20px 20px 40px 10px rgba(0, 0, 0, 0.2),
 			-2px -2px 20px 0 rgba(0, 0, 0, 0.2);
 	}
+	.custom-shadow-white {
+		box-shadow:
+			20px 20px 40px 10px rgba(255, 255, 255, 0.2),
+			-2px -2px 20px 0 rgba(255, 255, 255, 0.2);
+	}
+
+	.custom-drop-shadow-white {
+		filter: drop-shadow(0 0 0.3rem #ffffff);
+	}
+	.custom-drop-shadow-black {
+		filter: drop-shadow(1px 0 0.4rem #000000);
+	}
 }
 
-* {
+:root {
 	scroll-behavior: smooth;
 }

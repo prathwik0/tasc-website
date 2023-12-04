@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Dialog from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog-nandanfucker';
 
 	export let image: string;
 	export let image2: string = image;
@@ -13,15 +13,15 @@
 
 <Dialog.Root>
 	<Dialog.Trigger>
-		<div class="dark:custom-shadow-black w-72 cursor-pointer overflow-hidden rounded-lg border bg-card py-5 shadow-xl duration-300 ease-in-out hover:scale-110">
+		<div class="dark:custom-shadow-black w-60 cursor-pointer h-64 overflow-hidden rounded-lg border bg-card pt-4 shadow-xl duration-300 ease-in-out hover:scale-105">
 			<div class="mx-14 flex items-center justify-center">
 				<img src={image} alt={imageAlt} class="aspect-square w-full rounded-full border border-border object-cover" />
 			</div>
 			<div class="flex flex-col items-center justify-center">
 				<h1 class="pt-4 text-xl font-bold">{name}</h1>
-				<h2 class="p-2 text-lg font-medium text-zinc-600 dark:text-slate-400">{designation}</h2>
+				<h2 class="text-lg font-medium text-zinc-600 dark:text-slate-400">{designation}</h2>
 				{#if designation2}
-					<h2 class="text-lg text-zinc-600 dark:text-slate-400">{designation2}</h2>
+					<h2 class="text-lg text-zinc-600 dark:text-slate-400 font-bold">{designation2}</h2>
 				{/if}
 			</div>
 		</div>
@@ -32,12 +32,12 @@
 			<Dialog.Description class="text-lg font-medium">{designation}</Dialog.Description>
 		</Dialog.Header>
 
-		<div class="flex h-auto flex-col justify-center lg:flex-row">
-			<div class="flex h-auto min-w-[16rem] justify-center object-cover md:flex-shrink-0 lg:min-w-[24rem]">
+		<div class="flex flex-col justify-center lg:flex-row">
+			<div class="flex min-w-[16rem] justify-center object-cover md:flex-shrink-0 lg:min-w-[24rem]">
 				<img src={image2} alt={imageAlt} class="aspect-square w-64 object-cover md:flex-shrink-0 lg:w-96" />
 			</div>
 
-			<div class="flex max-h-96 flex-grow flex-col overflow-y-auto px-4">
+			<div class="flex flex-grow flex-col overflow-y-auto px-4">
 				{#each about as para}
 					<p class="pt-2">{para}</p>
 				{/each}

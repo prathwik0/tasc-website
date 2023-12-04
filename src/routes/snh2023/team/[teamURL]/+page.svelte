@@ -6,7 +6,7 @@
 	import { doc, getDoc } from 'firebase/firestore';
 	import { db } from '$lib/firebase/firebase';
 	import { page } from '$app/stores';
-	import type { TeamData } from '$lib/components/types/TeamData';
+	import type { TeamData } from '$lib/types/TeamData';
 	import { onMount } from 'svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 	import { qualified } from '$lib/data/Qualified';
@@ -127,7 +127,7 @@
 			{/if}
 			<div class="pb-8">
 				<div class="mx-5 flex w-[20rem] flex-col items-center rounded-2xl border border-[#d2b863] bg-gray-400 bg-opacity-5 p-6 backdrop-blur-sm transition duration-300 md:w-[35rem] md:p-10">
-					<img src="/upi.png" alt="UPI" class="h-[20rem] w-[20rem]" />
+					<img src="/snh2023/upi.png" alt="UPI" class="h-[20rem] w-[20rem]" />
 					<h3 class="py-4 font-jbBold text-xl md:text-2xl">Upload Payment Proof</h3>
 					<Input on:change={upload} name="photoURL" type="file" accept="image/png, image/jpeg, image/gif, image/webp" />
 					<p class="text-red-600">Max file size limit 500kB</p>

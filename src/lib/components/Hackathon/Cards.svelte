@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let theme: string|null;
-	export let img: string|null = "";
+	export let theme: string | null;
+	// export let img: string|null = "";
 </script>
 
 <div class="gradient_border group relative aspect-video overflow-hidden rounded-md border">
