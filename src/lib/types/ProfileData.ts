@@ -1,3 +1,7 @@
+/*
+ * Todo: rename this file UserData.ts and update all imports
+ */
+
 import type { Timestamp } from 'firebase/firestore';
 interface Link {
 	url: string;
