@@ -2,22 +2,22 @@
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import type { LayoutData } from './$types';
+	import { page } from '$app/stores';
 	export let data: LayoutData;
-
-	const specialOccasions = ['snh2023'];
 
 	let mount = false;
 	onMount(() => {
-		if (specialOccasions.includes(data.occasion)) {
-			goto(`/certificate/${data.certificateID}/${data.occasion}`, { replaceState: true });
-		}
 		mount = true;
+		console.log($page.url.pathname.toString());
+		if (!$page.url.pathname.toString().includes(data.occasionID)) {
+			goto(`/certificate/${data.certificateID}/${data.occasionID}`, { replaceState: true });
+		}
 	});
 </script>
 
 <svelte:head>
 	<title>Certificate | TASC</title>
-	<meta name="description" content={data.occasion} />
+	<meta name="description" content={data.occasionID} />
 </svelte:head>
 
 {#if mount}
