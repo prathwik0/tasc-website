@@ -1,5 +1,5 @@
 <script>
-	import * as Dialog from '$lib/components/ui/dialog';
+	import * as Dialog from '$lib/components/ui/dialog-nandanfucker';
 	import * as Table from '$lib/components/ui/table';
 
 	export let title = '';

@@ -17,7 +17,7 @@
 					<p class=" text-xl">Browse for glimpses of our 24 hour hackathon!</p>
 					<div class="pt-4">
 						<a href="/snh2023">
-							<button class="rounded-full bg-orange-500 px-4 py-2 duration-300 hover:scale-110">Hackathon</button>
+							<button class="rounded-full bg-accent px-4 py-2 duration-300 hover:scale-105 font-semibold">Hackathon</button>
 						</a>
 					</div>
 				</div>
@@ -25,13 +25,16 @@
 		</div>
 	</div>
 	<div class="absolute bottom-36 hidden w-full justify-center text-center md:flex">
-		<p class="text-xl">Welcome to the official website of TASC,<br /><span class="font-bold text-brand">Department of Artificial Intelligence and Machine Learning</span></p>
+		<p class="text-xl">Welcome to the official website of TASC,<br /><span class="font-bold text-brand dark:text-primary">Department of Artificial Intelligence and Machine Learning</span></p>
 	</div>
 
 	<div class="absolute bottom-10 hidden w-full animate-bounce items-center justify-center bg-transparent md:flex">
 		<a href="/#about">
-			<svg width="50" height="50" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<svg width="50" height="50" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden dark:block">
 				<path d="M65.2726 18.5L69.375 22.1445L37 55.5L4.625 22.1445L8.72738 18.5L37 47.6283L65.2726 18.5Z" fill="white" />
+			</svg>
+			<svg width="50" height="50" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg" class="block dark:hidden">
+				<path d="M65.2726 18.5L69.375 22.1445L37 55.5L4.625 22.1445L8.72738 18.5L37 47.6283L65.2726 18.5Z" fill="black" />
 			</svg>
 		</a>
 	</div>
@@ -51,7 +54,7 @@
 						<p class="pt-6 text-center text-lg">Browse for glimpses of our 24 hour hackathon!</p>
 						<div class="flex w-full justify-center pt-4">
 							<a href="/snh2023">
-								<button class="rounded-full bg-orange-500 px-4 py-2 duration-300 hover:scale-110">Hackathon</button>
+								<button class="rounded-full bg-accent px-4 py-2 font-semibold">Hackathon</button>
 							</a>
 						</div>
 					</div>
@@ -59,13 +62,16 @@
 			</div>
 
 			<div class="flex w-full justify-center px-2">
-				<p class="text-center text-sm">Welcome to the official website of TASC,<br /> <span class="font-bold text-brand">Department of Artificial Intelligence and Machine Learning</span></p>
+				<p class="text-center text-sm">Welcome to the official website of TASC,<br /> <span class="font-bold ">Department of Artificial Intelligence and Machine Learning</span></p>
 			</div>
 
 			<div class="mt-6 flex w-full animate-bounce justify-center">
 				<a href="/#about">
-					<svg width="30" height="30" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M37.9287 10.75L40.3125 12.8678L21.5 32.25L2.6875 12.8678L5.07131 10.75L21.5 27.6759L37.9287 10.75Z" fill="white" />
+					<svg width="30" height="30" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden dark:block">
+						<path d="M65.2726 18.5L69.375 22.1445L37 55.5L4.625 22.1445L8.72738 18.5L37 47.6283L65.2726 18.5Z" fill="white" />
+					</svg>
+					<svg width="30" height="30" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg" class="block dark:hidden">
+						<path d="M65.2726 18.5L69.375 22.1445L37 55.5L4.625 22.1445L8.72738 18.5L37 47.6283L65.2726 18.5Z" fill="black" />
 					</svg>
 				</a>
 			</div>
