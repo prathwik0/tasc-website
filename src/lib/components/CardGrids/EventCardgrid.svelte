@@ -13,21 +13,21 @@
 <div class={`grid-container mx-20 gap-10 py-16 `}>
 	{#each events as event}
 		<div class="flex w-full flex-col">
-			<div class="dark:custom-shadow-black flex-1 rounded-lg bg-muted-light px-5 py-8 shadow-xl dark:bg-muted-dark dark:drop-shadow-md">
+			<div class="dark:custom-shadow-black bg-muted-light dark:bg-muted-dark flex-1 rounded-lg px-5 py-8 shadow-xl dark:drop-shadow-md">
 				<div class="flex justify-center">
 					{#if event.image}
-						<img src={event?.image} alt={event.title} class="border border-muted-light object-cover dark:border-muted-dark" />
+						<img src={event?.image} alt={event.title} class="border-muted-light dark:border-muted-dark border object-cover" />
 					{/if}
 				</div>
 				<h1 class="py-4 text-center text-2xl font-bold">{event.title}</h1>
 				{#if event.date}
-					<h2 class="text-xl">Date: {event.date.toDate().toLocaleDateString(undefined, options)}</h2>
+					<h2 class="text-center text-xl">Date: {event.date.toDate().toLocaleDateString(undefined, options)}</h2>
 				{/if}
 				{#if event.time}
-					<h2 class="text-xl">Time: {event.time}</h2>
+					<h2 class="text-center text-xl">Time: {event.time}</h2>
 				{/if}
 				{#if event.venue}
-					<h2 class="text-xl">Venue: {event?.venue}</h2>
+					<h2 class="text-center text-xl">Venue: {event?.venue}</h2>
 				{/if}
 
 				<div class="flex items-center justify-center pt-4">

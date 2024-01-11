@@ -13,7 +13,7 @@ export const NAVITEM = [
 	},
 	{
 		title: 'Events',
-		href: '/old-events-page/previous'
+		href: '/events/previous'
 	},
 	{
 		title: 'SNH 2023',

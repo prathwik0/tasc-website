@@ -4,7 +4,7 @@
 	export let members: MemberData[];
 </script>
 
-<div class="grid-container px-4 pt-5">
+<div class="grid-container px-4 py-5">
 	{#each members as profile, index}
 		<MemberCard {...profile} lazy={index > 4} />
 	{/each}
