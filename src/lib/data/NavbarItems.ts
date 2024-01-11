@@ -4,15 +4,23 @@ export const NAVITEM = [
 		href: '/'
 	},
 	{
-		title: 'Hackathon',
-		href: '/snh2023'
+		title: 'Members',
+		href: '/team/2023'
 	},
-	// {
-	// 	title: 'Events',
-	// 	href: '/events'
-	// },
 	{
 		title: 'Faculty',
 		href: '/faculty'
+	},
+	{
+		title: 'Events',
+		href: '/old-events-page/previous'
+	},
+	{
+		title: 'SNH 2023',
+		href: '/snh2023'
+	},
+	{
+		title: 'Handbook',
+		href: '/handbook'
 	}
 ];
