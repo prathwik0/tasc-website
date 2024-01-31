@@ -15,12 +15,16 @@ export const NAVITEM = [
 		title: 'Events',
 		href: '/events/previous'
 	},
-	{
-		title: 'SNH 2023',
-		href: '/snh2023'
-	},
+	// {
+	// 	title: 'SNH 2023',
+	// 	href: '/snh2023'
+	// },
 	{
 		title: 'Handbook',
 		href: '/handbook'
+	},
+	{
+		title: 'Facilities',
+		href: '/facilities'
 	}
 ];
