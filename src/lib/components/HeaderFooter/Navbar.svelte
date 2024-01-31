@@ -37,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class="fixed z-50 flex w-full pt-4 lg:hidden">
+	<div class={`fixed z-50 flex w-full pt-4 lg:hidden ${y > 0 ? 'backdrop-blur-xl' : ''} transition-all duration-150 ease-out pb-4`}>
 		<div class="flex">
 			<div>
 				<a href="/" class="block dark:hidden">
