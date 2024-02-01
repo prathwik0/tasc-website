@@ -27,17 +27,39 @@ export const facilitiesData = [
 		content: `Technical skills: Programming and coding, data science, computer vision, natural language processing, statistical data and algorithmic and computational thinking
 Social skills: AI ethics and bias reduction, critical thinking, problem-solving, system mapping, AI solutions building, and social and emotional skills`
 	},
-	// {
-	// 	key: 'Workstation Specifications',
-	// 	title: 'Specs',
-	//imageCount: 0,
-	// 	content: ''
-	// },
+	{
+		key: 'Workstation Specifications',
+		title: 'Workstation Specifications',
+		imageCount: 0
+	},
 	{
 		key: 'Gallery',
 		title: 'AI Skill Lab Opening Ceremony',
 		content: '',
 		imageCount: 9
+	}
+];
+
+export const specs = [
+	{
+		title: 'Processor',
+		desc: '12th Gen Intel(R) Core(TM) i7-12700 Upto 4.9GHz'
+	},
+	{
+		title: 'RAM',
+		desc: '32GB DDR5 4400MHz'
+	},
+	{
+		title: 'Graphic Card',
+		desc: 'NVidia T1000 8GB'
+	},
+	{
+		title: 'Memory',
+		desc: 'm.2 512gb SSD'
+	},
+	{
+		title: 'OS',
+		desc: 'Windows 11 Pro 22H2'
 	}
 ];
 
