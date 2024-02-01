@@ -39,7 +39,7 @@
 						<Table.Body>
 							{#each specs as spec}
 								<Table.Row>
-									<Table.Cell>{spec.title}</Table.Cell>
+									<Table.Cell class="font-bold">{spec.title}</Table.Cell>
 									<Table.Cell>{spec.desc}</Table.Cell>
 								</Table.Row>
 							{/each}
