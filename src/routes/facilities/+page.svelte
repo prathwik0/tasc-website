@@ -24,8 +24,15 @@
 			<h1 class="self-center rounded-full border-2 bg-slate-900 p-2 text-center text-lg font-semibold drop-shadow-2xl sm:max-w-2xl md:p-6 md:text-xl lg:text-3xl">{heading}</h1>
 			{#each facilitiesData as data, index}
 				{#if data.key == facilitiesData[active].key && facilitiesData[active].key !== 'Workstation Specifications'}
-					<h2 class="text-2xl font-medium">{data.title}</h2>
-					<p class="pb-10 text-lg leading-7 text-slate-400 sm:pb-0">{data.content}</p>
+					<h2 class="text-2xl font-bold">{data.title}</h2>
+					<!-- <p class="pb-10 text-lg leading-7 text-slate-400 sm:pb-0">{data.content}</p> -->
+					{#if data?.bullets}
+						<ul>
+							{#each data.bullets as bullet}
+								<li class="pb-10 text-lg leading-7 sm:pb-0"><span class="font-semibold">{bullet.header}:{' '}</span><span class="text-slate-400">{bullet.desc}</span></li>
+							{/each}
+						</ul>
+					{/if}
 					{#if data.imageCount !== 0}
 						<div class="grid w-full grid-cols-1 place-items-center gap-10 pb-10 sm:pb-0 md:grid-cols-2 lg:grid-cols-3">
 							{#each Array(data.imageCount) as _, i}
@@ -39,7 +46,7 @@
 						<Table.Body>
 							{#each specs as spec}
 								<Table.Row>
-									<Table.Cell class="font-bold">{spec.title}</Table.Cell>
+									<Table.Cell class="font-semibold">{spec.title}</Table.Cell>
 									<Table.Cell>{spec.desc}</Table.Cell>
 								</Table.Row>
 							{/each}
