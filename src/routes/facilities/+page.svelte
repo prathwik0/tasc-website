@@ -25,11 +25,16 @@
 			{#each facilitiesData as data, index}
 				{#if data.key == facilitiesData[active].key && facilitiesData[active].key !== 'Workstation Specifications'}
 					<h2 class="text-2xl font-bold">{data.title}</h2>
-					<!-- <p class="pb-10 text-lg leading-7 text-slate-400 sm:pb-0">{data.content}</p> -->
+					<p class="pb-10 text-lg leading-7 text-slate-400 sm:pb-0">{data.content}</p>
 					{#if data?.bullets}
 						<ul>
 							{#each data.bullets as bullet}
-								<li class="pb-10 text-lg leading-7 sm:pb-0"><span class="font-semibold">{bullet.header}:{' '}</span><span class="text-slate-400">{bullet.desc}</span></li>
+								<li class="pb-10 text-lg leading-7 sm:pb-0"><span class="font-semibold">{bullet.header}</span></li>
+								<ul class="ml-8 list-disc text-slate-400">
+									{#each bullet.points as point}
+										<li class="text-md pb-10 leading-7 sm:pb-0">{point}</li>
+									{/each}
+								</ul>
 							{/each}
 						</ul>
 					{/if}
