@@ -2,13 +2,13 @@ export const facilitiesData = [
 	{
 		key: 'About',
 		title: 'About the program',
-		imageCount: 2,
+		images: [2],
 		content: `Intel, in collaboration with Dell Technologies, has launched the Digital Readiness Program at NMAM Institute of Technology. Aligned with Intel's RISE 2030 strategies for a responsible and inclusive future, the program focuses on AI for Youth. It provides immersive learning experiences, covering social and technical skills, with courses on Machine Learning, Computer Vision, Natural Language Processing, and AI Ethics. Intel supports faculty training, lab development, and the provision of cutting-edge systems for hands-on AI development. The AI Skills lab, equipped with Dell workstations featuring Intel's 12th gen i7 processor and NVIDIA T1000 8GB graphics card, enables students to undertake complex projects, fostering a practical understanding of AI. A total of 38 high-performance 3660 Tower workstations have been procured under an official agreement, emphasizing Intel's commitment to expanding digital access and readiness globally `
 	},
 	{
 		key: 'Program Goals',
 		title: 'Program Goals',
-		imageCount: 0,
+		images: [],
 		content: `The Intel AI for Youth program is structured into four phases: Inspire, Acquire, Experience, and Empower. The Inspire phase introduces students to the world of AI, highlighting its potential to address real-world issues. The Acquire phase establishes a strong foundation in AI concepts and technologies, while the Experience phase provides hands-on experience in constructing AI models and applications. The Empower phase offers students the opportunity to engage in real-world AI projects, gaining practical experience. The syllabus introduces learners to three domains of AI - Data, Computer Vision, and Natural Language`,
 		bullets: [
 			{
@@ -40,7 +40,7 @@ export const facilitiesData = [
 	// {
 	// 	key: 'Program Design',
 	// 	title: 'Design',
-	// 	imageCount: 0,
+	// 	images: [],
 	// 	content: 'After initial discussions, both parties formalized a collaboration to establish an AI Skill Lab at NMAM Institute of Technology. The lab aimed to provide students with hands-on experience in artificial intelligence, aligning academic learning with industry demands. The collaboration encompassed the following key elements: Curriculum Integration, Infrastructure Setup, Training Programs, Industry Exposure',
 	// 	bullets: [
 	// 		{
@@ -68,7 +68,7 @@ export const facilitiesData = [
 	// {
 	// 	key: 'Program Approach',
 	// 	title: 'Approach',
-	// 	imageCount: 0,
+	//  images: [],
 	// 	content: `Inclusive: Engages youth from diverse backgrounds and does not require prior knowledge or technical expertise
 	//                 Practical and applicable: Covers a combination of skill sets, toolsets and mindsets, preparing students to apply them to real-world problems
 	//                 Flexible and modular: The program can be easily adapted to students existing knowledge and time availability — contains multiple entry and exit points to match country curriculum needs
@@ -95,7 +95,7 @@ export const facilitiesData = [
 	// {
 	// 	key: 'Skills Gained',
 	// 	title: 'Skills',
-	// 	imageCount: 0,
+	// 	images: [],
 	// 	content: `Technical skills: Programming and coding, data science, computer vision, natural language processing, statistical data and algorithmic and computational thinking Social skills: AI ethics and bias reduction, critical thinking, problem-solving, system mapping, AI solutions building, and social and emotional skills`,
 	// 	bullets: [
 	// 		{
@@ -111,38 +111,39 @@ export const facilitiesData = [
 	{
 		key: 'Workstation Specifications',
 		title: 'Workstation Specifications',
-		imageCount: 0
+		images: [3]
 	},
 	{
 		key: 'Glimpses of Inaugural Programme',
 		title: 'Inaugural Programme',
+		images: [4],
 		content:
 			'The highlight of the event is the grand inauguration of the AI Skills lab, a collaborative effort with visionaries like Intel and Dell Technologies in partnership with the Artificial Intelligence and Machine Learning Department—specializing in AI technologies. Mr. Vivekanada Manjeri, Director of Client Solutions at Dell Technologies, and Mr. Santosh Banerjee from Dell Technologies spearheaded the inauguration. They were joined by esteemed guests, Dr. Udaya Kumar K Shenoy, Dean of Research and Development at Canara Engineering College. Dr. Niranjan N Chiplunkar, Principal of NMAMIT Nitte, Dr. Sharada U Shenoy, Head of the Department of Artificial Intelligence and Machine Learning Engineering at NMAMIT, Nitte, Mrs. Disha D N, Single Point of Contact -Intel AI for Youth, Department of Artificial Intelligence and Machine Learning, NMAMIT, Nitte, together, marked the commencement of an exciting chapter in advancing AI education and skills at our institution. Mr. Sharoon S. Manipur - Sr. Sales Consultant, Orchids Network & Systems (I) Pvt Ltd and Mr. Ravi Konila - Sr. Technical Consultant, Mr. Yogeesh Hegde, the Campus Development Officer, Dr I R Mithanthaya, Vice Principle, Dean (Academics), NMAMIT, Nitte graced the occasion by their presence. The event was well attended by the Deans, HODs, faculty from various departments and students of AIML.'
 	},
 	{
 		key: 'Gallery',
-		title: 'AI Skill Lab Opening Ceremony',
+		title: 'Gallery',
 		content: '',
-		imageCount: 4
+		images: [1, 2, 3]
 	}
 ];
 
 export const specs = [
 	{
-		title: 'Processor',
+		title: 'CPU',
 		desc: '12th Gen Intel(R) Core(TM) i7-12700 Upto 4.9GHz'
 	},
 	{
+		title: 'Graphics Card',
+		desc: 'Nvidia T1000 (8GB GDDR6)'
+	},
+	{
 		title: 'RAM',
-		desc: '32GB DDR5 4400MHz'
+		desc: '32GB 4400MHz DDR5'
 	},
 	{
-		title: 'Graphic Card',
-		desc: 'NVidia T1000 8GB'
-	},
-	{
-		title: 'Memory',
-		desc: 'm.2 512gb SSD'
+		title: 'Storage',
+		desc: '512gb M.2 SSD'
 	},
 	{
 		title: 'OS',
