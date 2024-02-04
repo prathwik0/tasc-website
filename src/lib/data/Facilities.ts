@@ -2,7 +2,7 @@ export const facilitiesData = [
 	{
 		key: 'About',
 		title: 'About the program',
-		images: [2],
+		images: [2, 22, 20],
 		content: `Intel, in collaboration with Dell Technologies, has launched the Digital Readiness Program at NMAM Institute of Technology. Aligned with Intel's RISE 2030 strategies for a responsible and inclusive future, the program focuses on AI for Youth. It provides immersive learning experiences, covering social and technical skills, with courses on Machine Learning, Computer Vision, Natural Language Processing, and AI Ethics. Intel supports faculty training, lab development, and the provision of cutting-edge systems for hands-on AI development. The AI Skills lab, equipped with Dell workstations featuring Intel's 12th gen i7 processor and NVIDIA T1000 8GB graphics card, enables students to undertake complex projects, fostering a practical understanding of AI. A total of 38 high-performance 3660 Tower workstations have been procured under an official agreement, emphasizing Intel's commitment to expanding digital access and readiness globally `
 	},
 	{
@@ -110,21 +110,19 @@ export const facilitiesData = [
 	// },
 	{
 		key: 'Workstation Specifications',
-		title: 'Workstation Specifications',
-		images: [3]
+		title: 'Workstation Specifications'
 	},
 	{
 		key: 'Glimpses of Inaugural Programme',
 		title: 'Inaugural Programme',
-		images: [4],
+		images: [16, 13, 14, 1, 2, 3],
 		content:
 			'The highlight of the event is the grand inauguration of the AI Skills lab, a collaborative effort with visionaries like Intel and Dell Technologies in partnership with the Artificial Intelligence and Machine Learning Department—specializing in AI technologies. Mr. Vivekanada Manjeri, Director of Client Solutions at Dell Technologies, and Mr. Santosh Banerjee from Dell Technologies spearheaded the inauguration. They were joined by esteemed guests, Dr. Udaya Kumar K Shenoy, Dean of Research and Development at Canara Engineering College. Dr. Niranjan N Chiplunkar, Principal of NMAMIT Nitte, Dr. Sharada U Shenoy, Head of the Department of Artificial Intelligence and Machine Learning Engineering at NMAMIT, Nitte, Mrs. Disha D N, Single Point of Contact -Intel AI for Youth, Department of Artificial Intelligence and Machine Learning, NMAMIT, Nitte, together, marked the commencement of an exciting chapter in advancing AI education and skills at our institution. Mr. Sharoon S. Manipur - Sr. Sales Consultant, Orchids Network & Systems (I) Pvt Ltd and Mr. Ravi Konila - Sr. Technical Consultant, Mr. Yogeesh Hegde, the Campus Development Officer, Dr I R Mithanthaya, Vice Principle, Dean (Academics), NMAMIT, Nitte graced the occasion by their presence. The event was well attended by the Deans, HODs, faculty from various departments and students of AIML.'
 	},
 	{
 		key: 'Gallery',
-		title: 'Gallery',
 		content: '',
-		images: [1, 2, 3]
+		images: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
 	}
 ];
 
