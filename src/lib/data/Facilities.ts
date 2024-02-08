@@ -150,3 +150,4 @@ export const specs = [
 ];
 
 export const heading = 'DELL and Intel Sponsored "AI Skills Lab"';
+export const subHeading = 'State of the Art AI Laboratory';

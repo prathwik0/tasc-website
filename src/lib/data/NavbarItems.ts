@@ -24,7 +24,7 @@ export const NAVITEM = [
 		href: '/handbook'
 	},
 	{
-		title: 'Facilities',
-		href: '/facilities'
+		title: 'Intel AI Lab',
+		href: '/intel-ai-lab'
 	}
 ];

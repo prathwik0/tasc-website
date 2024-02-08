@@ -1,6 +1,6 @@
 <script>
 	import * as Table from '$lib/components/ui/table';
-	import { facilitiesData, heading, specs } from '$lib/data/Facilities';
+	import { facilitiesData, heading, specs, subHeading } from '$lib/data/Facilities';
 	let active = 0;
 </script>
 
@@ -14,7 +14,7 @@
 	</div>
 	<div class="h-2/3 w-full bg-[#0e162a1e] px-10 pt-10 dark:bg-[#0e162a59] sm:h-full sm:w-2/3 md:px-20">
 		<div class="flex min-h-screen flex-col gap-5">
-			<h1 class="self-center rounded-full border-2 bg-slate-50 p-2 text-center text-lg font-semibold drop-shadow-2xl dark:bg-slate-900 sm:max-w-2xl md:p-6 md:text-xl lg:text-3xl">{heading}</h1>
+			<h1 class="flex flex-col gap-y-2 self-center rounded-full border-2 bg-slate-50 p-2 text-center text-lg font-semibold drop-shadow-2xl dark:bg-slate-900 sm:max-w-2xl md:p-6 md:text-xl lg:text-3xl">{heading}<span class="text-md font-normal text-slate-800 dark:text-slate-300 md:text-lg lg:text-2xl">{subHeading}</span></h1>
 			{#each facilitiesData as data}
 				{#if data.key == facilitiesData[active].key && facilitiesData[active].key !== 'Workstation Specifications'}
 					{#if data.title}<h2 class="text-2xl font-bold">{data.title}</h2>{/if}
