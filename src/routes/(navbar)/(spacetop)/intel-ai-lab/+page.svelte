@@ -42,6 +42,7 @@
 					<h2 class="text-2xl font-medium">{data.title}</h2>
 					<Table.Root>
 						<Table.Body>
+							<li class="pb-10 text-lg leading-7 sm:pb-0"><span class="font-semibold">Lab is equipped with 38 Dell Precision 3660 Tower Workstations</span></li>
 							{#each specs as spec}
 								<Table.Row>
 									<Table.Cell class="font-semibold">{spec.title}</Table.Cell>
