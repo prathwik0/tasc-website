@@ -128,12 +128,12 @@ export const facilitiesData = [
 
 export const specs = [
 	{
-		title: 'CPU',
+		title: 'Processor',
 		desc: '12th Gen Intel(R) Core(TM) i7-12700 Upto 4.9GHz'
 	},
 	{
 		title: 'Graphics Card',
-		desc: 'Nvidia T1000 (8GB GDDR6)'
+		desc: 'Nvidia T1000 (8GB GDDR6 + 8GB shared)'
 	},
 	{
 		title: 'RAM',
@@ -150,3 +150,4 @@ export const specs = [
 ];
 
 export const heading = 'DELL and Intel Sponsored "AI Skills Lab"';
+export const subHeading = 'State of the Art AI Laboratory';
