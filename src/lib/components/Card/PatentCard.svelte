@@ -14,7 +14,7 @@
 
 <div class={`h-full w-full grid sm:space-y-10 space-y-4 ${theme}`}>
 	{#each patents as patent}
-		<div class="sm:w-[80%] w-[95%] justify-self-center patent-card sm:p-4 p-1 rounded-2xl">
+		<div class="sm:w-[80%] w-[95%] justify-self-center bg-card border-2 border-blue-900 sm:p-4 p-1 rounded-2xl shadow-xl dark:custom-shadow-black">
 			<p class="text-center lg:text-3xl md:text-2xl sm:text-lg text-xs sm:font-semibold font-bold underline md:underline-offset-4 underline-offset-2 dark:text-yellow-300 text-black">{patent.title}</p>
 			{#if images.find(n => n.name === patent.id)}
 				<div class="grid w-full my-5"><img src={images.find(n => n.name === patent.id)?.image} class="sm:w-[60%] w-[80%] justify-self-center" alt=""></div>

@@ -429,6 +429,7 @@ export const PUBLICATION_DETAILS = [
 export const PLACEMENT_DETAILS = [
     {
         year: '2024',
+        companies: ['VEBUIN corporation through Zenken', 'Nidec Instruments Japan', 'Hewlett Packard Enterprise', 'Infineon Technologies', 'IBM', 'Oracle India Pvt. Ltd.', 'Adobe India', 'Outcomes', 'Infosys Finacle(Edgeverve)', 'Elsevier Technology', 'Questkart', 'Sony India Software Centre Pvt. Ltd.', 'IAST Software Solutions Pvt. Ltd.', 'Relanto Global', 'Accenture Solutions Private Limited', 'Trianz Digital', 'Ability Stack', 'KGiSL Microcollege', 'Lumen Technologies', 'GlowTouch Technologies', 'Kambala Solutions'],
         placements: [
             {
                 id: '4NM20AI001',
@@ -660,7 +661,7 @@ export const PLACEMENT_DETAILS = [
                 id: '4NM20AI050',
                 name: 'Sinchana S',
                 offers: [
-                    { company: 'VEBUIN corporation through Zenken', package: '49,00,000YPA' }
+                    { company: 'VEBUIN corporation through Zenken', package: '4.9M YPA' }
                 ]
             }
         ]

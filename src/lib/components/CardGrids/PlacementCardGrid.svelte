@@ -9,6 +9,8 @@
     let placementsByCompany: Record<string, string[]> = {};
     let placementsByStudent: Record<string, PlacementOffer[]> = {};
 
+    let companyNames: string[] = PLACEMENT_DETAILS.find((placements: PlacementDetails) => placements.year === year)?.companies || [];
+
     placements.forEach((placement: Placement) => {
         placement.offers.forEach((offer: { company: string, package: string }) => {
             if (!placementsByCompany[offer.company]) placementsByCompany[offer.company] = [];
@@ -21,5 +23,5 @@
 </script>
 
 <div class="px-4 md:py-5 py-0">
-    <PlacementCard companies={placementsByCompany} offers={placementsByStudent} />
+    <PlacementCard companies={placementsByCompany} offers={placementsByStudent} companyNames={companyNames} />
 </div>

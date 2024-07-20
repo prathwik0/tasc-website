@@ -32,7 +32,7 @@
                 { x: 0, opacity: 1, duration: 1.5, ease: 'power4.out', 
                     scrollTrigger: {
                         trigger: item,
-                        start: 'top 80%', // Starts animation when the top of the element is at 80% of the viewport height
+                        start: 'top 90%', // Starts animation when the top of the element is at 80% of the viewport height
                         end: 'bottom 60%', // Ends animation when the bottom of the element is at 70% of the viewport height
                         scrub: true,
                         toggleActions: 'play none none reverse',

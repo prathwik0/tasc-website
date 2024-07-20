@@ -6,8 +6,7 @@
 
 	export let companies: Record<string, string[]>;
 	export let offers: Record<string, PlacementOffer[]>;
-
-	let companyNames = Object.keys(companies);
+	export let companyNames: string[];
 
 	onMount(() => {
 		const containers = document.querySelectorAll('.carousel-container');
@@ -105,9 +104,9 @@
 				<div class="carousel-inner self-center">
 					{#each companies[company] as student}
 						<div class="carousel-item grid">
-							<div class="bg-card w-[95%] sm:h-full h-[90%] self-center object-contain sm:border-2 border border-yellow-300 rounded-xl grid grid-cols-5">
+							<div class="bg-card w-[95%] sm:h-full h-[90%] self-center object-contain sm:border-2 border border-[#d2b863] md:rounded-[17px] sm:rounded-[13px] rounded-[8px] grid grid-cols-5">
                                 <div class="col-span-2 w-full h-full sm:aspect-[7/9] aspect-square relative">
-                                    <img src="/user1.png" alt="" class=" object-fill sm:h-full h-[89.5%] w-full rounded-l-xl">
+                                    <img src="/user1.png" alt="" class=" object-fill sm:h-full h-[89.5%] w-full md:rounded-l-[15px] sm:rounded-l-[11px] rounded-l-[7px]">
                                     <div class="absolute inset-0 sm:ml-[75%] ml-[50%] sm:h-full h-[89.5%] bg-gradient-to-r from-transparent to-card"></div>
                                 </div>
                                 <div class="flex flex-col col-span-3 justify-around sm:h-full h-[90%]">
